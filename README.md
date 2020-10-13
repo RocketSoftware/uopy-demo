@@ -14,7 +14,7 @@ $ pip install uopy
 
 **Before use uopy to connect requires a running Universe/UniData server.** 
 
-The following example use uopy to connect to the Universe on Windows.
+The following example use uopy to connect to [UniVerse](https://www.rocketsoftware.com/products/rocket-universe-0/rocket-universe) on Windows.
 
 ```python
 >>> import uopy
