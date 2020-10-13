@@ -1,0 +1,550 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module uopy._dictionary</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="uopy.html"><font color="#ffffff">uopy</font></a>._dictionary</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cxshen%5Cappdata%5Croaming%5Cpython%5Cpython38%5Csite-packages%5Cuopy%5C_dictionary.py">c:\users\xshen\appdata\roaming\python\python38\site-packages\uopy\_dictionary.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Copyright&nbsp;2020&nbsp;-&nbsp;2020&nbsp;Rocket&nbsp;Software,&nbsp;Inc.&nbsp;or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;Rights&nbsp;Reserved.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="uopy._file.html#File">uopy._file.File</a>(<a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="uopy._dictionary.html#Dictionary">Dictionary</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Dictionary">class <strong>Dictionary</strong></a>(<a href="uopy._file.html#File">uopy._file.File</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Dictionary">Dictionary</a>(name,&nbsp;session=None)<br>
+&nbsp;<br>
+<a href="#Dictionary">Dictionary</a>&nbsp;provides&nbsp;convenient&nbsp;access&nbsp;to&nbsp;MV&nbsp;dictionary&nbsp;files.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="uopy._dictionary.html#Dictionary">Dictionary</a></dd>
+<dd><a href="uopy._file.html#File">uopy._file.File</a></dd>
+<dd><a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Dictionary-__init__"><strong>__init__</strong></a>(self, name, session=None)</dt><dd><tt>Initialize&nbsp;a&nbsp;<a href="#Dictionary">Dictionary</a>&nbsp;object.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;(str):&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;MV&nbsp;file&nbsp;to&nbsp;be&nbsp;opened.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;session&nbsp;(Session,&nbsp;optional):&nbsp;the&nbsp;Session&nbsp;object&nbsp;that&nbsp;the&nbsp;<a href="#Dictionary">Dictionary</a>&nbsp;object&nbsp;is&nbsp;bound&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;last&nbsp;opened&nbsp;Session&nbsp;in&nbsp;the&nbsp;current&nbsp;thread&nbsp;will&nbsp;be&nbsp;used.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_assoc"><strong>get_assoc</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;ASSOC&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;ASSOC&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError.</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_conv"><strong>get_conv</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;CONV&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;CONV&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_format"><strong>get_format</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;FORMAT&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;FORMAT&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_loc"><strong>get_loc</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;LOC&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;LOC&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_name"><strong>get_name</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;NAME&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;NAME&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_sm"><strong>get_sm</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;SM&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;SM&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_sql_type"><strong>get_sql_type</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;SQLType&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;SQLType&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_type"><strong>get_type</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;TYPE&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;TYPE&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_assoc"><strong>set_assoc</strong></a>(self, record_id, assoc)</dt><dd><tt>Set&nbsp;the&nbsp;ASSOC&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assoc&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;ASSOC&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_conv"><strong>set_conv</strong></a>(self, record_id, conv_code)</dt><dd><tt>Set&nbsp;the&nbsp;CONV&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conv_code&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;CONV&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_format"><strong>set_format</strong></a>(self, record_id, format_code)</dt><dd><tt>Set&nbsp;the&nbsp;FORMAT&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format_code&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;FORMAT&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_loc"><strong>set_loc</strong></a>(self, record_id, loc)</dt><dd><tt>Set&nbsp;the&nbsp;LOC&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loc&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;LOC&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_name"><strong>set_name</strong></a>(self, record_id, name)</dt><dd><tt>Set&nbsp;the&nbsp;NAME&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;NAME&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_sm"><strong>set_sm</strong></a>(self, record_id, sm)</dt><dd><tt>Set&nbsp;the&nbsp;SM&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sm&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;SM&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_sql_type"><strong>set_sql_type</strong></a>(self, record_id, sql_type)</dt><dd><tt>Set&nbsp;the&nbsp;SQLType&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sql_type&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;SQLType&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_type"><strong>set_type</strong></a>(self, record_id, field_type)</dt><dd><tt>Set&nbsp;the&nbsp;TYPE&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_type&nbsp;(str&nbsp;or&nbsp;DynArray):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;TYPE&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="uopy._file.html#File">uopy._file.File</a>:<br>
+<dl><dt><a name="Dictionary-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Dictionary-__exit__"><strong>__exit__</strong></a>(self, exec_type, exec_value, traceback)</dt></dl>
+
+<dl><dt><a name="Dictionary-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-clear"><strong>clear</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-close"><strong>close</strong></a>(self)</dt><dd><tt>Close&nbsp;the&nbsp;opened&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server&nbsp;-&nbsp;all&nbsp;file&nbsp;and&nbsp;record&nbsp;locks&nbsp;are&nbsp;released.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-delete"><strong>delete</strong></a>(self, record_id, lock_flag=0)</dt><dd><tt>Delete&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any&nbsp;):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_ak_info"><strong>get_ak_info</strong></a>(self, index_name='')</dt><dd><tt>Obtain&nbsp;information&nbsp;about&nbsp;the&nbsp;secondary&nbsp;key&nbsp;indexes&nbsp;available&nbsp;on&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;index_name&nbsp;(str,&nbsp;Optional).&nbsp;If&nbsp;this&nbsp;value&nbsp;is&nbsp;None&nbsp;or&nbsp;ignored,&nbsp;the&nbsp;list&nbsp;of&nbsp;available&nbsp;indices&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;return&nbsp;value&nbsp;will&nbsp;vary&nbsp;depending&nbsp;on&nbsp;the&nbsp;type&nbsp;of&nbsp;index,&nbsp;as&nbsp;follows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;For&nbsp;D-Type&nbsp;indexes:&nbsp;Field&nbsp;1&nbsp;contains&nbsp;D&nbsp;as&nbsp;the&nbsp;first&nbsp;character&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;2&nbsp;contains&nbsp;the&nbsp;location&nbsp;number&nbsp;of&nbsp;the&nbsp;indexed&nbsp;field.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;For&nbsp;I-type&nbsp;indexes:&nbsp;Field&nbsp;1&nbsp;contains&nbsp;I&nbsp;as&nbsp;the&nbsp;first&nbsp;character,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;2&nbsp;contains&nbsp;the&nbsp;I-type&nbsp;expression,&nbsp;and&nbsp;the&nbsp;compiled&nbsp;I-type&nbsp;resides&nbsp;in&nbsp;field&nbsp;19&nbsp;and&nbsp;onward.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;For&nbsp;both&nbsp;types:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;indicates&nbsp;if&nbsp;the&nbsp;index&nbsp;needs&nbsp;to&nbsp;be&nbsp;rebuilt.&nbsp;It&nbsp;is&nbsp;an&nbsp;empty&nbsp;string&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3rd&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;is&nbsp;set&nbsp;if&nbsp;the&nbsp;index&nbsp;is&nbsp;null-suppressed.&nbsp;It&nbsp;is&nbsp;an&nbsp;empty&nbsp;string&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4th&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;is&nbsp;set&nbsp;if&nbsp;automatic&nbsp;updates&nbsp;are&nbsp;disabled.&nbsp;It&nbsp;is&nbsp;an&nbsp;empty&nbsp;string&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6th&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;contains&nbsp;an&nbsp;S&nbsp;for&nbsp;single&nbsp;valued&nbsp;indices&nbsp;or&nbsp;M&nbsp;for&nbsp;a&nbsp;multivalued&nbsp;index.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-is_locked"><strong>is_locked</strong></a>(self, record_id)</dt><dd><tt>Check&nbsp;if&nbsp;a&nbsp;record&nbsp;has&nbsp;a&nbsp;lock&nbsp;on&nbsp;it.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;boolean:&nbsp;True,&nbsp;a&nbsp;lock&nbsp;exists&nbsp;on&nbsp;the&nbsp;record&nbsp;by&nbsp;either&nbsp;the&nbsp;current&nbsp;session&nbsp;or&nbsp;other&nbsp;sessions.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-itype"><strong>itype</strong></a>(self, record_id, i_type_id)</dt><dd><tt>Evaluates&nbsp;the&nbsp;specified&nbsp;I-descriptor&nbsp;and&nbsp;returns&nbsp;the&nbsp;evaluated&nbsp;string.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i_type_id&nbsp;(any):&nbsp;the&nbsp;I-descriptor&nbsp;record&nbsp;id&nbsp;in&nbsp;the&nbsp;dictionary&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;evaluated&nbsp;result.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-lock"><strong>lock</strong></a>(self, record_id, lock_flag=4)</dt><dd><tt>Lock&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;LOCK_EXCLUSIVE&nbsp;(default)&nbsp;or&nbsp;LOCK_SHARED<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-lock_file"><strong>lock_file</strong></a>(self)</dt><dd><tt>Lock&nbsp;the&nbsp;entire&nbsp;file&nbsp;exclusively.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-open"><strong>open</strong></a>(self)</dt><dd><tt>Open&nbsp;the&nbsp;named&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-read"><strong>read</strong></a>(self, record_id, lock_flag=0)</dt><dd><tt>Read&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default,&nbsp;no&nbsp;lock),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;record.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-read_field"><strong>read_field</strong></a>(self, record_id, field_num, lock_flag=0)</dt><dd><tt>Read&nbsp;a&nbsp;single&nbsp;field&nbsp;of&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any&nbsp;):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_num&nbsp;(int):&nbsp;the&nbsp;field&nbsp;number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DynArray:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-read_named_fields"><strong>read_named_fields</strong></a>(self, id_list, field_list, lock_flag=0)</dt><dd><tt>Read&nbsp;a&nbsp;list&nbsp;of&nbsp;named&nbsp;fields&nbsp;on&nbsp;multiple&nbsp;records.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fields&nbsp;can&nbsp;be&nbsp;of&nbsp;D-type&nbsp;or&nbsp;I/V&nbsp;type.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;field_list&nbsp;contains&nbsp;names&nbsp;that&nbsp;are&nbsp;not&nbsp;defined&nbsp;in&nbsp;the&nbsp;dictionary,&nbsp;these&nbsp;names&nbsp;are&nbsp;replaced&nbsp;by&nbsp;@ID.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;field&nbsp;has&nbsp;conv&nbsp;code&nbsp;on&nbsp;it,&nbsp;an&nbsp;oconv&nbsp;is&nbsp;automatically&nbsp;performed&nbsp;on&nbsp;its&nbsp;internal&nbsp;value&nbsp;to&nbsp;get&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;converted&nbsp;output&nbsp;value.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;field&nbsp;names.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default,&nbsp;no&nbsp;lock),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;four&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;record&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;<a href="uopy._file.html#File">File</a>("RENTAL_DETAILS")&nbsp;as&nbsp;test_file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_list&nbsp;=&nbsp;["FULL_NAME",&nbsp;"ACTUAL_RETURN_DATE",&nbsp;"BALANCE_DUE"]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id_list&nbsp;=&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read_rs&nbsp;=&nbsp;test_file.<a href="#Dictionary-read_named_fields">read_named_fields</a>(id_list,&nbsp;field_list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;l&nbsp;in&nbsp;read_rs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(l)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[['Karen&nbsp;McGlone',&nbsp;['03/29/2010',&nbsp;'03/30/2010',&nbsp;'03/31/2010',&nbsp;'03/30/2010'],&nbsp;'3.50'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Jamie&nbsp;Klink',&nbsp;['05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010'],&nbsp;'4.82'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Mo&nbsp;Evans',&nbsp;['08/23/2010',&nbsp;'08/20/2010',&nbsp;'08/26/2010',&nbsp;'08/22/2010',&nbsp;'08/25/2010',&nbsp;'08/22/2010'],&nbsp;'19.04']]</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-read_records"><strong>read_records</strong></a>(self, id_list, lock_flag=0)</dt><dd><tt>Read&nbsp;multiple&nbsp;records&nbsp;from&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default,&nbsp;no&nbsp;lock),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;four&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;record&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-unlock"><strong>unlock</strong></a>(self, record_id, clear_flag=False)</dt><dd><tt>Release&nbsp;locks&nbsp;owned&nbsp;by&nbsp;the&nbsp;current&nbsp;session&nbsp;on&nbsp;a&nbsp;record&nbsp;of&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clear_flag&nbsp;(boolean,&nbsp;optional):&nbsp;False&nbsp;(default),&nbsp;only&nbsp;release&nbsp;the&nbsp;lock&nbsp;on&nbsp;the&nbsp;specified&nbsp;record;&nbsp;otherwise,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;release&nbsp;all&nbsp;the&nbsp;locks&nbsp;owned&nbsp;by&nbsp;the&nbsp;current&nbsp;session.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-unlock_file"><strong>unlock_file</strong></a>(self)</dt><dd><tt>Release&nbsp;the&nbsp;exclusive&nbsp;lock&nbsp;on&nbsp;the&nbsp;entire&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-write"><strong>write</strong></a>(self, record_id, record, lock_flag=0)</dt><dd><tt>Write&nbsp;a&nbsp;record&nbsp;into&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record&nbsp;(any):&nbsp;the&nbsp;record&nbsp;to&nbsp;be&nbsp;written&nbsp;-&nbsp;can&nbsp;be&nbsp;DynArray,&nbsp;str,&nbsp;bytes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-write_field"><strong>write_field</strong></a>(self, record_id, field_num, field_value, lock_flag=0)</dt><dd><tt>Write&nbsp;a&nbsp;single&nbsp;field&nbsp;of&nbsp;a&nbsp;record&nbsp;to&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;DynArray.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_num&nbsp;(int):&nbsp;the&nbsp;field&nbsp;number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_value&nbsp;(any):&nbsp;the&nbsp;field&nbsp;value&nbsp;to&nbsp;be&nbsp;written&nbsp;-&nbsp;can&nbsp;be&nbsp;DynArray,&nbsp;str,&nbsp;bytes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-write_named_fields"><strong>write_named_fields</strong></a>(self, id_list, field_list, field_data_list, lock_flag=0)</dt><dd><tt>Write&nbsp;a&nbsp;list&nbsp;of&nbsp;named&nbsp;fields&nbsp;to&nbsp;multiple&nbsp;records.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;field_list&nbsp;contains&nbsp;names&nbsp;that&nbsp;are&nbsp;not&nbsp;defined&nbsp;in&nbsp;the&nbsp;dictionary,&nbsp;these&nbsp;names&nbsp;are&nbsp;ignored.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;field&nbsp;is&nbsp;of&nbsp;I/V&nbsp;type&nbsp;or&nbsp;the&nbsp;record&nbsp;id&nbsp;itself,&nbsp;it&nbsp;is&nbsp;ignored.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;field&nbsp;has&nbsp;CONV&nbsp;code&nbsp;on&nbsp;it,&nbsp;an&nbsp;iconv&nbsp;is&nbsp;automatically&nbsp;performed&nbsp;to&nbsp;use&nbsp;its&nbsp;internal&nbsp;value&nbsp;for&nbsp;the&nbsp;write.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;field&nbsp;names.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_data_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;DynArray&nbsp;consisting&nbsp;of&nbsp;all&nbsp;the&nbsp;field&nbsp;values.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;4&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;field&nbsp;values&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;<a href="uopy._file.html#File">File</a>("RENTAL_DETAILS")&nbsp;as&nbsp;test_file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_list&nbsp;=&nbsp;["FULL_NAME",&nbsp;"ACTUAL_RETURN_DATE",&nbsp;"BALANCE_DUE"]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id_list&nbsp;=&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_value_list&nbsp;=&nbsp;[['Karen&nbsp;McGlone',&nbsp;['03/29/2010',&nbsp;'03/30/2010',&nbsp;'03/31/2010',&nbsp;'03/30/2010'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'3.50'],&nbsp;['Jamie&nbsp;Klink',&nbsp;['05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010'],&nbsp;'4.82'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Mo&nbsp;Evans',&nbsp;['08/23/2010',&nbsp;'08/20/2010',&nbsp;'08/26/2010',&nbsp;'08/22/2010',&nbsp;'08/25/2010',&nbsp;'08/22/2010'],'19.04']]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_rs&nbsp;=&nbsp;test_file.<a href="#Dictionary-write_named_fields">write_named_fields</a>(id_list,&nbsp;field_list,&nbsp;field_value_list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;l&nbsp;in&nbsp;write_rs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(l)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[['Karen&nbsp;McGlone',&nbsp;['03/29/2010',&nbsp;'03/30/2010',&nbsp;'03/31/2010',&nbsp;'03/30/2010'],&nbsp;'3.50'],&nbsp;['Jamie&nbsp;Klink',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010'],&nbsp;'4.82'],&nbsp;['Mo&nbsp;Evans',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['08/23/2010',&nbsp;'08/20/2010',&nbsp;'08/26/2010',&nbsp;'08/22/2010',&nbsp;'08/25/2010',&nbsp;'08/22/2010'],&nbsp;'19.04']]</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-write_records"><strong>write_records</strong></a>(self, id_list, record_list, lock_flag=0)</dt><dd><tt>Write&nbsp;multiple&nbsp;records&nbsp;into&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;records.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;four&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;record&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError</tt></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="uopy._file.html#File">uopy._file.File</a>:<br>
+<dl><dt><strong>handle</strong></dt>
+</dl>
+<dl><dt><strong>is_opened</strong></dt>
+<dd><tt>boolean:&nbsp;True&nbsp;if&nbsp;the&nbsp;File&nbsp;object&nbsp;is&nbsp;opened&nbsp;on&nbsp;the&nbsp;remote&nbsp;server,&nbsp;otherwise&nbsp;False.</tt></dd>
+</dl>
+<dl><dt><strong>status</strong></dt>
+<dd><tt>The&nbsp;status&nbsp;code&nbsp;set&nbsp;by&nbsp;the&nbsp;remote&nbsp;server&nbsp;after&nbsp;a&nbsp;file&nbsp;operation.</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

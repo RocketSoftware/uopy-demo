@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module uopy._uopy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="uopy.html"><font color="#ffffff">uopy</font></a>._uopy</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cxshen%5Cappdata%5Croaming%5Cpython%5Cpython38%5Csite-packages%5Cuopy%5C_uopy.py">c:\users\xshen\appdata\roaming\python\python38\site-packages\uopy\_uopy.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Copyright&nbsp;2020&nbsp;-&nbsp;2020&nbsp;Rocket&nbsp;Software,&nbsp;Inc.&nbsp;or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;Rights&nbsp;Reserved.<br>
+#</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="threading.html">threading</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-connect"><strong>connect</strong></a>(**kwargs)</dt><dd><tt>Open&nbsp;a&nbsp;connection&nbsp;to&nbsp;an&nbsp;MV&nbsp;Database.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;kwargs:&nbsp;connection&nbsp;configuration&nbsp;keyword&nbsp;parameters:&nbsp;&nbsp;host,&nbsp;port,&nbsp;user,&nbsp;password,&nbsp;account,&nbsp;service,&nbsp;timeout,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encoding,&nbsp;ssl,&nbsp;min_pool_size,&nbsp;max_pool_size.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;only&nbsp;user&nbsp;and&nbsp;password&nbsp;are&nbsp;required,&nbsp;the&nbsp;rest&nbsp;have&nbsp;default&nbsp;values&nbsp;in&nbsp;uopy.config.connection.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;if&nbsp;connection&nbsp;pooling&nbsp;is&nbsp;turned&nbsp;on&nbsp;and&nbsp;<a href="#-connect">connect</a>()&nbsp;is&nbsp;called&nbsp;for&nbsp;the&nbsp;first&nbsp;time&nbsp;to&nbsp;open&nbsp;a&nbsp;connection<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;the&nbsp;database&nbsp;server,&nbsp;a&nbsp;connection&nbsp;pool&nbsp;will&nbsp;be&nbsp;created&nbsp;for&nbsp;the&nbsp;same&nbsp;host,&nbsp;account,&nbsp;user&nbsp;and&nbsp;password<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;that&nbsp;are&nbsp;passed&nbsp;in.&nbsp;If&nbsp;min_pool_size&nbsp;and/or&nbsp;max_pool_size&nbsp;are&nbsp;passed&nbsp;in&nbsp;as&nbsp;well,&nbsp;they&nbsp;will&nbsp;be&nbsp;used<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instead&nbsp;of&nbsp;the&nbsp;default&nbsp;values&nbsp;in&nbsp;the&nbsp;uopy.config.pooling&nbsp;section&nbsp;to&nbsp;set&nbsp;the&nbsp;minimum&nbsp;and&nbsp;maximum&nbsp;pool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sizes.&nbsp;Note&nbsp;that&nbsp;once&nbsp;a&nbsp;connection&nbsp;pool&nbsp;is&nbsp;created,&nbsp;its&nbsp;min_pool_size&nbsp;and&nbsp;max_pool_size&nbsp;cannot&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;changed.&nbsp;This&nbsp;means&nbsp;that&nbsp;the&nbsp;min_pool_size&nbsp;and&nbsp;max_pool_size&nbsp;parameters&nbsp;are&nbsp;ignored&nbsp;on&nbsp;subsequent&nbsp;calls<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;<a href="#-connect">connect</a>()&nbsp;for&nbsp;the&nbsp;same&nbsp;pool.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;Session&nbsp;object:&nbsp;either&nbsp;newly&nbsp;established&nbsp;or&nbsp;straight&nbsp;from&nbsp;a&nbsp;connection&nbsp;pool.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOError,&nbsp;ValueError<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;session&nbsp;=&nbsp;uopy.<a href="#-connect">connect</a>(user&nbsp;=&nbsp;'test',&nbsp;password&nbsp;='test')<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;session&nbsp;=&nbsp;uopy.<a href="#-connect">connect</a>(host&nbsp;='localhost',&nbsp;user&nbsp;=&nbsp;'test',&nbsp;password&nbsp;='test',&nbsp;account&nbsp;=&nbsp;'HS.SALES',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;service=uopy.UV_SERVICE,&nbsp;port=31438)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;config&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'user':&nbsp;'test',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'password':&nbsp;'test',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'service':&nbsp;'udcs',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'account':&nbsp;'demo',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'encoding':&nbsp;'GB18030',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ssl':&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;session&nbsp;=&nbsp;uopy.<a href="#-connect">connect</a>(**config)</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>IDLE_REMOVE_INTERVAL</strong> = 'idle_remove_interval'<br>
+<strong>POOLING_ON</strong> = 'pooling_on'<br>
+<strong>config</strong> = &lt;uopy._config._Config object&gt;</td></tr></table>
+</body></html>

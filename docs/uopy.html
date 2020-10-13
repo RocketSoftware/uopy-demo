@@ -1,0 +1,2035 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: package uopy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>uopy</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cxshen%5Cappdata%5Croaming%5Cpython%5Cpython38%5Csite-packages%5Cuopy%5C__init__.py">c:\users\xshen\appdata\roaming\python\python38\site-packages\uopy\__init__.py</a></font></td></tr></table>
+    <p><tt>UniObjects&nbsp;for&nbsp;Python&nbsp;is&nbsp;a&nbsp;Python&nbsp;package&nbsp;from&nbsp;Rocket&nbsp;Software.&nbsp;It&nbsp;is&nbsp;a&nbsp;client&nbsp;API&nbsp;that&nbsp;allows&nbsp;Python&nbsp;applications<br>
+to&nbsp;access&nbsp;Rocket&nbsp;MV&nbsp;Databases&nbsp;over&nbsp;the&nbsp;network.<br>
+&nbsp;<br>
+Specifically,&nbsp;it&nbsp;enables&nbsp;Python&nbsp;developers&nbsp;to:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1)&nbsp;remotely&nbsp;connect&nbsp;to&nbsp;MV&nbsp;databases<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1)&nbsp;call&nbsp;BASIC&nbsp;catalogued&nbsp;subroutines<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2)&nbsp;run&nbsp;TCL&nbsp;commands<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3)&nbsp;read/write&nbsp;MV&nbsp;files<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4)&nbsp;handle&nbsp;MV&nbsp;dynamic&nbsp;arrays<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;5)&nbsp;manage&nbsp;MV&nbsp;SELECT&nbsp;lists<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;6)&nbsp;control&nbsp;MV&nbsp;transactions<br>
+&nbsp;<br>
+Configuration:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOPY&nbsp;supports&nbsp;a&nbsp;list&nbsp;of&nbsp;configuration&nbsp;parameters.&nbsp;They&nbsp;are&nbsp;grouped&nbsp;into&nbsp;4&nbsp;categories:&nbsp;connection,&nbsp;pooling,&nbsp;logging,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;ssl_auth.&nbsp;Internally&nbsp;all&nbsp;the&nbsp;configuration&nbsp;parameters&nbsp;are&nbsp;preset&nbsp;to&nbsp;default&nbsp;values&nbsp;deemed&nbsp;to&nbsp;work&nbsp;for&nbsp;a&nbsp;minimal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOPY&nbsp;application&nbsp;development&nbsp;environment.&nbsp;To&nbsp;override&nbsp;these&nbsp;default&nbsp;values,&nbsp;UOPY&nbsp;supports&nbsp;an&nbsp;external<br>
+&nbsp;&nbsp;&nbsp;&nbsp;configuration&nbsp;file&nbsp;-&nbsp;'uopy.ini',&nbsp;in&nbsp;which&nbsp;a&nbsp;user&nbsp;can&nbsp;specify&nbsp;different&nbsp;values&nbsp;for&nbsp;some&nbsp;or&nbsp;all&nbsp;of&nbsp;the&nbsp;parameters.&nbsp;In<br>
+&nbsp;&nbsp;&nbsp;&nbsp;some&nbsp;cases,&nbsp;this&nbsp;enables&nbsp;users&nbsp;to&nbsp;change&nbsp;how&nbsp;the&nbsp;application&nbsp;behaves&nbsp;without&nbsp;having&nbsp;to&nbsp;make&nbsp;any&nbsp;code&nbsp;changes,&nbsp;such<br>
+&nbsp;&nbsp;&nbsp;&nbsp;as&nbsp;turning&nbsp;connection&nbsp;pooling&nbsp;on&nbsp;and&nbsp;off&nbsp;or&nbsp;making&nbsp;all&nbsp;connections&nbsp;to&nbsp;the&nbsp;database&nbsp;secure.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;example,&nbsp;on&nbsp;Windows&nbsp;10&nbsp;(US-English),&nbsp;the&nbsp;default&nbsp;parameter&nbsp;values&nbsp;are:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connection:&nbsp;{'host':&nbsp;'localhost',&nbsp;'account':&nbsp;'XDEMO',&nbsp;'port':&nbsp;31438,&nbsp;'timeout':&nbsp;300,&nbsp;'service':&nbsp;'defcs',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'encoding':&nbsp;'cp1252',&nbsp;'ssl':&nbsp;False}<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pooling:&nbsp;{'pooling_on':&nbsp;False,&nbsp;'min_pool_size':&nbsp;1,&nbsp;'max_pool_size':&nbsp;10,&nbsp;'max_wait_time':&nbsp;30,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'idle_remove_threshold':&nbsp;300,&nbsp;'idle_remove_interval':&nbsp;300}<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logging:&nbsp;{'level':&nbsp;'WARNING',&nbsp;'format':&nbsp;'standard',&nbsp;'dir':&nbsp;'./logs',&nbsp;'file_name':&nbsp;'uopy.log',&nbsp;'max_size':&nbsp;524288,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'backup_count':&nbsp;5,&nbsp;'unirpc_debug':&nbsp;False,&nbsp;'log_data_max_size':&nbsp;1024}<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ssl_auth:&nbsp;{'client_auth_required':&nbsp;False,&nbsp;'server_cert_file':&nbsp;'',&nbsp;'client_cert_file':&nbsp;'',&nbsp;'client_key_file':&nbsp;'',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'check_hostname':&nbsp;False}<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;the&nbsp;uopy.ini&nbsp;file&nbsp;is&nbsp;present&nbsp;in&nbsp;the&nbsp;current&nbsp;working&nbsp;directory&nbsp;with&nbsp;the&nbsp;following&nbsp;settings:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[connection]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;host&nbsp;=&nbsp;uv1211.rocketsoftware.com<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account&nbsp;=&nbsp;XDEMO<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;port&nbsp;=&nbsp;41438<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timeout&nbsp;=&nbsp;100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;service&nbsp;=&nbsp;udcs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ssl&nbsp;=&nbsp;True<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ssl_auth]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server_cert_file="c:\temp\desktop-ppdt4ds.crt"<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[pooling]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pooling_on&nbsp;=&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_wait_time&nbsp;=&nbsp;60<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;idle_remove_threshold&nbsp;=&nbsp;300<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;idle_remove_interval&nbsp;=&nbsp;300<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_pool_size&nbsp;=&nbsp;5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_pool_size&nbsp;=&nbsp;15<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[logging]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level&nbsp;=&nbsp;DEBUG<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backup_count&nbsp;=&nbsp;10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_data_max_size&nbsp;=&nbsp;256<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;then&nbsp;when&nbsp;uopy&nbsp;is&nbsp;imported,&nbsp;it&nbsp;will&nbsp;combine&nbsp;uopy.ini&nbsp;with&nbsp;the&nbsp;internal&nbsp;default&nbsp;configuration,&nbsp;resulting&nbsp;in&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;actual&nbsp;runtime&nbsp;configuration&nbsp;(see&nbsp;the&nbsp;Examples&nbsp;below).&nbsp;Please&nbsp;note&nbsp;that&nbsp;most&nbsp;of&nbsp;these&nbsp;configuration&nbsp;values&nbsp;cannot<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;changed&nbsp;by&nbsp;the&nbsp;application&nbsp;at&nbsp;runtime,&nbsp;with&nbsp;the&nbsp;exception&nbsp;of&nbsp;the&nbsp;values&nbsp;in&nbsp;the&nbsp;connection&nbsp;category&nbsp;and&nbsp;the&nbsp;pool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;size&nbsp;values&nbsp;in&nbsp;the&nbsp;pooling&nbsp;category,&nbsp;which&nbsp;can&nbsp;be&nbsp;passed&nbsp;in&nbsp;with&nbsp;different&nbsp;values&nbsp;to&nbsp;uopy.<a href="#-connect">connect</a>().<br>
+&nbsp;<br>
+&nbsp;<br>
+Logging:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOPY&nbsp;uses&nbsp;a&nbsp;rotating&nbsp;log&nbsp;strategy&nbsp;which&nbsp;is&nbsp;configurable&nbsp;in&nbsp;uopy.ini&nbsp;as&nbsp;shown&nbsp;above.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Specifically,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level:&nbsp;the&nbsp;logging&nbsp;level,&nbsp;can&nbsp;be&nbsp;CRITICAL(50),&nbsp;ERROR(40),&nbsp;WARNING&nbsp;(30,&nbsp;default),&nbsp;INFO(20),&nbsp;DEBUG(10).<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format:&nbsp;can&nbsp;be&nbsp;standard&nbsp;or&nbsp;simple&nbsp;-&nbsp;the&nbsp;difference&nbsp;is&nbsp;that&nbsp;source&nbsp;code&nbsp;line&nbsp;no&nbsp;is&nbsp;provided&nbsp;in&nbsp;the&nbsp;standard&nbsp;format.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dir:&nbsp;the&nbsp;directory&nbsp;where&nbsp;log&nbsp;files&nbsp;are&nbsp;stored.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file_name:&nbsp;the&nbsp;log&nbsp;file&nbsp;name.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_size:&nbsp;the&nbsp;maximum&nbsp;size&nbsp;of&nbsp;a&nbsp;single&nbsp;log&nbsp;file.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backup_count:&nbsp;the&nbsp;number&nbsp;of&nbsp;backup&nbsp;log&nbsp;files&nbsp;to&nbsp;rotate&nbsp;through.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unirpc_debug:&nbsp;if&nbsp;set&nbsp;to&nbsp;True&nbsp;and&nbsp;the&nbsp;logging&nbsp;level&nbsp;is&nbsp;DEBUG,&nbsp;all&nbsp;UniRPC&nbsp;packets&nbsp;are&nbsp;dumped&nbsp;into&nbsp;the&nbsp;log&nbsp;files.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_data_max_size:&nbsp;the&nbsp;maximum&nbsp;length&nbsp;for&nbsp;any&nbsp;data&nbsp;logged&nbsp;when&nbsp;logging&nbsp;level&nbsp;is&nbsp;DEBUG&nbsp;-&nbsp;the&nbsp;default&nbsp;is&nbsp;1k.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;instance,&nbsp;if&nbsp;a&nbsp;subroutine&nbsp;parameter&nbsp;is&nbsp;a&nbsp;XML&nbsp;string&nbsp;greater&nbsp;than&nbsp;1K&nbsp;in&nbsp;size,&nbsp;it&nbsp;will&nbsp;be&nbsp;truncated&nbsp;to&nbsp;1K<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;log&nbsp;file.<br>
+&nbsp;<br>
+&nbsp;<br>
+Constants:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UV_SERVICE,&nbsp;UD_SERVICE,&nbsp;DEFAULT_SERVICE:&nbsp;standard&nbsp;service&nbsp;names&nbsp;for&nbsp;back-end&nbsp;UO&nbsp;servers.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DATA_FILE,&nbsp;DICT_FILE:&nbsp;used&nbsp;when&nbsp;creating&nbsp;a&nbsp;<a href="#File">File</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;indicate&nbsp;which&nbsp;part&nbsp;of&nbsp;the&nbsp;file&nbsp;should&nbsp;be&nbsp;opened.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LOCK_WAIT,&nbsp;LOCK_RETAIN,&nbsp;LOCK_EXCLUSIVE,&nbsp;LOCK_SHARED:&nbsp;locking&nbsp;behaviors&nbsp;when&nbsp;working&nbsp;with&nbsp;records&nbsp;of&nbsp;hashed&nbsp;files.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EXEC_COMPLETE,&nbsp;EXEC_REPLY,&nbsp;EXEC_MORE_OUTPUT:&nbsp;<a href="#Command">Command</a>&nbsp;execution&nbsp;status&nbsp;codes.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AtVar:&nbsp;an&nbsp;enum&nbsp;of&nbsp;supported&nbsp;MV&nbsp;@variables.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UOLocale(Enum):&nbsp;an&nbsp;enum&nbsp;of&nbsp;UniVerse&nbsp;locale&nbsp;definitions.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DEFAULT_MARKS:&nbsp;a&nbsp;named&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;default&nbsp;MV&nbsp;delimiters&nbsp;(marks).<br>
+&nbsp;<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;import&nbsp;uopy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;uopy.config.connection<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{'host':&nbsp;'uv1211.rocketsoftware.com',&nbsp;'account':&nbsp;'XDEMO',&nbsp;'port':&nbsp;41438,&nbsp;'timeout':&nbsp;100,&nbsp;'service':&nbsp;'udcs',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'encoding':&nbsp;'cp1252',&nbsp;'ssl':&nbsp;True}<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;uopy.config.pooling<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{'pooling_on':&nbsp;True,&nbsp;'min_pool_size':&nbsp;5,&nbsp;'max_pool_size':&nbsp;15,&nbsp;'max_wait_time':&nbsp;60,&nbsp;'idle_remove_threshold':&nbsp;300,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'idle_remove_interval':&nbsp;300}<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;uopy.config.logging<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{'level':&nbsp;'DEBUG',&nbsp;'format':&nbsp;'standard',&nbsp;'dir':&nbsp;'./logs',&nbsp;'file_name':&nbsp;'uopy.log',&nbsp;'max_size':&nbsp;524288,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'backup_count':&nbsp;10,&nbsp;'unirpc_debug':&nbsp;False,&nbsp;'log_data_max_size':&nbsp;256}<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;uopy.config.ssl_auth<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{'client_auth_required':&nbsp;False,&nbsp;'server_cert_file':&nbsp;'c:\temp\desktop-ppdt4ds.crt',&nbsp;'client_cert_file':&nbsp;'',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'client_key_file':&nbsp;'',&nbsp;'check_hostname':&nbsp;False}<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;uopy.<a href="#-connect">connect</a>(user='test',&nbsp;password='test'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd&nbsp;=&nbsp;uopy.<a href="#Command">Command</a>("LIST&nbsp;VOC")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.run()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(cmd.response[-20:])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'68&nbsp;records&nbsp;listed.<br>
+'</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Package Contents</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="uopy._command.html">_command</a><br>
+<a href="uopy._config.html">_config</a><br>
+<a href="uopy._constants.html">_constants</a><br>
+<a href="uopy._dictionary.html">_dictionary</a><br>
+<a href="uopy._dynarray.html">_dynarray</a><br>
+<a href="uopy._errorcodes.html">_errorcodes</a><br>
+</td><td width="25%" valign=top><a href="uopy._file.html">_file</a><br>
+<a href="uopy._funccodes.html">_funccodes</a><br>
+<a href="uopy._list.html">_list</a><br>
+<a href="uopy._logger.html">_logger</a><br>
+<a href="uopy._mvdelimited.html">_mvdelimited</a><br>
+<a href="uopy._nlslocale.html">_nlslocale</a><br>
+</td><td width="25%" valign=top><a href="uopy._nlsmap.html">_nlsmap</a><br>
+<a href="uopy._pool.html">_pool</a><br>
+<a href="uopy._recordset.html">_recordset</a><br>
+<a href="uopy._sequentialfile.html">_sequentialfile</a><br>
+<a href="uopy._session.html">_session</a><br>
+<a href="uopy._subroutine.html">_subroutine</a><br>
+</td><td width="25%" valign=top><a href="uopy._transaction.html">_transaction</a><br>
+<a href="uopy._uniobject.html">_uniobject</a><br>
+<a href="uopy._unirpc.html">_unirpc</a><br>
+<a href="uopy._uoerror.html">_uoerror</a><br>
+<a href="uopy._uopy.html">_uopy</a><br>
+<a href="uopy._utils.html">_utils</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#Exception">builtins.Exception</a>(<a href="builtins.html#BaseException">builtins.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="uopy._uoerror.html#UOError">uopy._uoerror.UOError</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="uopy._session.html#Session">uopy._session.Session</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="uopy._mvdelimited.html#MvDelimited">uopy._mvdelimited.MvDelimited</a>(<a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="uopy._dynarray.html#DynArray">uopy._dynarray.DynArray</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="uopy._command.html#Command">uopy._command.Command</a>
+</font></dt><dt><font face="helvetica, arial"><a href="uopy._file.html#File">uopy._file.File</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="uopy._dictionary.html#Dictionary">uopy._dictionary.Dictionary</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="uopy._list.html#List">uopy._list.List</a>
+</font></dt><dt><font face="helvetica, arial"><a href="uopy._sequentialfile.html#SequentialFile">uopy._sequentialfile.SequentialFile</a>
+</font></dt><dt><font face="helvetica, arial"><a href="uopy._subroutine.html#Subroutine">uopy._subroutine.Subroutine</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Command">class <strong>Command</strong></a>(<a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Command">Command</a>(command_text=None,&nbsp;session=None)<br>
+&nbsp;<br>
+<a href="#Command">Command</a>&nbsp;allows&nbsp;applications&nbsp;to&nbsp;run&nbsp;MV&nbsp;ECL/TCL&nbsp;commands&nbsp;or&nbsp;stored&nbsp;procedures&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.<br>
+&nbsp;<br>
+After&nbsp;a&nbsp;command&nbsp;is&nbsp;executed,&nbsp;it&nbsp;can&nbsp;have&nbsp;one&nbsp;of&nbsp;these&nbsp;three&nbsp;status:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EXEC_COMPLETE:&nbsp;the&nbsp;command&nbsp;execution&nbsp;has&nbsp;completed.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EXEC_REPLY:&nbsp;the&nbsp;command&nbsp;awaits&nbsp;user&nbsp;input&nbsp;-&nbsp;the&nbsp;<a href="#Command-reply">reply</a>()&nbsp;method&nbsp;can&nbsp;be&nbsp;called&nbsp;to&nbsp;provide&nbsp;an&nbsp;input.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EXEC_MORE_OUTPUT:&nbsp;the&nbsp;command&nbsp;output&nbsp;buffer&nbsp;isn't&nbsp;big&nbsp;enough&nbsp;to&nbsp;hold&nbsp;all&nbsp;the&nbsp;results.&nbsp;In&nbsp;this&nbsp;case,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;<a href="#Command-next_response">next_response</a>()&nbsp;method&nbsp;can&nbsp;be&nbsp;called&nbsp;to&nbsp;get&nbsp;the&nbsp;next&nbsp;block&nbsp;of&nbsp;the&nbsp;response.<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;status&nbsp;is&nbsp;either&nbsp;EXEC_REPLY&nbsp;or&nbsp;EXEC_MORE_OUTPUT,&nbsp;the&nbsp;<a href="#Command-cancel">cancel</a>()&nbsp;method&nbsp;can&nbsp;be&nbsp;called&nbsp;to&nbsp;terminate<br>
+the&nbsp;command&nbsp;execution.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;command_text&nbsp;(str):&nbsp;the&nbsp;command&nbsp;text.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;at_system_return_code&nbsp;(int)&nbsp;:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;system&nbsp;variable&nbsp;@SYSTEM.RETURN.CODE&nbsp;on&nbsp;the&nbsp;server.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;at_selected&nbsp;(int):&nbsp;The&nbsp;value&nbsp;of&nbsp;the&nbsp;system&nbsp;variable&nbsp;@SELECTED&nbsp;on&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;uopy.<a href="#-connect">connect</a>(user='test',&nbsp;password='test'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd&nbsp;=&nbsp;uopy.<a href="#Command">Command</a>("LIST&nbsp;VOC")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.<a href="#Command-run">run</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(cmd.response)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;uopy.<a href="#-connect">connect</a>(user='test',&nbsp;password='test'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd&nbsp;=&nbsp;uopy.<a href="#Command">Command</a>("RUN&nbsp;BP&nbsp;SAYHELLOTO")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;cmd.status&nbsp;==&nbsp;uopy.EXEC_REPLY:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.<a href="#Command-reply">reply</a>("MV&nbsp;loyal&nbsp;user")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(cmd.response)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="uopy._command.html#Command">Command</a></dd>
+<dd><a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Command-__init__"><strong>__init__</strong></a>(self, command_text=None, session=None)</dt><dd><tt>Initialize&nbsp;a&nbsp;<a href="#Command">Command</a>&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;command_text&nbsp;(str,&nbsp;optional):&nbsp;the&nbsp;TCL/ECL&nbsp;command&nbsp;to&nbsp;be&nbsp;executed&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;session&nbsp;(<a href="#Session">Session</a>,&nbsp;optional):&nbsp;the&nbsp;<a href="#Session">Session</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;the&nbsp;<a href="#Command">Command</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;bound&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;last&nbsp;opened&nbsp;<a href="#Session">Session</a>&nbsp;in&nbsp;the&nbsp;current&nbsp;thread&nbsp;will&nbsp;be&nbsp;used.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Command-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Command-cancel"><strong>cancel</strong></a>(self)</dt><dd><tt>Cancel&nbsp;the&nbsp;execution&nbsp;of&nbsp;the&nbsp;command.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Command-next_response"><strong>next_response</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;next&nbsp;block&nbsp;of&nbsp;output&nbsp;from&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Command-reply"><strong>reply</strong></a>(self, reply_data)</dt><dd><tt>Send&nbsp;a&nbsp;reply&nbsp;to&nbsp;the&nbsp;server&nbsp;to&nbsp;continue&nbsp;the&nbsp;command&nbsp;execution.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;reply_data:&nbsp;the&nbsp;input&nbsp;for&nbsp;the&nbsp;command.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Command-run"><strong>run</strong></a>(self)</dt><dd><tt>Execute&nbsp;the&nbsp;command&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>response</strong></dt>
+<dd><tt>str:&nbsp;The&nbsp;current&nbsp;response&nbsp;of&nbsp;the&nbsp;Command&nbsp;object&nbsp;from&nbsp;the&nbsp;server.</tt></dd>
+</dl>
+<dl><dt><strong>status</strong></dt>
+<dd><tt>int:&nbsp;The&nbsp;current&nbsp;status&nbsp;of&nbsp;the&nbsp;Command&nbsp;object.</tt></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>buffer_size</strong></dt>
+<dd><tt>int:&nbsp;The&nbsp;size&nbsp;of&nbsp;the&nbsp;output&nbsp;buffer&nbsp;for&nbsp;the&nbsp;Command&nbsp;object.<br>
+&nbsp;<br>
+If&nbsp;left&nbsp;unset,&nbsp;all&nbsp;the&nbsp;output&nbsp;of&nbsp;the&nbsp;command&nbsp;execution&nbsp;will&nbsp;be&nbsp;brought&nbsp;back&nbsp;at&nbsp;once.<br>
+If&nbsp;set&nbsp;explicitly,&nbsp;only&nbsp;the&nbsp;output&nbsp;of&nbsp;the&nbsp;specified&nbsp;size&nbsp;will&nbsp;be&nbsp;returned.</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Dictionary">class <strong>Dictionary</strong></a>(<a href="uopy._file.html#File">uopy._file.File</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Dictionary">Dictionary</a>(name,&nbsp;session=None)<br>
+&nbsp;<br>
+<a href="#Dictionary">Dictionary</a>&nbsp;provides&nbsp;convenient&nbsp;access&nbsp;to&nbsp;MV&nbsp;dictionary&nbsp;files.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="uopy._dictionary.html#Dictionary">Dictionary</a></dd>
+<dd><a href="uopy._file.html#File">uopy._file.File</a></dd>
+<dd><a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Dictionary-__init__"><strong>__init__</strong></a>(self, name, session=None)</dt><dd><tt>Initialize&nbsp;a&nbsp;<a href="#Dictionary">Dictionary</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;(str):&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;MV&nbsp;file&nbsp;to&nbsp;be&nbsp;opened.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;session&nbsp;(<a href="#Session">Session</a>,&nbsp;optional):&nbsp;the&nbsp;<a href="#Session">Session</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;the&nbsp;<a href="#Dictionary">Dictionary</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;bound&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;last&nbsp;opened&nbsp;<a href="#Session">Session</a>&nbsp;in&nbsp;the&nbsp;current&nbsp;thread&nbsp;will&nbsp;be&nbsp;used.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_assoc"><strong>get_assoc</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;ASSOC&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;ASSOC&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a>.</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_conv"><strong>get_conv</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;CONV&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;CONV&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_format"><strong>get_format</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;FORMAT&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;FORMAT&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_loc"><strong>get_loc</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;LOC&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;LOC&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_name"><strong>get_name</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;NAME&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;NAME&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_sm"><strong>get_sm</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;SM&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;SM&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_sql_type"><strong>get_sql_type</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;SQLType&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;SQLType&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_type"><strong>get_type</strong></a>(self, record_id)</dt><dd><tt>Return&nbsp;the&nbsp;TYPE&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;TYPE&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_assoc"><strong>set_assoc</strong></a>(self, record_id, assoc)</dt><dd><tt>Set&nbsp;the&nbsp;ASSOC&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;assoc&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;ASSOC&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_conv"><strong>set_conv</strong></a>(self, record_id, conv_code)</dt><dd><tt>Set&nbsp;the&nbsp;CONV&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conv_code&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;CONV&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_format"><strong>set_format</strong></a>(self, record_id, format_code)</dt><dd><tt>Set&nbsp;the&nbsp;FORMAT&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format_code&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;FORMAT&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_loc"><strong>set_loc</strong></a>(self, record_id, loc)</dt><dd><tt>Set&nbsp;the&nbsp;LOC&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loc&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;LOC&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_name"><strong>set_name</strong></a>(self, record_id, name)</dt><dd><tt>Set&nbsp;the&nbsp;NAME&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;NAME&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_sm"><strong>set_sm</strong></a>(self, record_id, sm)</dt><dd><tt>Set&nbsp;the&nbsp;SM&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sm&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;SM&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_sql_type"><strong>set_sql_type</strong></a>(self, record_id, sql_type)</dt><dd><tt>Set&nbsp;the&nbsp;SQLType&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sql_type&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;SQLType&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-set_type"><strong>set_type</strong></a>(self, record_id, field_type)</dt><dd><tt>Set&nbsp;the&nbsp;TYPE&nbsp;field&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;record.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;record&nbsp;id&nbsp;of&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_type&nbsp;(str&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>):&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;TYPE&nbsp;field.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="uopy._file.html#File">uopy._file.File</a>:<br>
+<dl><dt><a name="Dictionary-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Dictionary-__exit__"><strong>__exit__</strong></a>(self, exec_type, exec_value, traceback)</dt></dl>
+
+<dl><dt><a name="Dictionary-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-clear"><strong>clear</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-close"><strong>close</strong></a>(self)</dt><dd><tt>Close&nbsp;the&nbsp;opened&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server&nbsp;-&nbsp;all&nbsp;file&nbsp;and&nbsp;record&nbsp;locks&nbsp;are&nbsp;released.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-delete"><strong>delete</strong></a>(self, record_id, lock_flag=0)</dt><dd><tt>Delete&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any&nbsp;):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-get_ak_info"><strong>get_ak_info</strong></a>(self, index_name='')</dt><dd><tt>Obtain&nbsp;information&nbsp;about&nbsp;the&nbsp;secondary&nbsp;key&nbsp;indexes&nbsp;available&nbsp;on&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;index_name&nbsp;(str,&nbsp;Optional).&nbsp;If&nbsp;this&nbsp;value&nbsp;is&nbsp;None&nbsp;or&nbsp;ignored,&nbsp;the&nbsp;list&nbsp;of&nbsp;available&nbsp;indices&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;return&nbsp;value&nbsp;will&nbsp;vary&nbsp;depending&nbsp;on&nbsp;the&nbsp;type&nbsp;of&nbsp;index,&nbsp;as&nbsp;follows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;For&nbsp;D-Type&nbsp;indexes:&nbsp;Field&nbsp;1&nbsp;contains&nbsp;D&nbsp;as&nbsp;the&nbsp;first&nbsp;character&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;2&nbsp;contains&nbsp;the&nbsp;location&nbsp;number&nbsp;of&nbsp;the&nbsp;indexed&nbsp;field.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;For&nbsp;I-type&nbsp;indexes:&nbsp;Field&nbsp;1&nbsp;contains&nbsp;I&nbsp;as&nbsp;the&nbsp;first&nbsp;character,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;2&nbsp;contains&nbsp;the&nbsp;I-type&nbsp;expression,&nbsp;and&nbsp;the&nbsp;compiled&nbsp;I-type&nbsp;resides&nbsp;in&nbsp;field&nbsp;19&nbsp;and&nbsp;onward.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;For&nbsp;both&nbsp;types:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;indicates&nbsp;if&nbsp;the&nbsp;index&nbsp;needs&nbsp;to&nbsp;be&nbsp;rebuilt.&nbsp;It&nbsp;is&nbsp;an&nbsp;empty&nbsp;string&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3rd&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;is&nbsp;set&nbsp;if&nbsp;the&nbsp;index&nbsp;is&nbsp;null-suppressed.&nbsp;It&nbsp;is&nbsp;an&nbsp;empty&nbsp;string&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4th&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;is&nbsp;set&nbsp;if&nbsp;automatic&nbsp;updates&nbsp;are&nbsp;disabled.&nbsp;It&nbsp;is&nbsp;an&nbsp;empty&nbsp;string&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6th&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;contains&nbsp;an&nbsp;S&nbsp;for&nbsp;single&nbsp;valued&nbsp;indices&nbsp;or&nbsp;M&nbsp;for&nbsp;a&nbsp;multivalued&nbsp;index.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-is_locked"><strong>is_locked</strong></a>(self, record_id)</dt><dd><tt>Check&nbsp;if&nbsp;a&nbsp;record&nbsp;has&nbsp;a&nbsp;lock&nbsp;on&nbsp;it.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;boolean:&nbsp;True,&nbsp;a&nbsp;lock&nbsp;exists&nbsp;on&nbsp;the&nbsp;record&nbsp;by&nbsp;either&nbsp;the&nbsp;current&nbsp;session&nbsp;or&nbsp;other&nbsp;sessions.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-itype"><strong>itype</strong></a>(self, record_id, i_type_id)</dt><dd><tt>Evaluates&nbsp;the&nbsp;specified&nbsp;I-descriptor&nbsp;and&nbsp;returns&nbsp;the&nbsp;evaluated&nbsp;string.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i_type_id&nbsp;(any):&nbsp;the&nbsp;I-descriptor&nbsp;record&nbsp;id&nbsp;in&nbsp;the&nbsp;dictionary&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;evaluated&nbsp;result.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-lock"><strong>lock</strong></a>(self, record_id, lock_flag=4)</dt><dd><tt>Lock&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;LOCK_EXCLUSIVE&nbsp;(default)&nbsp;or&nbsp;LOCK_SHARED<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-lock_file"><strong>lock_file</strong></a>(self)</dt><dd><tt>Lock&nbsp;the&nbsp;entire&nbsp;file&nbsp;exclusively.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-open"><strong>open</strong></a>(self)</dt><dd><tt>Open&nbsp;the&nbsp;named&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-read"><strong>read</strong></a>(self, record_id, lock_flag=0)</dt><dd><tt>Read&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default,&nbsp;no&nbsp;lock),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;record.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-read_field"><strong>read_field</strong></a>(self, record_id, field_num, lock_flag=0)</dt><dd><tt>Read&nbsp;a&nbsp;single&nbsp;field&nbsp;of&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any&nbsp;):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_num&nbsp;(int):&nbsp;the&nbsp;field&nbsp;number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-read_named_fields"><strong>read_named_fields</strong></a>(self, id_list, field_list, lock_flag=0)</dt><dd><tt>Read&nbsp;a&nbsp;list&nbsp;of&nbsp;named&nbsp;fields&nbsp;on&nbsp;multiple&nbsp;records.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fields&nbsp;can&nbsp;be&nbsp;of&nbsp;D-type&nbsp;or&nbsp;I/V&nbsp;type.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;field_list&nbsp;contains&nbsp;names&nbsp;that&nbsp;are&nbsp;not&nbsp;defined&nbsp;in&nbsp;the&nbsp;dictionary,&nbsp;these&nbsp;names&nbsp;are&nbsp;replaced&nbsp;by&nbsp;@ID.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;field&nbsp;has&nbsp;conv&nbsp;code&nbsp;on&nbsp;it,&nbsp;an&nbsp;oconv&nbsp;is&nbsp;automatically&nbsp;performed&nbsp;on&nbsp;its&nbsp;internal&nbsp;value&nbsp;to&nbsp;get&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;converted&nbsp;output&nbsp;value.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;field&nbsp;names.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default,&nbsp;no&nbsp;lock),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;four&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;record&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a><br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;<a href="#File">File</a>("RENTAL_DETAILS")&nbsp;as&nbsp;test_file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_list&nbsp;=&nbsp;["FULL_NAME",&nbsp;"ACTUAL_RETURN_DATE",&nbsp;"BALANCE_DUE"]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id_list&nbsp;=&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read_rs&nbsp;=&nbsp;test_file.<a href="#Dictionary-read_named_fields">read_named_fields</a>(id_list,&nbsp;field_list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;l&nbsp;in&nbsp;read_rs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(l)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[['Karen&nbsp;McGlone',&nbsp;['03/29/2010',&nbsp;'03/30/2010',&nbsp;'03/31/2010',&nbsp;'03/30/2010'],&nbsp;'3.50'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Jamie&nbsp;Klink',&nbsp;['05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010'],&nbsp;'4.82'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Mo&nbsp;Evans',&nbsp;['08/23/2010',&nbsp;'08/20/2010',&nbsp;'08/26/2010',&nbsp;'08/22/2010',&nbsp;'08/25/2010',&nbsp;'08/22/2010'],&nbsp;'19.04']]</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-read_records"><strong>read_records</strong></a>(self, id_list, lock_flag=0)</dt><dd><tt>Read&nbsp;multiple&nbsp;records&nbsp;from&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default,&nbsp;no&nbsp;lock),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;four&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;record&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-unlock"><strong>unlock</strong></a>(self, record_id, clear_flag=False)</dt><dd><tt>Release&nbsp;locks&nbsp;owned&nbsp;by&nbsp;the&nbsp;current&nbsp;session&nbsp;on&nbsp;a&nbsp;record&nbsp;of&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clear_flag&nbsp;(boolean,&nbsp;optional):&nbsp;False&nbsp;(default),&nbsp;only&nbsp;release&nbsp;the&nbsp;lock&nbsp;on&nbsp;the&nbsp;specified&nbsp;record;&nbsp;otherwise,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;release&nbsp;all&nbsp;the&nbsp;locks&nbsp;owned&nbsp;by&nbsp;the&nbsp;current&nbsp;session.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-unlock_file"><strong>unlock_file</strong></a>(self)</dt><dd><tt>Release&nbsp;the&nbsp;exclusive&nbsp;lock&nbsp;on&nbsp;the&nbsp;entire&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-write"><strong>write</strong></a>(self, record_id, record, lock_flag=0)</dt><dd><tt>Write&nbsp;a&nbsp;record&nbsp;into&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record&nbsp;(any):&nbsp;the&nbsp;record&nbsp;to&nbsp;be&nbsp;written&nbsp;-&nbsp;can&nbsp;be&nbsp;<a href="#DynArray">DynArray</a>,&nbsp;str,&nbsp;bytes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-write_field"><strong>write_field</strong></a>(self, record_id, field_num, field_value, lock_flag=0)</dt><dd><tt>Write&nbsp;a&nbsp;single&nbsp;field&nbsp;of&nbsp;a&nbsp;record&nbsp;to&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_num&nbsp;(int):&nbsp;the&nbsp;field&nbsp;number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_value&nbsp;(any):&nbsp;the&nbsp;field&nbsp;value&nbsp;to&nbsp;be&nbsp;written&nbsp;-&nbsp;can&nbsp;be&nbsp;<a href="#DynArray">DynArray</a>,&nbsp;str,&nbsp;bytes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Dictionary-write_named_fields"><strong>write_named_fields</strong></a>(self, id_list, field_list, field_data_list, lock_flag=0)</dt><dd><tt>Write&nbsp;a&nbsp;list&nbsp;of&nbsp;named&nbsp;fields&nbsp;to&nbsp;multiple&nbsp;records.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;field_list&nbsp;contains&nbsp;names&nbsp;that&nbsp;are&nbsp;not&nbsp;defined&nbsp;in&nbsp;the&nbsp;dictionary,&nbsp;these&nbsp;names&nbsp;are&nbsp;ignored.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;field&nbsp;is&nbsp;of&nbsp;I/V&nbsp;type&nbsp;or&nbsp;the&nbsp;record&nbsp;id&nbsp;itself,&nbsp;it&nbsp;is&nbsp;ignored.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;field&nbsp;has&nbsp;CONV&nbsp;code&nbsp;on&nbsp;it,&nbsp;an&nbsp;iconv&nbsp;is&nbsp;automatically&nbsp;performed&nbsp;to&nbsp;use&nbsp;its&nbsp;internal&nbsp;value&nbsp;for&nbsp;the&nbsp;write.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;field&nbsp;names.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_data_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;<a href="#DynArray">DynArray</a>&nbsp;consisting&nbsp;of&nbsp;all&nbsp;the&nbsp;field&nbsp;values.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;4&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;field&nbsp;values&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a><br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;<a href="#File">File</a>("RENTAL_DETAILS")&nbsp;as&nbsp;test_file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_list&nbsp;=&nbsp;["FULL_NAME",&nbsp;"ACTUAL_RETURN_DATE",&nbsp;"BALANCE_DUE"]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id_list&nbsp;=&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_value_list&nbsp;=&nbsp;[['Karen&nbsp;McGlone',&nbsp;['03/29/2010',&nbsp;'03/30/2010',&nbsp;'03/31/2010',&nbsp;'03/30/2010'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'3.50'],&nbsp;['Jamie&nbsp;Klink',&nbsp;['05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010'],&nbsp;'4.82'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Mo&nbsp;Evans',&nbsp;['08/23/2010',&nbsp;'08/20/2010',&nbsp;'08/26/2010',&nbsp;'08/22/2010',&nbsp;'08/25/2010',&nbsp;'08/22/2010'],'19.04']]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_rs&nbsp;=&nbsp;test_file.<a href="#Dictionary-write_named_fields">write_named_fields</a>(id_list,&nbsp;field_list,&nbsp;field_value_list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;l&nbsp;in&nbsp;write_rs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(l)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[['Karen&nbsp;McGlone',&nbsp;['03/29/2010',&nbsp;'03/30/2010',&nbsp;'03/31/2010',&nbsp;'03/30/2010'],&nbsp;'3.50'],&nbsp;['Jamie&nbsp;Klink',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010'],&nbsp;'4.82'],&nbsp;['Mo&nbsp;Evans',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['08/23/2010',&nbsp;'08/20/2010',&nbsp;'08/26/2010',&nbsp;'08/22/2010',&nbsp;'08/25/2010',&nbsp;'08/22/2010'],&nbsp;'19.04']]</tt></dd></dl>
+
+<dl><dt><a name="Dictionary-write_records"><strong>write_records</strong></a>(self, id_list, record_list, lock_flag=0)</dt><dd><tt>Write&nbsp;multiple&nbsp;records&nbsp;into&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;records.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;four&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;record&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<hr>
+Readonly properties inherited from <a href="uopy._file.html#File">uopy._file.File</a>:<br>
+<dl><dt><strong>handle</strong></dt>
+</dl>
+<dl><dt><strong>is_opened</strong></dt>
+<dd><tt>boolean:&nbsp;True&nbsp;if&nbsp;the&nbsp;File&nbsp;object&nbsp;is&nbsp;opened&nbsp;on&nbsp;the&nbsp;remote&nbsp;server,&nbsp;otherwise&nbsp;False.</tt></dd>
+</dl>
+<dl><dt><strong>status</strong></dt>
+<dd><tt>The&nbsp;status&nbsp;code&nbsp;set&nbsp;by&nbsp;the&nbsp;remote&nbsp;server&nbsp;after&nbsp;a&nbsp;file&nbsp;operation.</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DynArray">class <strong>DynArray</strong></a>(<a href="uopy._mvdelimited.html#MvDelimited">uopy._mvdelimited.MvDelimited</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DynArray">DynArray</a>(obj=None,&nbsp;session=None)<br>
+&nbsp;<br>
+<a href="#DynArray">DynArray</a>&nbsp;represents&nbsp;MV&nbsp;delimited&nbsp;data&nbsp;as&nbsp;nested&nbsp;lists&nbsp;and&nbsp;supports&nbsp;most&nbsp;common&nbsp;Python&nbsp;list&nbsp;methods.<br>
+&nbsp;<br>
+Specifically,&nbsp;a&nbsp;<a href="#DynArray">DynArray</a>&nbsp;works&nbsp;with&nbsp;MV&nbsp;delimiters&nbsp;automatically&nbsp;and&nbsp;transparently.&nbsp;It&nbsp;can&nbsp;be&nbsp;used&nbsp;just&nbsp;like&nbsp;a&nbsp;Python<br>
+list&nbsp;and&nbsp;should&nbsp;only&nbsp;be&nbsp;used&nbsp;in&nbsp;that&nbsp;manner.&nbsp;It&nbsp;is&nbsp;a&nbsp;best&nbsp;practice&nbsp;that&nbsp;applications&nbsp;do&nbsp;not&nbsp;use&nbsp;MV&nbsp;delimiters<br>
+directly&nbsp;for&nbsp;internationalization&nbsp;reasons.&nbsp;Please&nbsp;remember&nbsp;that&nbsp;a&nbsp;<a href="#DynArray">DynArray</a>&nbsp;can&nbsp;be&nbsp;passed&nbsp;directly&nbsp;to&nbsp;any&nbsp;UOPY&nbsp;method<br>
+where&nbsp;MV&nbsp;delimited&nbsp;data&nbsp;is&nbsp;expected,&nbsp;such&nbsp;as&nbsp;file.write(),&nbsp;the&nbsp;application&nbsp;doesn't&nbsp;need&nbsp;to&nbsp;convert&nbsp;it&nbsp;first.<br>
+&nbsp;<br>
+Two&nbsp;convenience&nbsp;methods:&nbsp;make_list&nbsp;and&nbsp;make_nested_list&nbsp;are&nbsp;provided&nbsp;to&nbsp;convert&nbsp;a&nbsp;field&nbsp;itself&nbsp;into&nbsp;a&nbsp;list&nbsp;or&nbsp;nested<br>
+list.&nbsp;They&nbsp;are&nbsp;useful&nbsp;if&nbsp;the&nbsp;original&nbsp;field&nbsp;is&nbsp;multivalued&nbsp;or&nbsp;multi-sub-valued,&nbsp;but&nbsp;may&nbsp;contain&nbsp;scalar&nbsp;values.<br>
+Calling&nbsp;them&nbsp;first&nbsp;on&nbsp;a&nbsp;field&nbsp;will&nbsp;ensure&nbsp;that&nbsp;you&nbsp;can&nbsp;safely&nbsp;treat&nbsp;the&nbsp;field&nbsp;as&nbsp;a&nbsp;list&nbsp;or&nbsp;nested&nbsp;list.<br>
+&nbsp;<br>
+In&nbsp;addition,&nbsp;<a href="#DynArray">DynArray</a>&nbsp;also&nbsp;supports&nbsp;two&nbsp;unique&nbsp;MV&nbsp;conversion&nbsp;functions:&nbsp;iconv&nbsp;and&nbsp;oconv.&nbsp;The&nbsp;details&nbsp;of&nbsp;these<br>
+conversion&nbsp;functions&nbsp;are&nbsp;documented&nbsp;under&nbsp;each&nbsp;method.&nbsp;Because&nbsp;they&nbsp;call&nbsp;the&nbsp;remote&nbsp;server&nbsp;to&nbsp;do&nbsp;the&nbsp;conversion,<br>
+it&nbsp;is&nbsp;strongly&nbsp;recommended&nbsp;that&nbsp;applications&nbsp;use&nbsp;<a href="#File">File</a>.read_named_fields()&nbsp;and&nbsp;<a href="#File">File</a>.write_named_fields()&nbsp;instead<br>
+when&nbsp;reading&nbsp;data&nbsp;from&nbsp;or&nbsp;writing&nbsp;data&nbsp;to&nbsp;the&nbsp;server.&nbsp;They&nbsp;automatically&nbsp;perform&nbsp;the&nbsp;iconv&nbsp;and&nbsp;oconv&nbsp;on&nbsp;the<br>
+specified&nbsp;fields&nbsp;on&nbsp;the&nbsp;server,&nbsp;and&nbsp;thus&nbsp;save&nbsp;a&nbsp;rpc&nbsp;call&nbsp;across&nbsp;the&nbsp;network.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="uopy._dynarray.html#DynArray">DynArray</a></dd>
+<dd><a href="uopy._mvdelimited.html#MvDelimited">uopy._mvdelimited.MvDelimited</a></dd>
+<dd><a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DynArray-__init__"><strong>__init__</strong></a>(self, obj=None, session=None)</dt><dd><tt>Initialize&nbsp;a&nbsp;<a href="#DynArray">DynArray</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;obj&nbsp;(any,&nbsp;optional):&nbsp;can&nbsp;be&nbsp;a&nbsp;Python&nbsp;list,&nbsp;a&nbsp;string,&nbsp;a&nbsp;byte&nbsp;<a href="builtins.html#object">object</a>,&nbsp;or&nbsp;another&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;session&nbsp;(<a href="#Session">Session</a>,&nbsp;optional):&nbsp;the&nbsp;<a href="#Session">Session</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;the&nbsp;<a href="#DynArray">DynArray</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;bound&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;last&nbsp;opened&nbsp;<a href="#Session">Session</a>&nbsp;in&nbsp;the&nbsp;current&nbsp;thread&nbsp;will&nbsp;be&nbsp;used.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="DynArray-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="DynArray-format"><strong>format</strong></a>(self, format_code)</dt><dd><tt>Return&nbsp;the&nbsp;formatted&nbsp;value&nbsp;of&nbsp;the&nbsp;<a href="#DynArray">DynArray</a>&nbsp;based&nbsp;on&nbsp;the&nbsp;format&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;format_code&nbsp;(str):&nbsp;the&nbsp;format&nbsp;code.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;formatted&nbsp;value.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="DynArray-iconv"><strong>iconv</strong></a>(self, conversion_code)</dt><dd><tt>Return&nbsp;the&nbsp;internal&nbsp;storage&nbsp;value&nbsp;of&nbsp;the&nbsp;<a href="#DynArray">DynArray</a>&nbsp;based&nbsp;on&nbsp;the&nbsp;conversion&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;conversion_code&nbsp;(str):&nbsp;&nbsp;the&nbsp;MV&nbsp;conversion&nbsp;code.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;internal&nbsp;storage&nbsp;value.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="DynArray-make_list"><strong>make_list</strong></a>(self, index)</dt><dd><tt>Check&nbsp;if&nbsp;the&nbsp;list&nbsp;item&nbsp;is&nbsp;a&nbsp;list&nbsp;itself&nbsp;-&nbsp;if&nbsp;not,&nbsp;make&nbsp;it&nbsp;as&nbsp;such.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;(int):&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;list&nbsp;item.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;d&nbsp;=&nbsp;uopy.<a href="#DynArray">DynArray</a>([1,&nbsp;2])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;d.<a href="#DynArray-make_list">make_list</a>(1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;d[1].<a href="#DynArray-append">append</a>(3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;print(d.list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[1,&nbsp;[2,&nbsp;3]]</tt></dd></dl>
+
+<dl><dt><a name="DynArray-make_nested_list"><strong>make_nested_list</strong></a>(self, index)</dt><dd><tt>Check&nbsp;if&nbsp;the&nbsp;list&nbsp;item&nbsp;is&nbsp;a&nbsp;nested&nbsp;list&nbsp;itself&nbsp;-&nbsp;if&nbsp;not,&nbsp;make&nbsp;it&nbsp;as&nbsp;such.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;(int):&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;list&nbsp;item.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;d&nbsp;=&nbsp;uopy.<a href="#DynArray">DynArray</a>([1,&nbsp;2])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;d.<a href="#DynArray-make_nested_list">make_nested_list</a>(1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;d[1][0].<a href="#DynArray-append">append</a>(3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;print(d.list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[1,&nbsp;[[2,&nbsp;3]]]</tt></dd></dl>
+
+<dl><dt><a name="DynArray-oconv"><strong>oconv</strong></a>(self, conversion_code)</dt><dd><tt>Return&nbsp;the&nbsp;output&nbsp;format&nbsp;of&nbsp;the&nbsp;<a href="#DynArray">DynArray</a>&nbsp;based&nbsp;on&nbsp;the&nbsp;conversion&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;conversion_code&nbsp;(str):&nbsp;the&nbsp;MV&nbsp;conversion&nbsp;code.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;output&nbsp;format.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="uopy._mvdelimited.html#MvDelimited">uopy._mvdelimited.MvDelimited</a>:<br>
+<dl><dt><a name="DynArray-__bytes__"><strong>__bytes__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DynArray-__contains__"><strong>__contains__</strong></a>(self, item)</dt></dl>
+
+<dl><dt><a name="DynArray-__delitem__"><strong>__delitem__</strong></a>(self, key)</dt></dl>
+
+<dl><dt><a name="DynArray-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="DynArray-__getitem__"><strong>__getitem__</strong></a>(self, key)</dt></dl>
+
+<dl><dt><a name="DynArray-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DynArray-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DynArray-__setitem__"><strong>__setitem__</strong></a>(self, key, value)</dt></dl>
+
+<dl><dt><a name="DynArray-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="DynArray-append"><strong>append</strong></a>(self, obj)</dt></dl>
+
+<dl><dt><a name="DynArray-clear"><strong>clear</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DynArray-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DynArray-count"><strong>count</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="DynArray-extend"><strong>extend</strong></a>(self, iterable)</dt></dl>
+
+<dl><dt><a name="DynArray-index"><strong>index</strong></a>(self, value, start=0, stop=9223372036854775807)</dt></dl>
+
+<dl><dt><a name="DynArray-insert"><strong>insert</strong></a>(self, index, obj)</dt></dl>
+
+<dl><dt><a name="DynArray-pop"><strong>pop</strong></a>(self, index=-1)</dt></dl>
+
+<dl><dt><a name="DynArray-remove"><strong>remove</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="DynArray-reverse"><strong>reverse</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DynArray-sort"><strong>sort</strong></a>(self, key=None, reverse=False)</dt></dl>
+
+<hr>
+Readonly properties inherited from <a href="uopy._mvdelimited.html#MvDelimited">uopy._mvdelimited.MvDelimited</a>:<br>
+<dl><dt><strong>list</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="uopy._mvdelimited.html#MvDelimited">uopy._mvdelimited.MvDelimited</a>:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<hr>
+Data descriptors inherited from <a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="File">class <strong>File</strong></a>(<a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#File">File</a>(name,&nbsp;dict_flag=0,&nbsp;session=None)<br>
+&nbsp;<br>
+<a href="#File">File</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;represents&nbsp;a&nbsp;MV&nbsp;hashed&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.&nbsp;It&nbsp;is&nbsp;the&nbsp;main&nbsp;mechanism&nbsp;for&nbsp;applications&nbsp;to<br>
+access&nbsp;MV&nbsp;data&nbsp;remotely.<br>
+&nbsp;<br>
+<a href="#File">File</a>&nbsp;objects&nbsp;can&nbsp;be&nbsp;used&nbsp;in&nbsp;Python&nbsp;with&nbsp;statement&nbsp;so&nbsp;that&nbsp;whatever&nbsp;occurs&nbsp;in&nbsp;the&nbsp;with&nbsp;statement&nbsp;block,&nbsp;they<br>
+are&nbsp;guaranteed&nbsp;to&nbsp;be&nbsp;closed&nbsp;upon&nbsp;exit.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;uopy.<a href="#File">File</a>("VOC")&nbsp;as&nbsp;voc_file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rec&nbsp;=&nbsp;voc_file.<a href="#File-read">read</a>("LIST")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(rec.list)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="uopy._file.html#File">File</a></dd>
+<dd><a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="File-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="File-__exit__"><strong>__exit__</strong></a>(self, exec_type, exec_value, traceback)</dt></dl>
+
+<dl><dt><a name="File-__init__"><strong>__init__</strong></a>(self, name, dict_flag=0, session=None)</dt><dd><tt>Initializes&nbsp;a&nbsp;<a href="#File">File</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;(str):&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;MV&nbsp;<a href="#File">File</a>&nbsp;to&nbsp;be&nbsp;opened.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict_flag&nbsp;(int,&nbsp;optional):&nbsp;when&nbsp;it&nbsp;is&nbsp;uopy.DICT_FILE,&nbsp;then&nbsp;the&nbsp;<a href="#File">File</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;points&nbsp;to&nbsp;the&nbsp;dictionary&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Otherwise,&nbsp;the&nbsp;target&nbsp;is&nbsp;the&nbsp;data&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;session&nbsp;(<a href="#Session">Session</a>,&nbsp;optional):&nbsp;the&nbsp;<a href="#Session">Session</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;the&nbsp;<a href="#File">File</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;bound&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;last&nbsp;opened&nbsp;<a href="#Session">Session</a>&nbsp;in&nbsp;the&nbsp;current&nbsp;thread&nbsp;will&nbsp;be&nbsp;used.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="File-clear"><strong>clear</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-close"><strong>close</strong></a>(self)</dt><dd><tt>Close&nbsp;the&nbsp;opened&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server&nbsp;-&nbsp;all&nbsp;file&nbsp;and&nbsp;record&nbsp;locks&nbsp;are&nbsp;released.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-delete"><strong>delete</strong></a>(self, record_id, lock_flag=0)</dt><dd><tt>Delete&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any&nbsp;):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-get_ak_info"><strong>get_ak_info</strong></a>(self, index_name='')</dt><dd><tt>Obtain&nbsp;information&nbsp;about&nbsp;the&nbsp;secondary&nbsp;key&nbsp;indexes&nbsp;available&nbsp;on&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;index_name&nbsp;(str,&nbsp;Optional).&nbsp;If&nbsp;this&nbsp;value&nbsp;is&nbsp;None&nbsp;or&nbsp;ignored,&nbsp;the&nbsp;list&nbsp;of&nbsp;available&nbsp;indices&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;return&nbsp;value&nbsp;will&nbsp;vary&nbsp;depending&nbsp;on&nbsp;the&nbsp;type&nbsp;of&nbsp;index,&nbsp;as&nbsp;follows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;For&nbsp;D-Type&nbsp;indexes:&nbsp;Field&nbsp;1&nbsp;contains&nbsp;D&nbsp;as&nbsp;the&nbsp;first&nbsp;character&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;2&nbsp;contains&nbsp;the&nbsp;location&nbsp;number&nbsp;of&nbsp;the&nbsp;indexed&nbsp;field.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;For&nbsp;I-type&nbsp;indexes:&nbsp;Field&nbsp;1&nbsp;contains&nbsp;I&nbsp;as&nbsp;the&nbsp;first&nbsp;character,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;2&nbsp;contains&nbsp;the&nbsp;I-type&nbsp;expression,&nbsp;and&nbsp;the&nbsp;compiled&nbsp;I-type&nbsp;resides&nbsp;in&nbsp;field&nbsp;19&nbsp;and&nbsp;onward.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;For&nbsp;both&nbsp;types:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2nd&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;indicates&nbsp;if&nbsp;the&nbsp;index&nbsp;needs&nbsp;to&nbsp;be&nbsp;rebuilt.&nbsp;It&nbsp;is&nbsp;an&nbsp;empty&nbsp;string&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3rd&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;is&nbsp;set&nbsp;if&nbsp;the&nbsp;index&nbsp;is&nbsp;null-suppressed.&nbsp;It&nbsp;is&nbsp;an&nbsp;empty&nbsp;string&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4th&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;is&nbsp;set&nbsp;if&nbsp;automatic&nbsp;updates&nbsp;are&nbsp;disabled.&nbsp;It&nbsp;is&nbsp;an&nbsp;empty&nbsp;string&nbsp;otherwise.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6th&nbsp;value&nbsp;of&nbsp;Field&nbsp;1&nbsp;contains&nbsp;an&nbsp;S&nbsp;for&nbsp;single&nbsp;valued&nbsp;indices&nbsp;or&nbsp;M&nbsp;for&nbsp;a&nbsp;multivalued&nbsp;index.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-is_locked"><strong>is_locked</strong></a>(self, record_id)</dt><dd><tt>Check&nbsp;if&nbsp;a&nbsp;record&nbsp;has&nbsp;a&nbsp;lock&nbsp;on&nbsp;it.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;boolean:&nbsp;True,&nbsp;a&nbsp;lock&nbsp;exists&nbsp;on&nbsp;the&nbsp;record&nbsp;by&nbsp;either&nbsp;the&nbsp;current&nbsp;session&nbsp;or&nbsp;other&nbsp;sessions.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-itype"><strong>itype</strong></a>(self, record_id, i_type_id)</dt><dd><tt>Evaluates&nbsp;the&nbsp;specified&nbsp;I-descriptor&nbsp;and&nbsp;returns&nbsp;the&nbsp;evaluated&nbsp;string.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i_type_id&nbsp;(any):&nbsp;the&nbsp;I-descriptor&nbsp;record&nbsp;id&nbsp;in&nbsp;the&nbsp;dictionary&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;evaluated&nbsp;result.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-lock"><strong>lock</strong></a>(self, record_id, lock_flag=4)</dt><dd><tt>Lock&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;LOCK_EXCLUSIVE&nbsp;(default)&nbsp;or&nbsp;LOCK_SHARED<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-lock_file"><strong>lock_file</strong></a>(self)</dt><dd><tt>Lock&nbsp;the&nbsp;entire&nbsp;file&nbsp;exclusively.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-open"><strong>open</strong></a>(self)</dt><dd><tt>Open&nbsp;the&nbsp;named&nbsp;file&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-read"><strong>read</strong></a>(self, record_id, lock_flag=0)</dt><dd><tt>Read&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default,&nbsp;no&nbsp;lock),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;record.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-read_field"><strong>read_field</strong></a>(self, record_id, field_num, lock_flag=0)</dt><dd><tt>Read&nbsp;a&nbsp;single&nbsp;field&nbsp;of&nbsp;a&nbsp;record&nbsp;in&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any&nbsp;):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_num&nbsp;(int):&nbsp;the&nbsp;field&nbsp;number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;field.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-read_named_fields"><strong>read_named_fields</strong></a>(self, id_list, field_list, lock_flag=0)</dt><dd><tt>Read&nbsp;a&nbsp;list&nbsp;of&nbsp;named&nbsp;fields&nbsp;on&nbsp;multiple&nbsp;records.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fields&nbsp;can&nbsp;be&nbsp;of&nbsp;D-type&nbsp;or&nbsp;I/V&nbsp;type.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;field_list&nbsp;contains&nbsp;names&nbsp;that&nbsp;are&nbsp;not&nbsp;defined&nbsp;in&nbsp;the&nbsp;dictionary,&nbsp;these&nbsp;names&nbsp;are&nbsp;replaced&nbsp;by&nbsp;@ID.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;field&nbsp;has&nbsp;conv&nbsp;code&nbsp;on&nbsp;it,&nbsp;an&nbsp;oconv&nbsp;is&nbsp;automatically&nbsp;performed&nbsp;on&nbsp;its&nbsp;internal&nbsp;value&nbsp;to&nbsp;get&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;converted&nbsp;output&nbsp;value.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;field&nbsp;names.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default,&nbsp;no&nbsp;lock),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;four&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;record&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a><br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;<a href="#File">File</a>("RENTAL_DETAILS")&nbsp;as&nbsp;test_file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_list&nbsp;=&nbsp;["FULL_NAME",&nbsp;"ACTUAL_RETURN_DATE",&nbsp;"BALANCE_DUE"]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id_list&nbsp;=&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read_rs&nbsp;=&nbsp;test_file.<a href="#File-read_named_fields">read_named_fields</a>(id_list,&nbsp;field_list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;l&nbsp;in&nbsp;read_rs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(l)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[['Karen&nbsp;McGlone',&nbsp;['03/29/2010',&nbsp;'03/30/2010',&nbsp;'03/31/2010',&nbsp;'03/30/2010'],&nbsp;'3.50'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Jamie&nbsp;Klink',&nbsp;['05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010'],&nbsp;'4.82'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Mo&nbsp;Evans',&nbsp;['08/23/2010',&nbsp;'08/20/2010',&nbsp;'08/26/2010',&nbsp;'08/22/2010',&nbsp;'08/25/2010',&nbsp;'08/22/2010'],&nbsp;'19.04']]</tt></dd></dl>
+
+<dl><dt><a name="File-read_records"><strong>read_records</strong></a>(self, id_list, lock_flag=0)</dt><dd><tt>Read&nbsp;multiple&nbsp;records&nbsp;from&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default,&nbsp;no&nbsp;lock),&nbsp;or&nbsp;[LOCK_EXCLUSIVE&nbsp;or&nbsp;LOCK_SHARED]&nbsp;[+&nbsp;LOCK_WAIT]<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;four&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;record&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-unlock"><strong>unlock</strong></a>(self, record_id, clear_flag=False)</dt><dd><tt>Release&nbsp;locks&nbsp;owned&nbsp;by&nbsp;the&nbsp;current&nbsp;session&nbsp;on&nbsp;a&nbsp;record&nbsp;of&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clear_flag&nbsp;(boolean,&nbsp;optional):&nbsp;False&nbsp;(default),&nbsp;only&nbsp;release&nbsp;the&nbsp;lock&nbsp;on&nbsp;the&nbsp;specified&nbsp;record;&nbsp;otherwise,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;release&nbsp;all&nbsp;the&nbsp;locks&nbsp;owned&nbsp;by&nbsp;the&nbsp;current&nbsp;session.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-unlock_file"><strong>unlock_file</strong></a>(self)</dt><dd><tt>Release&nbsp;the&nbsp;exclusive&nbsp;lock&nbsp;on&nbsp;the&nbsp;entire&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-write"><strong>write</strong></a>(self, record_id, record, lock_flag=0)</dt><dd><tt>Write&nbsp;a&nbsp;record&nbsp;into&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record&nbsp;(any):&nbsp;the&nbsp;record&nbsp;to&nbsp;be&nbsp;written&nbsp;-&nbsp;can&nbsp;be&nbsp;<a href="#DynArray">DynArray</a>,&nbsp;str,&nbsp;bytes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-write_field"><strong>write_field</strong></a>(self, record_id, field_num, field_value, lock_flag=0)</dt><dd><tt>Write&nbsp;a&nbsp;single&nbsp;field&nbsp;of&nbsp;a&nbsp;record&nbsp;to&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(any):&nbsp;the&nbsp;record&nbsp;id&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_num&nbsp;(int):&nbsp;the&nbsp;field&nbsp;number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_value&nbsp;(any):&nbsp;the&nbsp;field&nbsp;value&nbsp;to&nbsp;be&nbsp;written&nbsp;-&nbsp;can&nbsp;be&nbsp;<a href="#DynArray">DynArray</a>,&nbsp;str,&nbsp;bytes.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="File-write_named_fields"><strong>write_named_fields</strong></a>(self, id_list, field_list, field_data_list, lock_flag=0)</dt><dd><tt>Write&nbsp;a&nbsp;list&nbsp;of&nbsp;named&nbsp;fields&nbsp;to&nbsp;multiple&nbsp;records.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;field_list&nbsp;contains&nbsp;names&nbsp;that&nbsp;are&nbsp;not&nbsp;defined&nbsp;in&nbsp;the&nbsp;dictionary,&nbsp;these&nbsp;names&nbsp;are&nbsp;ignored.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;field&nbsp;is&nbsp;of&nbsp;I/V&nbsp;type&nbsp;or&nbsp;the&nbsp;record&nbsp;id&nbsp;itself,&nbsp;it&nbsp;is&nbsp;ignored.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;a&nbsp;field&nbsp;has&nbsp;CONV&nbsp;code&nbsp;on&nbsp;it,&nbsp;an&nbsp;iconv&nbsp;is&nbsp;automatically&nbsp;performed&nbsp;to&nbsp;use&nbsp;its&nbsp;internal&nbsp;value&nbsp;for&nbsp;the&nbsp;write.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;field&nbsp;names.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;field_data_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;<a href="#DynArray">DynArray</a>&nbsp;consisting&nbsp;of&nbsp;all&nbsp;the&nbsp;field&nbsp;values.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;4&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;field&nbsp;values&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a><br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;<a href="#File">File</a>("RENTAL_DETAILS")&nbsp;as&nbsp;test_file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_list&nbsp;=&nbsp;["FULL_NAME",&nbsp;"ACTUAL_RETURN_DATE",&nbsp;"BALANCE_DUE"]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id_list&nbsp;=&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field_value_list&nbsp;=&nbsp;[['Karen&nbsp;McGlone',&nbsp;['03/29/2010',&nbsp;'03/30/2010',&nbsp;'03/31/2010',&nbsp;'03/30/2010'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'3.50'],&nbsp;['Jamie&nbsp;Klink',&nbsp;['05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010'],&nbsp;'4.82'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Mo&nbsp;Evans',&nbsp;['08/23/2010',&nbsp;'08/20/2010',&nbsp;'08/26/2010',&nbsp;'08/22/2010',&nbsp;'08/25/2010',&nbsp;'08/22/2010'],'19.04']]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_rs&nbsp;=&nbsp;test_file.<a href="#File-write_named_fields">write_named_fields</a>(id_list,&nbsp;field_list,&nbsp;field_value_list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;l&nbsp;in&nbsp;write_rs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(l)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['0',&nbsp;'0',&nbsp;'0']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['1084',&nbsp;'1307',&nbsp;'1976']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[['Karen&nbsp;McGlone',&nbsp;['03/29/2010',&nbsp;'03/30/2010',&nbsp;'03/31/2010',&nbsp;'03/30/2010'],&nbsp;'3.50'],&nbsp;['Jamie&nbsp;Klink',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010',&nbsp;'05/07/2010',&nbsp;'05/05/2010'],&nbsp;'4.82'],&nbsp;['Mo&nbsp;Evans',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['08/23/2010',&nbsp;'08/20/2010',&nbsp;'08/26/2010',&nbsp;'08/22/2010',&nbsp;'08/25/2010',&nbsp;'08/22/2010'],&nbsp;'19.04']]</tt></dd></dl>
+
+<dl><dt><a name="File-write_records"><strong>write_records</strong></a>(self, id_list, record_list, lock_flag=0)</dt><dd><tt>Write&nbsp;multiple&nbsp;records&nbsp;into&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_list:&nbsp;a&nbsp;list&nbsp;of&nbsp;records.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lock_flag&nbsp;(int,&nbsp;optional):&nbsp;0&nbsp;(default),&nbsp;LOCK_RETAIN,&nbsp;LOCK_WAIT,&nbsp;or&nbsp;LOCK_RETAIN&nbsp;+&nbsp;LOCK_WAIT<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;a&nbsp;tuple&nbsp;consisting&nbsp;of&nbsp;four&nbsp;lists:&nbsp;1.&nbsp;response&nbsp;code&nbsp;list,&nbsp;2.&nbsp;status&nbsp;code&nbsp;list,&nbsp;3.&nbsp;record&nbsp;id&nbsp;list,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;record&nbsp;list.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>handle</strong></dt>
+</dl>
+<dl><dt><strong>is_opened</strong></dt>
+<dd><tt>boolean:&nbsp;True&nbsp;if&nbsp;the&nbsp;File&nbsp;object&nbsp;is&nbsp;opened&nbsp;on&nbsp;the&nbsp;remote&nbsp;server,&nbsp;otherwise&nbsp;False.</tt></dd>
+</dl>
+<dl><dt><strong>status</strong></dt>
+<dd><tt>The&nbsp;status&nbsp;code&nbsp;set&nbsp;by&nbsp;the&nbsp;remote&nbsp;server&nbsp;after&nbsp;a&nbsp;file&nbsp;operation.</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="List">class <strong>List</strong></a>(<a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#List">List</a>(list_no:&nbsp;int&nbsp;=&nbsp;0,&nbsp;session:&nbsp;uopy._session.<a href="#Session">Session</a>&nbsp;=&nbsp;None)<br>
+&nbsp;<br>
+<a href="#List">List</a>&nbsp;is&nbsp;used&nbsp;to&nbsp;control,&nbsp;access,&nbsp;and&nbsp;manipulate&nbsp;server&nbsp;side&nbsp;select&nbsp;lists.<br>
+&nbsp;<br>
+<a href="#List">List</a>&nbsp;is&nbsp;iterable&nbsp;-&nbsp;the&nbsp;iterator&nbsp;returns&nbsp;a&nbsp;<a href="#DynArray">DynArray</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;representing&nbsp;a&nbsp;record&nbsp;id.<br>
+The&nbsp;iteration&nbsp;can&nbsp;be&nbsp;run&nbsp;only&nbsp;once&nbsp;until&nbsp;the&nbsp;select&nbsp;list&nbsp;is&nbsp;exhausted&nbsp;-&nbsp;subsequent&nbsp;iteration&nbsp;yields&nbsp;nothing.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;cmd&nbsp;=&nbsp;<a href="#Command">Command</a>("SELECT&nbsp;VOC&nbsp;WITH&nbsp;F1&nbsp;=&nbsp;'V'")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;cmd.run()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;select_list&nbsp;=&nbsp;<a href="#List">List</a>()&nbsp;#&nbsp;default&nbsp;is&nbsp;select&nbsp;list&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;ids&nbsp;=&nbsp;select_list.<a href="#List-read_list">read_list</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;print(ids[:5])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['LOAD.LANG',&nbsp;'BEGIN.WORK',&nbsp;'CLEARSELECT',&nbsp;'RELEASE.ITEMS',&nbsp;'SET.WIDEZERO']<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="uopy._list.html#List">List</a></dd>
+<dd><a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="List-__init__"><strong>__init__</strong></a>(self, list_no: int = 0, session: uopy._session.Session = None)</dt><dd><tt>Initializes&nbsp;a&nbsp;new&nbsp;<a href="#List">List</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list_no&nbsp;(int,&nbsp;optional):&nbsp;select&nbsp;list&nbsp;number&nbsp;(default&nbsp;is&nbsp;0).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;session&nbsp;(<a href="#Session">Session</a>,&nbsp;optional):&nbsp;the&nbsp;<a href="#Session">Session</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;the&nbsp;<a href="#List">List</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;bound&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;last&nbsp;opened&nbsp;<a href="#Session">Session</a>&nbsp;in&nbsp;the&nbsp;current&nbsp;thread&nbsp;will&nbsp;be&nbsp;used.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="List-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="List-__next__"><strong>__next__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="List-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="List-clear"><strong>clear</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;selected&nbsp;list,&nbsp;emptying&nbsp;the&nbsp;contents&nbsp;and&nbsp;preparing&nbsp;for&nbsp;a&nbsp;new&nbsp;select&nbsp;list&nbsp;to&nbsp;be&nbsp;generated.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="List-form_list"><strong>form_list</strong></a>(self, ids)</dt><dd><tt>Create&nbsp;a&nbsp;new&nbsp;select&nbsp;list&nbsp;from&nbsp;the&nbsp;supplied&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;<br>
+The&nbsp;current&nbsp;select&nbsp;list&nbsp;number&nbsp;will&nbsp;be&nbsp;used&nbsp;as&nbsp;the&nbsp;new&nbsp;list&nbsp;number.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ids&nbsp;(<a href="#DynArray">DynArray</a>&nbsp;or&nbsp;list):&nbsp;A&nbsp;list&nbsp;of&nbsp;record&nbsp;ids.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="List-next"><strong>next</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;next&nbsp;record&nbsp;ID&nbsp;in&nbsp;the&nbsp;select&nbsp;list.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;The&nbsp;next&nbsp;record&nbsp;id&nbsp;in&nbsp;the&nbsp;select&nbsp;list,&nbsp;or&nbsp;None&nbsp;if&nbsp;exhausted.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="List-read_list"><strong>read_list</strong></a>(self)</dt><dd><tt>Read&nbsp;the&nbsp;entire&nbsp;select&nbsp;list&nbsp;back.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;contains&nbsp;all&nbsp;the&nbsp;record&nbsp;ids&nbsp;in&nbsp;the&nbsp;select&nbsp;list.<br>
+&nbsp;<br>
+Raises:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="List-select"><strong>select</strong></a>(self, file_obj: uopy._file.File)</dt><dd><tt>Create&nbsp;a&nbsp;new&nbsp;select&nbsp;list&nbsp;by&nbsp;selecting&nbsp;the&nbsp;<a href="#File">File</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;and&nbsp;generating&nbsp;a&nbsp;select&nbsp;list&nbsp;of<br>
+all&nbsp;the&nbsp;record&nbsp;ids&nbsp;from&nbsp;that&nbsp;file.&nbsp;It&nbsp;will&nbsp;overwrite&nbsp;the&nbsp;previous&nbsp;select&nbsp;list&nbsp;and&nbsp;the&nbsp;select<br>
+list&nbsp;pointer&nbsp;will&nbsp;be&nbsp;reset&nbsp;to&nbsp;the&nbsp;first&nbsp;record&nbsp;id&nbsp;in&nbsp;the&nbsp;list.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;file_obj:&nbsp;<a href="#File">File</a>&nbsp;or&nbsp;<a href="#Dictionary">Dictionary</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;be&nbsp;selected.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="List-select_alternate_key"><strong>select_alternate_key</strong></a>(self, file_obj: uopy._file.File, index_name)</dt><dd><tt>Generate&nbsp;a&nbsp;select&nbsp;list&nbsp;from&nbsp;the&nbsp;given&nbsp;<a href="#File">File</a>&nbsp;based&nbsp;on&nbsp;the&nbsp;specified&nbsp;secondary&nbsp;index.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;file_obj&nbsp;(<a href="#File">File</a>):&nbsp;a&nbsp;<a href="#File">File</a>&nbsp;or&nbsp;a&nbsp;<a href="#Dictionary">Dictionary</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;index_name&nbsp;(str):&nbsp;index&nbsp;name&nbsp;to&nbsp;select&nbsp;on.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="List-select_matching_ak"><strong>select_matching_ak</strong></a>(self, file_obj: uopy._file.File, index_name, index_value)</dt><dd><tt>Generate&nbsp;a&nbsp;select&nbsp;list&nbsp;from&nbsp;the&nbsp;given&nbsp;<a href="#File">File</a>&nbsp;based&nbsp;on&nbsp;the&nbsp;specified&nbsp;secondary&nbsp;index<br>
+whose&nbsp;value&nbsp;matches&nbsp;that&nbsp;of&nbsp;the&nbsp;named&nbsp;value.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;file_obj&nbsp;(<a href="#File">File</a>):&nbsp;a&nbsp;<a href="#File">File</a>&nbsp;or&nbsp;a&nbsp;<a href="#Dictionary">Dictionary</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;index_name&nbsp;(str):&nbsp;index&nbsp;name&nbsp;to&nbsp;select&nbsp;on.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;index_value&nbsp;(any):&nbsp;value&nbsp;within&nbsp;the&nbsp;index&nbsp;to&nbsp;select&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes,&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SequentialFile">class <strong>SequentialFile</strong></a>(<a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#SequentialFile">SequentialFile</a>(file_name,&nbsp;record_id,&nbsp;create_flag=False,&nbsp;session=None)<br>
+&nbsp;<br>
+<a href="#SequentialFile">SequentialFile</a>&nbsp;is&nbsp;used&nbsp;to&nbsp;define&nbsp;and&nbsp;manage&nbsp;MV&nbsp;Sequential&nbsp;Files&nbsp;(which&nbsp;are&nbsp;OS&nbsp;files).<br>
+&nbsp;<br>
+<a href="#SequentialFile">SequentialFile</a>&nbsp;can&nbsp;be&nbsp;used&nbsp;in&nbsp;the&nbsp;Python&nbsp;with&nbsp;statement&nbsp;so&nbsp;that&nbsp;whatever&nbsp;occurs&nbsp;in&nbsp;the&nbsp;with&nbsp;statement&nbsp;block,<br>
+they&nbsp;are&nbsp;guaranteed&nbsp;to&nbsp;be&nbsp;closed&nbsp;upon&nbsp;exit.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;<a href="#SequentialFile">SequentialFile</a>("BP",&nbsp;"TEST_SEQ",&nbsp;True)&nbsp;as&nbsp;seq_file:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;seq_file.<a href="#SequentialFile-write_line">write_line</a>("This&nbsp;is&nbsp;test&nbsp;line&nbsp;1")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;seq_file.<a href="#SequentialFile-write_line">write_line</a>("This&nbsp;is&nbsp;test&nbsp;line&nbsp;2")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;seq_file.<a href="#SequentialFile-seek">seek</a>(0)&nbsp;#&nbsp;go&nbsp;to&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;seq_file.<a href="#SequentialFile-write_line">write_line</a>("This&nbsp;is&nbsp;test&nbsp;line&nbsp;0")&nbsp;#&nbsp;overwrite&nbsp;the&nbsp;first&nbsp;line<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;seq_file.<a href="#SequentialFile-seek">seek</a>(0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;seq_file.<a href="#SequentialFile-read_line">read_line</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;test&nbsp;line&nbsp;0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;seq_file.<a href="#SequentialFile-read_line">read_line</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;test&nbsp;line&nbsp;2<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="uopy._sequentialfile.html#SequentialFile">SequentialFile</a></dd>
+<dd><a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SequentialFile-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SequentialFile-__exit__"><strong>__exit__</strong></a>(self, exec_type, exec_value, traceback)</dt></dl>
+
+<dl><dt><a name="SequentialFile-__init__"><strong>__init__</strong></a>(self, file_name, record_id, create_flag=False, session=None)</dt><dd><tt>Initializes&nbsp;a&nbsp;<a href="#SequentialFile">SequentialFile</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;file_name&nbsp;(str):&nbsp;the&nbsp;directory&nbsp;file&nbsp;name.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;record_id&nbsp;(str):&nbsp;the&nbsp;sequential&nbsp;file&nbsp;name.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;create_flag&nbsp;(boolean,&nbsp;optional):&nbsp;when&nbsp;False&nbsp;(default),&nbsp;do&nbsp;not&nbsp;create&nbsp;the&nbsp;file&nbsp;if&nbsp;nonexistent;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;otherwise,&nbsp;create&nbsp;the&nbsp;file&nbsp;if&nbsp;nonexistent.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;session&nbsp;(<a href="#Session">Session</a>,&nbsp;optional):&nbsp;the&nbsp;<a href="#Session">Session</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;the&nbsp;<a href="#SequentialFile">SequentialFile</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;bound&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;last&nbsp;opened&nbsp;<a href="#Session">Session</a>&nbsp;in&nbsp;the&nbsp;current&nbsp;thread&nbsp;will&nbsp;be&nbsp;used.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="SequentialFile-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="SequentialFile-close"><strong>close</strong></a>(self)</dt><dd><tt>Close&nbsp;an&nbsp;opened&nbsp;sequential&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="SequentialFile-open"><strong>open</strong></a>(self)</dt><dd><tt>Open&nbsp;the&nbsp;server-side&nbsp;file,&nbsp;creating&nbsp;it&nbsp;if&nbsp;the&nbsp;create_flag&nbsp;is&nbsp;True&nbsp;and&nbsp;the&nbsp;file&nbsp;doesn't&nbsp;exist.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="SequentialFile-read_block"><strong>read_block</strong></a>(self)</dt><dd><tt>Reads&nbsp;a&nbsp;block&nbsp;of&nbsp;data&nbsp;from&nbsp;the&nbsp;sequential&nbsp;file.<br>
+&nbsp;<br>
+Upon&nbsp;completion,&nbsp;the&nbsp;status&nbsp;property&nbsp;will&nbsp;return&nbsp;one&nbsp;of&nbsp;the&nbsp;following&nbsp;values:<br>
+-1&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;file&nbsp;is&nbsp;not&nbsp;open&nbsp;for&nbsp;reading.<br>
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;read&nbsp;was&nbsp;successful.<br>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;end&nbsp;of&nbsp;file&nbsp;was&nbsp;reached.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bytes:&nbsp;the&nbsp;data&nbsp;block&nbsp;read.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="SequentialFile-read_line"><strong>read_line</strong></a>(self)</dt><dd><tt>Reads&nbsp;a&nbsp;line&nbsp;of&nbsp;data&nbsp;from&nbsp;the&nbsp;sequential&nbsp;file.<br>
+&nbsp;<br>
+The&nbsp;lines&nbsp;must&nbsp;be&nbsp;delimited&nbsp;with&nbsp;a&nbsp;newline&nbsp;character.<br>
+&nbsp;<br>
+status&nbsp;property&nbsp;will&nbsp;return&nbsp;one&nbsp;of&nbsp;the&nbsp;following&nbsp;values:<br>
+-1&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;file&nbsp;is&nbsp;not&nbsp;open&nbsp;for&nbsp;reading.<br>
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;read&nbsp;was&nbsp;successful.<br>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;end&nbsp;of&nbsp;file&nbsp;was&nbsp;reached.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;the&nbsp;line&nbsp;of&nbsp;data&nbsp;read.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="SequentialFile-seek"><strong>seek</strong></a>(self, offset, relative_pos=0)</dt><dd><tt>Move&nbsp;the&nbsp;file&nbsp;pointer&nbsp;within&nbsp;the&nbsp;Sequential&nbsp;<a href="#File">File</a>&nbsp;by&nbsp;an&nbsp;offset&nbsp;position&nbsp;specified&nbsp;in&nbsp;bytes.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;offset&nbsp;(int):&nbsp;specifies&nbsp;the&nbsp;number&nbsp;of&nbsp;bytes&nbsp;before&nbsp;or&nbsp;after&nbsp;relative_pos.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;negative&nbsp;value&nbsp;moves&nbsp;the&nbsp;pointer&nbsp;to&nbsp;a&nbsp;position&nbsp;before&nbsp;aRelPos.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;relative_pos&nbsp;(int):&nbsp;specifies&nbsp;the&nbsp;relative&nbsp;position&nbsp;within&nbsp;a&nbsp;file&nbsp;from&nbsp;which&nbsp;to&nbsp;seek.&nbsp;Default&nbsp;value&nbsp;is&nbsp;0.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;(default)&nbsp;start&nbsp;from&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;start&nbsp;from&nbsp;the&nbsp;current&nbsp;position.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;start&nbsp;from&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="SequentialFile-write_block"><strong>write_block</strong></a>(self, blk_data)</dt><dd><tt>Write&nbsp;the&nbsp;given&nbsp;block&nbsp;to&nbsp;the&nbsp;sequential&nbsp;file&nbsp;at&nbsp;the&nbsp;location&nbsp;currently&nbsp;set.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;blk_data&nbsp;(any):&nbsp;The&nbsp;data&nbsp;to&nbsp;write&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="SequentialFile-write_eof"><strong>write_eof</strong></a>(self)</dt><dd><tt>Write&nbsp;an&nbsp;EOF&nbsp;marker&nbsp;to&nbsp;the&nbsp;sequential&nbsp;file.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="SequentialFile-write_line"><strong>write_line</strong></a>(self, line_data)</dt><dd><tt>Write&nbsp;the&nbsp;given&nbsp;line&nbsp;to&nbsp;the&nbsp;sequential&nbsp;file&nbsp;at&nbsp;the&nbsp;location&nbsp;currently&nbsp;set.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;line_data&nbsp;(any):&nbsp;The&nbsp;data&nbsp;to&nbsp;write&nbsp;-&nbsp;can&nbsp;be&nbsp;str,&nbsp;bytes&nbsp;or&nbsp;<a href="#DynArray">DynArray</a>.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>status</strong></dt>
+<dd><tt>int:&nbsp;The&nbsp;status&nbsp;code&nbsp;set&nbsp;by&nbsp;the&nbsp;remote&nbsp;server&nbsp;after&nbsp;a&nbsp;sequential&nbsp;file&nbsp;operation.</tt></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>block_size</strong></dt>
+<dd><tt>int:&nbsp;The&nbsp;block&nbsp;size&nbsp;for&nbsp;read_block().&nbsp;The&nbsp;default&nbsp;value&nbsp;is&nbsp;8192.<br>
+&nbsp;<br>
+If&nbsp;left&nbsp;unset,&nbsp;read_block()&nbsp;will&nbsp;read&nbsp;the&nbsp;whole&nbsp;file&nbsp;back.<br>
+If&nbsp;set&nbsp;explicitly,&nbsp;it&nbsp;will&nbsp;be&nbsp;the&nbsp;maximum&nbsp;size&nbsp;of&nbsp;the&nbsp;data&nbsp;read_block()&nbsp;returns.</tt></dd>
+</dl>
+<dl><dt><strong>timeout</strong></dt>
+<dd><tt>int:&nbsp;the&nbsp;timeout&nbsp;for&nbsp;sequential&nbsp;file&nbsp;operations.</tt></dd>
+</dl>
+<hr>
+Data descriptors inherited from <a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Session">class <strong>Session</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Session">Session</a>(connect_config)<br>
+&nbsp;<br>
+A&nbsp;<a href="#Session">Session</a>&nbsp;represents&nbsp;a&nbsp;MV&nbsp;database&nbsp;connection.&nbsp;It&nbsp;is&nbsp;the&nbsp;foundation&nbsp;for&nbsp;and&nbsp;embedded&nbsp;in&nbsp;other&nbsp;UOPY&nbsp;objects.<br>
+&nbsp;<br>
+<a href="#Session">Session</a>&nbsp;objects&nbsp;can&nbsp;be&nbsp;used&nbsp;in&nbsp;Python&nbsp;with&nbsp;statement&nbsp;so&nbsp;that&nbsp;whatever&nbsp;happens&nbsp;in&nbsp;the&nbsp;with&nbsp;statement&nbsp;block,&nbsp;they<br>
+are&nbsp;guaranteed&nbsp;to&nbsp;be&nbsp;closed&nbsp;upon&nbsp;exit.<br>
+&nbsp;<br>
+Applications&nbsp;can&nbsp;also&nbsp;perform&nbsp;transactions&nbsp;on&nbsp;a&nbsp;<a href="#Session">Session</a>,&nbsp;and&nbsp;get&nbsp;supported&nbsp;@var&nbsp;values&nbsp;from&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+Note:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Applications&nbsp;should&nbsp;call&nbsp;uopy.<a href="#Session-connect">connect</a>()&nbsp;to&nbsp;get&nbsp;a&nbsp;<a href="#Session">Session</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;instead&nbsp;of&nbsp;directly&nbsp;instantiating&nbsp;a&nbsp;<a href="#Session">Session</a>.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;uopy.<a href="#Session-connect">connect</a>(user='test',&nbsp;password='test'):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd&nbsp;=&nbsp;uopy.<a href="#Command">Command</a>("LIST&nbsp;VOC")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd.run()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(cmd.response)<br>
+&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;uopy.<a href="#Session-connect">connect</a>(user="test",&nbsp;password="test")&nbsp;as&nbsp;session:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.<a href="#Session-tx_start">tx_start</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(session.<a href="#Session-tx_is_active">tx_is_active</a>())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.<a href="#Session-tx_commit">tx_commit</a>()<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Session-__enter__"><strong>__enter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Session-__exit__"><strong>__exit__</strong></a>(self, exec_type, exec_value, traceback)</dt></dl>
+
+<dl><dt><a name="Session-__init__"><strong>__init__</strong></a>(self, connect_config)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Session-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Session-bind_command"><strong>bind_command</strong></a>(self, command_obj)</dt></dl>
+
+<dl><dt><a name="Session-bind_pool"><strong>bind_pool</strong></a>(self, pool)</dt></dl>
+
+<dl><dt><a name="Session-check_rpc_error"><strong>check_rpc_error</strong></a>(self, e)</dt></dl>
+
+<dl><dt><a name="Session-close"><strong>close</strong></a>(self)</dt><dd><tt>Close&nbsp;the&nbsp;session&nbsp;or&nbsp;return&nbsp;it&nbsp;to&nbsp;the&nbsp;connection&nbsp;pool.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Session-connect"><strong>connect</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Session-decode"><strong>decode</strong></a>(self, obj)</dt></dl>
+
+<dl><dt><a name="Session-encode"><strong>encode</strong></a>(self, obj)</dt></dl>
+
+<dl><dt><a name="Session-get_atvar"><strong>get_atvar</strong></a>(self, atvar)</dt><dd><tt>Get&nbsp;a&nbsp;@var&nbsp;value&nbsp;from&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;atvar:&nbsp;uopy.AtVar&nbsp;enum.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;@var<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Session-hard_close"><strong>hard_close</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Session-health_check"><strong>health_check</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Session-read_packet4cmd"><strong>read_packet4cmd</strong></a>(self, packet)</dt></dl>
+
+<dl><dt><a name="Session-reset"><strong>reset</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Session-rpc_call"><strong>rpc_call</strong></a>(self, in_packet, out_packet, in_exec=False)</dt></dl>
+
+<dl><dt><a name="Session-start_idle"><strong>start_idle</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Session-sync_marks"><strong>sync_marks</strong></a>(self, mark_list)</dt></dl>
+
+<dl><dt><a name="Session-tx_commit"><strong>tx_commit</strong></a>(self)</dt><dd><tt>Commit&nbsp;the&nbsp;current&nbsp;transaction&nbsp;on&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Session-tx_is_active"><strong>tx_is_active</strong></a>(self)</dt><dd><tt>Check&nbsp;if&nbsp;a&nbsp;transaction&nbsp;is&nbsp;active&nbsp;on&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True/False:&nbsp;in&nbsp;transaction&nbsp;or&nbsp;not<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Session-tx_level"><strong>tx_level</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;current&nbsp;transaction&nbsp;level&nbsp;on&nbsp;the&nbsp;server<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;the&nbsp;current&nbsp;transaction&nbsp;level<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Session-tx_rollback"><strong>tx_rollback</strong></a>(self)</dt><dd><tt>Roll&nbsp;back&nbsp;the&nbsp;current&nbsp;transaction&nbsp;on&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Session-tx_start"><strong>tx_start</strong></a>(self)</dt><dd><tt>Start&nbsp;a&nbsp;transaction&nbsp;on&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<hr>
+Readonly properties defined here:<br>
+<dl><dt><strong>config</strong></dt>
+<dd><tt>A&nbsp;copy&nbsp;of&nbsp;all&nbsp;the&nbsp;configuration&nbsp;parameters&nbsp;for&nbsp;this&nbsp;session.</tt></dd>
+</dl>
+<dl><dt><strong>db_type</strong></dt>
+<dd><tt>str:&nbsp;either&nbsp;"UD'&nbsp;for&nbsp;UniData,'UV'&nbsp;for&nbsp;UniVerse,&nbsp;or&nbsp;"D3"&nbsp;for&nbsp;D3.</tt></dd>
+</dl>
+<dl><dt><strong>idle_start_time</strong></dt>
+</dl>
+<dl><dt><strong>is_nls_enabled</strong></dt>
+<dd><tt>boolean:&nbsp;whether&nbsp;NLS&nbsp;is&nbsp;enabled&nbsp;on&nbsp;the&nbsp;server.</tt></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>encoding</strong></dt>
+<dd><tt>The&nbsp;name&nbsp;of&nbsp;the&nbsp;character&nbsp;encoding&nbsp;used&nbsp;for&nbsp;conversion&nbsp;between&nbsp;Python&nbsp;unicode&nbsp;strings&nbsp;and&nbsp;MV&nbsp;data.<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;it&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;local&nbsp;system's&nbsp;preferred&nbsp;encoding&nbsp;when&nbsp;server&nbsp;NLS&nbsp;is&nbsp;off,&nbsp;and&nbsp;to&nbsp;UTF-8&nbsp;when<br>
+server&nbsp;NLS&nbsp;is&nbsp;on.&nbsp;However&nbsp;it&nbsp;can&nbsp;be&nbsp;overridden&nbsp;by&nbsp;the&nbsp;application&nbsp;to&nbsp;what&nbsp;reflects&nbsp;the&nbsp;actual&nbsp;encoding&nbsp;of<br>
+the&nbsp;server&nbsp;data.</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Subroutine">class <strong>Subroutine</strong></a>(<a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Subroutine">Subroutine</a>(name='',&nbsp;num_args=0,&nbsp;session=None)<br>
+&nbsp;<br>
+<a href="#Subroutine">Subroutine</a>&nbsp;allows&nbsp;the&nbsp;application&nbsp;to&nbsp;call&nbsp;a&nbsp;cataloged&nbsp;BASIC&nbsp;subroutine&nbsp;on&nbsp;the&nbsp;server.<br>
+&nbsp;<br>
+Arguments&nbsp;are&nbsp;used&nbsp;to&nbsp;both&nbsp;pass&nbsp;in&nbsp;data&nbsp;to&nbsp;and&nbsp;get&nbsp;back&nbsp;data&nbsp;from&nbsp;the&nbsp;cataloged&nbsp;subroutine.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;(str):&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;cataloged&nbsp;BASIC&nbsp;subroutine.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num_args&nbsp;(int):&nbsp;the&nbsp;number&nbsp;of&nbsp;arguments&nbsp;defined&nbsp;on&nbsp;the&nbsp;cataloged&nbsp;subroutine.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args&nbsp;(list):&nbsp;the&nbsp;argument&nbsp;list&nbsp;for&nbsp;the&nbsp;subroutine,&nbsp;an&nbsp;argument&nbsp;can&nbsp;be&nbsp;a&nbsp;str,&nbsp;a&nbsp;<a href="#DynArray">DynArray</a>,&nbsp;a&nbsp;byte&nbsp;array.<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;sub&nbsp;=&nbsp;<a href="#Subroutine">Subroutine</a>("SAYHELLOTO",&nbsp;1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;sub.args[0]&nbsp;=&nbsp;"David"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;print(sub.args)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['David']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;sub.<a href="#Subroutine-call">call</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;print(sub.args)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;['Hello,&nbsp;David']<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="uopy._subroutine.html#Subroutine">Subroutine</a></dd>
+<dd><a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Subroutine-__init__"><strong>__init__</strong></a>(self, name='', num_args=0, session=None)</dt><dd><tt>Initialize&nbsp;a&nbsp;<a href="#Subroutine">Subroutine</a>&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;(str):&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;cataloged&nbsp;BASIC&nbsp;subroutine.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num_args&nbsp;(int)&nbsp;:&nbsp;the&nbsp;number&nbsp;of&nbsp;arguments&nbsp;defined&nbsp;on&nbsp;the&nbsp;cataloged&nbsp;subroutine.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;session&nbsp;(<a href="#Session">Session</a>,&nbsp;optional):&nbsp;the&nbsp;<a href="#Session">Session</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;that&nbsp;the&nbsp;<a href="#Subroutine">Subroutine</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;bound&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;omitted,&nbsp;the&nbsp;last&nbsp;opened&nbsp;<a href="#Session">Session</a>&nbsp;in&nbsp;the&nbsp;current&nbsp;thread&nbsp;will&nbsp;be&nbsp;used.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+
+<dl><dt><a name="Subroutine-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Subroutine-call"><strong>call</strong></a>(self)</dt><dd><tt>Run&nbsp;the&nbsp;catalogued&nbsp;subroutine&nbsp;using&nbsp;the&nbsp;args&nbsp;on&nbsp;the&nbsp;remote&nbsp;server.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="uopy._uniobject.html#UniObject">uopy._uniobject.UniObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UOError">class <strong>UOError</strong></a>(<a href="builtins.html#Exception">builtins.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#UOError">UOError</a>(code=-1,&nbsp;message=None,&nbsp;obj=None)<br>
+&nbsp;<br>
+<a href="#UOError">UOError</a>&nbsp;represents&nbsp;error&nbsp;conditions&nbsp;detected&nbsp;in&nbsp;UOPY.<br>
+&nbsp;<br>
+It&nbsp;is&nbsp;recommended&nbsp;that&nbsp;Applications&nbsp;always&nbsp;use&nbsp;a&nbsp;try/catch&nbsp;block&nbsp;when&nbsp;calling&nbsp;any&nbsp;UOPY&nbsp;function&nbsp;and&nbsp;should&nbsp;rely&nbsp;on<br>
+the&nbsp;code&nbsp;and&nbsp;message&nbsp;in&nbsp;<a href="#UOError">UOError</a>&nbsp;exception&nbsp;for&nbsp;proper&nbsp;error&nbsp;handling&nbsp;and&nbsp;reporting.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;message&nbsp;(str):&nbsp;the&nbsp;error&nbsp;message.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;code&nbsp;(int):&nbsp;the&nbsp;error&nbsp;code;&nbsp;if&nbsp;the&nbsp;error&nbsp;is&nbsp;reported&nbsp;by&nbsp;the&nbsp;server,&nbsp;it&nbsp;is&nbsp;the&nbsp;server&nbsp;error&nbsp;code.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="uopy._uoerror.html#UOError">UOError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="UOError-__init__"><strong>__init__</strong></a>(self, code=-1, message=None, obj=None)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="UOError-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Static methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="UOError-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="UOError-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="UOError-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="UOError-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Helper&nbsp;for&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="UOError-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="UOError-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="UOError-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="UOError-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#UOError-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-connect"><strong>connect</strong></a>(**kwargs)</dt><dd><tt>Open&nbsp;a&nbsp;connection&nbsp;to&nbsp;an&nbsp;MV&nbsp;Database.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;kwargs:&nbsp;connection&nbsp;configuration&nbsp;keyword&nbsp;parameters:&nbsp;&nbsp;host,&nbsp;port,&nbsp;user,&nbsp;password,&nbsp;account,&nbsp;service,&nbsp;timeout,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;encoding,&nbsp;ssl,&nbsp;min_pool_size,&nbsp;max_pool_size.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;only&nbsp;user&nbsp;and&nbsp;password&nbsp;are&nbsp;required,&nbsp;the&nbsp;rest&nbsp;have&nbsp;default&nbsp;values&nbsp;in&nbsp;uopy.config.connection.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;if&nbsp;connection&nbsp;pooling&nbsp;is&nbsp;turned&nbsp;on&nbsp;and&nbsp;<a href="#-connect">connect</a>()&nbsp;is&nbsp;called&nbsp;for&nbsp;the&nbsp;first&nbsp;time&nbsp;to&nbsp;open&nbsp;a&nbsp;connection<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;the&nbsp;database&nbsp;server,&nbsp;a&nbsp;connection&nbsp;pool&nbsp;will&nbsp;be&nbsp;created&nbsp;for&nbsp;the&nbsp;same&nbsp;host,&nbsp;account,&nbsp;user&nbsp;and&nbsp;password<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;that&nbsp;are&nbsp;passed&nbsp;in.&nbsp;If&nbsp;min_pool_size&nbsp;and/or&nbsp;max_pool_size&nbsp;are&nbsp;passed&nbsp;in&nbsp;as&nbsp;well,&nbsp;they&nbsp;will&nbsp;be&nbsp;used<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instead&nbsp;of&nbsp;the&nbsp;default&nbsp;values&nbsp;in&nbsp;the&nbsp;uopy.config.pooling&nbsp;section&nbsp;to&nbsp;set&nbsp;the&nbsp;minimum&nbsp;and&nbsp;maximum&nbsp;pool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sizes.&nbsp;Note&nbsp;that&nbsp;once&nbsp;a&nbsp;connection&nbsp;pool&nbsp;is&nbsp;created,&nbsp;its&nbsp;min_pool_size&nbsp;and&nbsp;max_pool_size&nbsp;cannot&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;changed.&nbsp;This&nbsp;means&nbsp;that&nbsp;the&nbsp;min_pool_size&nbsp;and&nbsp;max_pool_size&nbsp;parameters&nbsp;are&nbsp;ignored&nbsp;on&nbsp;subsequent&nbsp;calls<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;<a href="#-connect">connect</a>()&nbsp;for&nbsp;the&nbsp;same&nbsp;pool.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;<a href="#Session">Session</a>&nbsp;<a href="builtins.html#object">object</a>:&nbsp;either&nbsp;newly&nbsp;established&nbsp;or&nbsp;straight&nbsp;from&nbsp;a&nbsp;connection&nbsp;pool.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a>,&nbsp;ValueError<br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;session&nbsp;=&nbsp;uopy.<a href="#-connect">connect</a>(user&nbsp;=&nbsp;'test',&nbsp;password&nbsp;='test')<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;session&nbsp;=&nbsp;uopy.<a href="#-connect">connect</a>(host&nbsp;='localhost',&nbsp;user&nbsp;=&nbsp;'test',&nbsp;password&nbsp;='test',&nbsp;account&nbsp;=&nbsp;'HS.SALES',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;service=uopy.UV_SERVICE,&nbsp;port=31438)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;config&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'user':&nbsp;'test',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'password':&nbsp;'test',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'service':&nbsp;'udcs',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'account':&nbsp;'demo',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'encoding':&nbsp;'GB18030',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ssl':&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;session&nbsp;=&nbsp;uopy.<a href="#-connect">connect</a>(**config)</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['connect', 'config', 'Session', 'Command', 'DynArray', 'UOError', 'File', 'SequentialFile', 'Dictionary', 'List', 'Subroutine']<br>
+<strong>config</strong> = &lt;uopy._config._Config object&gt;</td></tr></table>
+</body></html>
