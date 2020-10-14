@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uopy web app examples</title>
+      <script language="javascript" type="text/javascript">
+      function stopRKey(evt) {
+        var evt  = (evt) ? evt : ((event) ? event : null);
+        var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+        if ((evt.keyCode == 13) && (node.type=="text")) { return false; }
+      }
+      document.onkeypress = stopRKey;
+      </script>
+      <div id="python_emblem">
+        <img src="static/uopy.png" ALIGN="RIGHT" ></img>
+      </div>
+</head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+
+  <div class="container">
+
+   <h2>Welcome  {{user}} </h2>
+
+    <!-- Load an icon library -->
+    <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 300px;
+      background-color: #f1f1f1;
+    }
+    
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    
+    /* Change the link color on hover */
+    li a:hover {
+      background-color: #555;
+      color: white;
+    }
+    </style>
+    </div>
+<body>
+    
+    <!-- <h4>UOPY EXAMPLES</h4> -->
+    <div>
+    <ul>
+      <li><a href="sales_chart"> Subroutine Example </a></li>
+      <li><a href="mempick"> File Read / Write Example</a></li>
+      <li><a href="memsearch">Query Example 1 </a></li>
+      <li><a href="membystate">Query Example 2</a></li>
+      <li><a href="logout">Logout</a></li>
+    </ul>
+    </div>
+    
+    
+</body>
+</html>
+<script>
+  /* var user = '{{user}}'
+  /* alert('user is : ' + user)
+</script>

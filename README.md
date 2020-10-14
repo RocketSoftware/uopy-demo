@@ -1,6 +1,6 @@
-# uopy-demo
+# UOPY demo
 
-UOPY demo programs.
+UniObjects for Python demo programs.
 
 ## Installation
 
@@ -12,9 +12,9 @@ $ pip install uopy
 
 ## Quick start
 
-**Before use uopy to connect requires a running Universe/UniData server.** 
+**Before use UOPY to connect requires a running Universe/UniData server.** 
 
-The following example use uopy to connect to [UniVerse](https://www.rocketsoftware.com/products/rocket-universe-0/rocket-universe) on Windows.
+The following example use UOPY to connect to [UniVerse](https://www.rocketsoftware.com/products/rocket-universe-0/rocket-universe) on Windows.
 
 ```python
 >>> import uopy
@@ -31,8 +31,11 @@ WHSE2         Secondary warehouse
 WHSE3         Tertiary Warehouse
 
 3 records listed.
-
 ```
+### Examples code
+
+* UOPY GUI [link](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_tkexample)
+* UOPY Web App [link](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_web)
 
 ## API Reference
 

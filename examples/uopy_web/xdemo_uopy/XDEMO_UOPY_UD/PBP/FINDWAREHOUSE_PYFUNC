@@ -1,0 +1,120 @@
+*****************************************************************************
+*
+*	Program:	FINDWAREHOUSE_PYFUNC
+*       Copyright (C) Rocket Software 1993-2017
+*	Desc:	This sample program reads a record from MEMBERS file in
+*	the xdemo account (used in Rocket demos) and determines which movie
+*	warehouse (contained in LOCATIONS file) is closest to the
+*	member's address.
+*	It demonstrates the use of the new function in U2 Basic,
+*	PyCallFunction(), by calling two Python functions:
+*	decodeAddressToGeocode() and distanceBetweenPoints().
+*
+*	Python function decodeAddressToGeocode() takes an address
+*	as an input string and returns the corresponding latitude and
+*	longitude using Google MAPS API. 
+*	FINDWAREHOUSE_PYFUNC calls decodeAddressToGeocode() with
+*	the member's address and addresses of all warehouses.
+*
+*	Python function distanceBetweenPoints() takes latitudes and
+*	longitudes of two locations and calculates the distance between
+*	them in miles.
+*
+*	If receiving 'OVER_QUERY_LIMIT' error refer to the Google Maps
+*	API documentation. A 'SLEEP 1' is included in places to reduce
+*	the frequency of this error.
+*****************************************************************************
+* Define Modules to use
+ModuleName = "AddressToCoordObj"
+FuncName = "decodeAddressToGeocode"
+
+ModuleName2 = "DistanceBtwnPoints" 
+FuncName2 = "distanceBetweenPoints"
+
+*	read a record from MEMBERS file
+OPEN 'MEMBERS' TO MEMBERS.FILE ELSE STOP "CAN'T OPEN MEMBERS"
+MEMBERS.ID = '0277'
+READ REC FROM MEMBERS.FILE, MEMBERS.ID ELSE 
+  STOP "cannot read record 0277"
+END
+CRT "MEMBER NAME: ":REC<2>:" ":REC<1>
+map_address = REC<5>:", ":REC<6>:", ":REC<7>:", ":REC<8> 
+CRT "CUSTOMER ADDRESS IS: ":map_address
+*	call first Python function to get member's location coordinates
+*	it returns an object of class Point which has two attributes,
+*	lat and lng.
+
+member_location = PyCallFunction(ModuleName, FuncName, map_address)
+
+*	check the outcome and print exception and traceback information
+*	if an exception was raised
+IF @PYEXCEPTIONTYPE NE '' THEN GOSUB CRT.EXCEPTION.INFO
+
+*	Get CRTable latitude and longitude from member_location.
+*	One way to do it is to get a string in the form "lat, lng"
+*	using PointValue method of class Point
+member_coords = PyCallMethod(member_location, 'PointValue')
+IF @PYEXCEPTIONTYPE NE '' THEN GOSUB CRT.EXCEPTION.INFO
+
+CRT "CUSTOMER LOCATION COORDINATES ARE: " :member_coords
+
+*	retrieve all Warehouse locations and
+*	calculate the distance from this customer address to each warehouse
+OPEN 'LOCATIONS' TO LOCATIONS.FILE ELSE STOP "CAN'T OPEN LOCATIONS" 
+SELECT LOCATIONS.FILE
+DONE = 0
+MINDISTANCE = -1 
+LOOP
+  READNEXT LOCATIONS.ID ELSE DONE = 1 
+WHILE NOT(DONE) DO
+  READ LOC.REC FROM LOCATIONS.FILE,LOCATIONS.ID ELSE 
+    CRT "No LOCATIONS RECORD: ":LOCATIONS.ID 
+    EXIT
+  END
+  CRT STR("-",60)
+  CRT "WAREHOUSE: ":LOC.REC<1>
+  wh_address = LOC.REC<2>:", ":LOC.REC<3>:", ":LOC.REC<4>:" ":LOC.REC<5>  
+  CRT "WAREHOUSE ADDRESS IS: ":wh_address
+  *	call first Python function to get this warehouse location coords 
+  wh_location = PyCallFunction(ModuleName, FuncName, wh_address)
+  IF @PYEXCEPTIONTYPE NE '' THEN GOSUB CRT.EXCEPTION.INFO
+  *	Get printable latitude and longitude from warehouse location
+  *	An alternative way to do it is to get lat and lng attribute
+  *	values of object wh_location of class Point
+  wh_lat = PyGetAttr(wh_location, 'lat')  
+  IF @PYEXCEPTIONTYPE NE '' THEN GOSUB CRT.EXCEPTION.INFO
+
+  wh_lng = PyGetAttr(wh_location, 'lng')
+  IF @PYEXCEPTIONTYPE NE '' THEN GOSUB CRT.EXCEPTION.INFO
+  CRT "WAREHOUSE LOCATION COORDINATES ARE: " :wh_lat:", ":wh_lng
+  SLEEP 1;* This is to avoid timeouts from Google's API
+  * call second Python function to calculate the distance 
+  pydist = PyCallFunction(ModuleName2, FuncName2, member_location, wh_location) 
+  IF @PYEXCEPTIONTYPE NE '' THEN GOSUB CRT.EXCEPTION.INFO
+
+  CRT "DISTANCE IS " :OCONV(pydist,"MD1P"):" MILES" 
+  IF MINDISTANCE = -1 THEN
+     MINDISTANCE = pydist
+     WAREHOUSE = LOC.REC<1>
+  END ELSE
+     IF pydist < MINDISTANCE THEN
+        MINDISTANCE = pydist
+        WAREHOUSE = LOC.REC<1>
+     END
+  END
+  SLEEP 1;* This is to avoid timeouts from Google's API
+REPEAT
+CRT STR("-",60)
+CRT "MIN DISTANCE IS: ":OCONV(MINDISTANCE,"MD1P") 
+CRT "WAREHOUSE IS: ":WAREHOUSE
+
+STOP
+
+CRT.EXCEPTION.INFO:
+  CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE 
+  CRT "EXCEPTION MESSAGE IS " :@PYEXCEPTIONMSG
+  CRT "EXCEPTIONTRACEBACK IS " :@PYEXCEPTIONTRACEBACK 
+  STOP
+RETURN
+END
+**********************************************************************

@@ -1,0 +1,53 @@
+<title>uopy web app examples</title>
+    <link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<head>
+    <script language="javascript" type="text/javascript">
+        function stopRKey(evt) {
+          var evt  = (evt) ? evt : ((event) ? event : null);
+          var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+          if ((evt.keyCode == 13) && (node.type=="text")) { return false; }
+        }
+        document.onkeypress = stopRKey;
+    </script>   
+</head>    
+<div class="container">
+<img src="static/uopy.png" ALIGN="RIGHT" ></img>
+<h3>uopy web app login form </h3>
+<form action="" method="post" role="form">
+<!--	{{form.csrf}} -->
+<div class="form-group">
+<label for="server">Server:</label>
+<input type="text" class="form-control" id="server" name="server" >
+
+<label for="account">Account:</label>
+<input type="text" class="form-control" id="account" name="account" >
+
+<label for="user">User:</label>
+<input type="text" class="form-control" id="user" name="user" >
+
+<label for="password">Password:</label>
+<input type="password" class="form-control" id="password" name="password">
+
+	{{form.dbms()}}
+</div>
+<button type="submit" class="btn btn-success">Connect</button>	
+
+</form>	
+</div>
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error }}
+{% endif %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for  message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                <span>{{ message }}</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}

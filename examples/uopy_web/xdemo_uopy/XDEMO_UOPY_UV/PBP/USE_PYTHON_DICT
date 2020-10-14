@@ -1,0 +1,67 @@
+*******************************************************************************
+*
+* How to use Python dict object in BASIC to store 1 million key/value pairs
+* Copyright (C) Rocket Software 1993-2017
+* 
+*******************************************************************************
+ModuleName = "builtins"
+ClsName = "dict"
+
+* create the python dict object
+pymodule = PyImport(ModuleName)
+pydictcls = PyGetAttr(pymodule, ClsName)
+pydict = PyCall(pydictcls)
+IF @PYEXCEPTIONTYPE NE '' THEN 
+  GOSUB CRT.EXCEPTION.INFO
+  STOP
+END
+*
+
+PRINT "Storing 1 million key/value pairs..."
+* store 1 million key/value pairs in the dict object
+start_time = SYSTEM(9)
+FOR i = 1 TO 1000000
+    pyresult = PyCallMethod(pydict, "__setitem__", "key":i, "value":i)
+	IF @PYEXCEPTIONTYPE NE '' THEN 
+		GOSUB CRT.EXCEPTION.INFO
+		STOP
+	END
+NEXT i
+PRINT "Time (ms) to store 1 million key/value pairs: ": SYSTEM(9) - start_time
+
+
+* get the values of the 1 million keys in the dict object
+start_time = SYSTEM(9)
+FOR i = 1 TO 1000000
+    pyresult = PyCallMethod(pydict, "__getitem__", "key":i)
+	IF @PYEXCEPTIONTYPE NE '' THEN 
+		GOSUB CRT.EXCEPTION.INFO
+		STOP
+	END
+NEXT i
+PRINT "Time (ms) to extract 1 million pairs: ":SYSTEM(9) - start_time
+
+* get the value of a specific key
+start_time = SYSTEM(9)
+value = PyCallMethod(pydict, "__getitem__", "key531245")
+PRINT "Time (ms) to get a value by key: " : SYSTEM(9) - start_time
+PRINT ""
+PRINT "VALUE: ": value
+
+* get the value of a non-existing key
+start_time = SYSTEM(9)
+value = PyCallMethod(pydict, "__getitem__", "key-531245")
+PRINT ""
+PRINT "Time (ms) to get result for non-existing key: " : SYSTEM(9) - start_time
+IF @PYEXCEPTIONTYPE NE '' THEN 
+  GOSUB CRT.EXCEPTION.INFO
+  STOP
+END
+
+*
+CRT.EXCEPTION.INFO:
+  CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE 
+  CRT "EXCEPTION MESSAGE IS " :@PYEXCEPTIONMSG
+  CRT "EXCEPTIONTRACEBACK IS " :@PYEXCEPTIONTRACEBACK 
+RETURN
+END

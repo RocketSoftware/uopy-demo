@@ -1,0 +1,14 @@
+*       Copyright (C) Rocket Software 1993-2015
+SUBROUTINE RMABLOGIN(ID, PASSWORDIN, STATUS)           
+ STATUS ="FAIL"                                         
+ OPEN "MEMBERS" TO F.MEM THEN                           
+   READ REC FROM F.MEM, ID THEN                         
+     PASSWORD = REC<14>                                 
+     IF PASSWORD = PASSWORDIN THEN                      
+       STATUS = "SUCESS"                                
+       WRITE REC ON F.MEM, ID ON ERROR STATUS="FAIL"    
+     END                                                
+   END                                                  
+  CLOSE F.MEM                                          
+END                                                    
+RETURN                                                 

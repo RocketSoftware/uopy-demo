@@ -1,0 +1,1394 @@
+2020-10-02 11:11:56,984 : 17488 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-02 11:11:56,984 : 17488 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-02 11:11:56,984 : 17488 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-02 11:11:56,984 : 17488 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-02 11:11:58,346 : 19336 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-02 11:11:58,346 : 19336 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-02 11:11:58,346 : 19336 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-02 11:11:58,346 : 19336 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-02 11:12:31,431 : 19336 : Thread-4 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:12:31,646 : 19336 : Thread-4 : _command : run : 174 ：DEBUG : Enter : VERSION
+2020-10-02 11:12:31,647 : 19336 : Thread-4 : _command : _exec : 152 ：DEBUG : Response : 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA..................... 0
+2020-10-02 11:12:31,648 : 19336 : Thread-4 : _command : run : 193 ：DEBUG : Exit : 0 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA.....................
+2020-10-02 11:12:31,655 : 19336 : Thread-4 : _session : close : 393 ：DEBUG : Enter : 228397648
+2020-10-02 11:12:31,656 : 19336 : Thread-4 : _session : hard_close : 327 ：DEBUG : Exit : 228397648 is hard-closed 
+2020-10-02 11:12:31,656 : 19336 : Thread-4 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:12:36,923 : 19336 : Thread-9 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:12:37,140 : 19336 : Thread-9 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:12:37,146 : 19336 : Thread-9 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:12:37,146 : 19336 : Thread-9 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:12:37,150 : 19336 : Thread-9 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'LA', '33931']])
+2020-10-02 11:12:37,151 : 19336 : Thread-9 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:12:37,151 : 19336 : Thread-9 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:12:37,151 : 19336 : Thread-9 : _session : close : 393 ：DEBUG : Enter : 236802096
+2020-10-02 11:12:37,152 : 19336 : Thread-9 : _session : hard_close : 327 ：DEBUG : Exit : 236802096 is hard-closed 
+2020-10-02 11:12:37,152 : 19336 : Thread-9 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:12:47,068 : 19336 : Thread-12 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:12:47,277 : 19336 : Thread-12 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:12:47,278 : 19336 : Thread-12 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:12:47,278 : 19336 : Thread-12 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'la', '33931']] 0
+2020-10-02 11:12:47,280 : 19336 : Thread-12 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'la', '33931']])
+2020-10-02 11:12:47,280 : 19336 : Thread-12 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:12:47,281 : 19336 : Thread-12 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:12:47,281 : 19336 : Thread-12 : _session : close : 393 ：DEBUG : Enter : 236805904
+2020-10-02 11:12:47,282 : 19336 : Thread-12 : _session : hard_close : 327 ：DEBUG : Exit : 236805904 is hard-closed 
+2020-10-02 11:12:47,282 : 19336 : Thread-12 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:12:52,053 : 19336 : Thread-16 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:12:52,271 : 19336 : Thread-16 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:12:52,277 : 19336 : Thread-16 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:12:52,277 : 19336 : Thread-16 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:12:52,280 : 19336 : Thread-16 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'LA', '33931']])
+2020-10-02 11:12:52,280 : 19336 : Thread-16 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:12:52,281 : 19336 : Thread-16 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:12:52,281 : 19336 : Thread-16 : _session : close : 393 ：DEBUG : Enter : 228398640
+2020-10-02 11:12:52,281 : 19336 : Thread-16 : _session : hard_close : 327 ：DEBUG : Exit : 228398640 is hard-closed 
+2020-10-02 11:12:52,281 : 19336 : Thread-16 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:13:05,543 : 19336 : Thread-19 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:13:05,757 : 19336 : Thread-19 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:13:05,758 : 19336 : Thread-19 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:13:05,759 : 19336 : Thread-19 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'la', '33931']] 0
+2020-10-02 11:13:05,760 : 19336 : Thread-19 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'la', '33931']])
+2020-10-02 11:13:05,760 : 19336 : Thread-19 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:13:05,761 : 19336 : Thread-19 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:13:05,761 : 19336 : Thread-19 : _session : close : 393 ：DEBUG : Enter : 236836816
+2020-10-02 11:13:05,761 : 19336 : Thread-19 : _session : hard_close : 327 ：DEBUG : Exit : 236836816 is hard-closed 
+2020-10-02 11:13:05,761 : 19336 : Thread-19 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:13:53,214 : 19336 : Thread-24 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:13:54,174 : 19336 : Thread-24 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-02 11:13:54,199 : 19336 : Thread-24 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-02 11:13:54,200 : 19336 : Thread-24 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-02 11:13:54,204 : 19336 : Thread-24 : _session : close : 393 ：DEBUG : Enter : 236908880
+2020-10-02 11:13:54,205 : 19336 : Thread-24 : _session : hard_close : 327 ：DEBUG : Exit : 236908880 is hard-closed 
+2020-10-02 11:13:54,205 : 19336 : Thread-24 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:13:57,289 : 19336 : Thread-29 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:13:58,242 : 19336 : Thread-29 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:13:58,249 : 19336 : Thread-29 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:13:58,249 : 19336 : Thread-29 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:13:58,260 : 19336 : Thread-29 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'LA', '33931']])
+2020-10-02 11:13:58,260 : 19336 : Thread-29 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:13:58,263 : 19336 : Thread-29 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:13:58,263 : 19336 : Thread-29 : _session : close : 393 ：DEBUG : Enter : 236835312
+2020-10-02 11:13:58,263 : 19336 : Thread-29 : _session : hard_close : 327 ：DEBUG : Exit : 236835312 is hard-closed 
+2020-10-02 11:13:58,263 : 19336 : Thread-29 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:14:04,972 : 19336 : Thread-32 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:14:06,071 : 19336 : Thread-32 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:14:06,075 : 19336 : Thread-32 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:14:06,075 : 19336 : Thread-32 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'la', '33931']] 0
+2020-10-02 11:14:06,083 : 19336 : Thread-32 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'la', '33931']])
+2020-10-02 11:14:06,083 : 19336 : Thread-32 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:14:06,086 : 19336 : Thread-32 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:14:06,086 : 19336 : Thread-32 : _session : close : 393 ：DEBUG : Enter : 236835536
+2020-10-02 11:14:06,087 : 19336 : Thread-32 : _session : hard_close : 327 ：DEBUG : Exit : 236835536 is hard-closed 
+2020-10-02 11:14:06,087 : 19336 : Thread-32 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:14:10,176 : 19336 : Thread-36 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:14:11,164 : 19336 : Thread-36 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:14:11,170 : 19336 : Thread-36 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:14:11,170 : 19336 : Thread-36 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:14:11,177 : 19336 : Thread-36 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'la', '33931']])
+2020-10-02 11:14:11,178 : 19336 : Thread-36 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:14:11,180 : 19336 : Thread-36 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:14:11,180 : 19336 : Thread-36 : _session : close : 393 ：DEBUG : Enter : 228397488
+2020-10-02 11:14:11,181 : 19336 : Thread-36 : _session : hard_close : 327 ：DEBUG : Exit : 228397488 is hard-closed 
+2020-10-02 11:14:11,181 : 19336 : Thread-36 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:15:47,676 : 19336 : Thread-42 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:15:47,911 : 19336 : Thread-42 : _command : run : 174 ：DEBUG : Enter : VERSION
+2020-10-02 11:15:47,912 : 19336 : Thread-42 : _command : _exec : 152 ：DEBUG : Response : 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA..................... 0
+2020-10-02 11:15:47,912 : 19336 : Thread-42 : _command : run : 193 ：DEBUG : Exit : 0 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA.....................
+2020-10-02 11:15:47,917 : 19336 : Thread-42 : _session : close : 393 ：DEBUG : Enter : 236910544
+2020-10-02 11:15:47,917 : 19336 : Thread-42 : _session : hard_close : 327 ：DEBUG : Exit : 236910544 is hard-closed 
+2020-10-02 11:15:47,917 : 19336 : Thread-42 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:15:52,980 : 19336 : Thread-47 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:15:53,225 : 19336 : Thread-47 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:15:53,230 : 19336 : Thread-47 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:15:53,231 : 19336 : Thread-47 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:15:53,233 : 19336 : Thread-47 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'LA', '33931']])
+2020-10-02 11:15:53,233 : 19336 : Thread-47 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:15:53,233 : 19336 : Thread-47 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:15:53,234 : 19336 : Thread-47 : _session : close : 393 ：DEBUG : Enter : 236911984
+2020-10-02 11:15:53,234 : 19336 : Thread-47 : _session : hard_close : 327 ：DEBUG : Exit : 236911984 is hard-closed 
+2020-10-02 11:15:53,234 : 19336 : Thread-47 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:16:04,922 : 19336 : Thread-50 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:16:05,198 : 19336 : Thread-50 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:16:05,200 : 19336 : Thread-50 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:16:05,200 : 19336 : Thread-50 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'la', '33931']] 0
+2020-10-02 11:16:05,203 : 19336 : Thread-50 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'la', '33931']])
+2020-10-02 11:16:05,204 : 19336 : Thread-50 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:16:05,205 : 19336 : Thread-50 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:16:05,205 : 19336 : Thread-50 : _session : close : 393 ：DEBUG : Enter : 236803504
+2020-10-02 11:16:05,205 : 19336 : Thread-50 : _session : hard_close : 327 ：DEBUG : Exit : 236803504 is hard-closed 
+2020-10-02 11:16:05,206 : 19336 : Thread-50 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:16:11,561 : 19336 : Thread-54 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:16:11,794 : 19336 : Thread-54 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-02 11:16:11,830 : 19336 : Thread-54 : _command : _exec : 152 ：DEBUG : Response : 
+62 records selected to list 0.
+
+ 0
+2020-10-02 11:16:11,830 : 19336 : Thread-54 : _command : run : 193 ：DEBUG : Exit : 0 
+62 records selected to list 0.
+
+
+2020-10-02 11:16:11,830 : 19336 : Thread-54 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-02 11:16:11,830 : 19336 : Thread-54 : _list : read_list : 203 ：DEBUG : Exit : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0
+2020-10-02 11:16:11,831 : 19336 : Thread-54 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:16:11,832 : 19336 : Thread-54 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:16:11,832 : 19336 : Thread-54 : _file : read_named_fields : 714 ：DEBUG : Enter : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0 ['LAST_NAME', 'FIRST_NAME', 'CITY', 'STATE', 'BIRTHDATE', 'GENDER'] 0
+2020-10-02 11:16:11,937 : 19336 : Thread-54 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+2020-10-02 11:16:11,941 : 19336 : Thread-54 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:16:11,941 : 19336 : Thread-54 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:16:11,941 : 19336 : Thread-54 : _session : close : 393 ：DEBUG : Enter : 236911152
+2020-10-02 11:16:11,942 : 19336 : Thread-54 : _session : hard_close : 327 ：DEBUG : Exit : 236911152 is hard-closed 
+2020-10-02 11:16:11,942 : 19336 : Thread-54 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:16:23,084 : 19336 : Thread-58 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:16:23,363 : 19336 : Thread-58 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-02 11:16:23,399 : 19336 : Thread-58 : _command : _exec : 152 ：DEBUG : Response : 
+62 records selected to list 0.
+
+ 0
+2020-10-02 11:16:23,399 : 19336 : Thread-58 : _command : run : 193 ：DEBUG : Exit : 0 
+62 records selected to list 0.
+
+
+2020-10-02 11:16:23,399 : 19336 : Thread-58 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-02 11:16:23,400 : 19336 : Thread-58 : _list : read_list : 203 ：DEBUG : Exit : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0
+2020-10-02 11:16:23,400 : 19336 : Thread-58 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:16:23,402 : 19336 : Thread-58 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:16:23,402 : 19336 : Thread-58 : _file : read_named_fields : 714 ：DEBUG : Enter : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0 ['LAST_NAME', 'FIRST_NAME', 'CITY', 'STATE', 'BIRTHDATE', 'GENDER'] 0
+2020-10-02 11:16:23,513 : 19336 : Thread-58 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+2020-10-02 11:16:23,516 : 19336 : Thread-58 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:16:23,517 : 19336 : Thread-58 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:16:23,517 : 19336 : Thread-58 : _session : close : 393 ：DEBUG : Enter : 236836496
+2020-10-02 11:16:23,518 : 19336 : Thread-58 : _session : hard_close : 327 ：DEBUG : Exit : 236836496 is hard-closed 
+2020-10-02 11:16:23,518 : 19336 : Thread-58 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:17:23,169 : 19336 : Thread-64 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:17:23,417 : 19336 : Thread-64 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:17:23,419 : 19336 : Thread-64 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:17:23,419 : 19336 : Thread-64 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:17:23,421 : 19336 : Thread-64 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'LA', '33931']])
+2020-10-02 11:17:23,422 : 19336 : Thread-64 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:17:23,422 : 19336 : Thread-64 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:17:23,422 : 19336 : Thread-64 : _session : close : 393 ：DEBUG : Enter : 236835632
+2020-10-02 11:17:23,422 : 19336 : Thread-64 : _session : hard_close : 327 ：DEBUG : Exit : 236835632 is hard-closed 
+2020-10-02 11:17:23,422 : 19336 : Thread-64 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:17:33,038 : 19336 : Thread-67 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:17:33,273 : 19336 : Thread-67 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:17:33,274 : 19336 : Thread-67 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:17:33,274 : 19336 : Thread-67 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'ny', '33931']] 0
+2020-10-02 11:17:33,276 : 19336 : Thread-67 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'ny', '33931']])
+2020-10-02 11:17:33,277 : 19336 : Thread-67 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:17:33,277 : 19336 : Thread-67 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:17:33,277 : 19336 : Thread-67 : _session : close : 393 ：DEBUG : Enter : 228401104
+2020-10-02 11:17:33,278 : 19336 : Thread-67 : _session : hard_close : 327 ：DEBUG : Exit : 228401104 is hard-closed 
+2020-10-02 11:17:33,278 : 19336 : Thread-67 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:17:40,536 : 19336 : Thread-71 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:17:40,785 : 19336 : Thread-71 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:17:40,791 : 19336 : Thread-71 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:17:40,791 : 19336 : Thread-71 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:17:40,793 : 19336 : Thread-71 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'NY', '33931']])
+2020-10-02 11:17:40,793 : 19336 : Thread-71 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:17:40,794 : 19336 : Thread-71 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:17:40,794 : 19336 : Thread-71 : _session : close : 393 ：DEBUG : Enter : 236837392
+2020-10-02 11:17:40,794 : 19336 : Thread-71 : _session : hard_close : 327 ：DEBUG : Exit : 236837392 is hard-closed 
+2020-10-02 11:17:40,795 : 19336 : Thread-71 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:17:49,147 : 19336 : Thread-76 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:17:49,403 : 19336 : Thread-76 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-02 11:17:49,435 : 19336 : Thread-76 : _command : _exec : 152 ：DEBUG : Response : 
+63 records selected to list 0.
+
+ 0
+2020-10-02 11:17:49,435 : 19336 : Thread-76 : _command : run : 193 ：DEBUG : Exit : 0 
+63 records selected to list 0.
+
+
+2020-10-02 11:17:49,435 : 19336 : Thread-76 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-02 11:17:49,436 : 19336 : Thread-76 : _list : read_list : 203 ：DEBUG : Exit : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0855þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0
+2020-10-02 11:17:49,436 : 19336 : Thread-76 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:17:49,437 : 19336 : Thread-76 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:17:49,438 : 19336 : Thread-76 : _file : read_named_fields : 714 ：DEBUG : Enter : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0855þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0 ['LAST_NAME', 'FIRST_NAME', 'CITY', 'STATE', 'BIRTHDATE', 'GENDER'] 0
+2020-10-02 11:17:49,538 : 19336 : Thread-76 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+2020-10-02 11:17:49,541 : 19336 : Thread-76 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:17:49,541 : 19336 : Thread-76 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:17:49,541 : 19336 : Thread-76 : _session : close : 393 ：DEBUG : Enter : 236805680
+2020-10-02 11:17:49,542 : 19336 : Thread-76 : _session : hard_close : 327 ：DEBUG : Exit : 236805680 is hard-closed 
+2020-10-02 11:17:49,542 : 19336 : Thread-76 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:28:19,114 : 17312 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-02 11:28:19,114 : 17312 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-02 11:28:19,114 : 17312 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-02 11:28:19,114 : 17312 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-02 11:28:20,389 : 19664 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-02 11:28:20,389 : 19664 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-02 11:28:20,389 : 19664 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-02 11:28:20,389 : 19664 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-02 11:28:58,875 : 19664 : Thread-10 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:28:59,145 : 19664 : Thread-10 : _command : run : 174 ：DEBUG : Enter : VERSION
+2020-10-02 11:28:59,145 : 19664 : Thread-10 : _command : _exec : 152 ：DEBUG : Response : 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA..................... 0
+2020-10-02 11:28:59,145 : 19664 : Thread-10 : _command : run : 193 ：DEBUG : Exit : 0 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA.....................
+2020-10-02 11:28:59,160 : 19664 : Thread-10 : _session : close : 393 ：DEBUG : Enter : 219353296
+2020-10-02 11:28:59,160 : 19664 : Thread-10 : _session : hard_close : 327 ：DEBUG : Exit : 219353296 is hard-closed 
+2020-10-02 11:28:59,160 : 19664 : Thread-10 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:29:02,270 : 19664 : Thread-13 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:29:02,470 : 19664 : Thread-13 : _subroutine : call : 61 ：DEBUG : Enter : CHART_DATA_UD ['udcs', '']
+2020-10-02 11:29:02,617 : 19664 : Thread-13 : _subroutine : call : 84 ：DEBUG : Exit : CHART_DATA_UD [<uopy._dynarray.DynArray object ['udcs'] at 0x000000000D131890>, <uopy._dynarray.DynArray object ['19919', '11559', '18861', '12408', '19918', '16993', '13864', '16535'] at 0x000000000D131550>]
+2020-10-02 11:29:02,617 : 19664 : Thread-13 : _session : close : 393 ：DEBUG : Enter : 219353200
+2020-10-02 11:29:02,617 : 19664 : Thread-13 : _session : hard_close : 327 ：DEBUG : Exit : 219353200 is hard-closed 
+2020-10-02 11:29:02,617 : 19664 : Thread-13 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:29:06,969 : 19664 : Thread-16 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:29:07,201 : 19664 : Thread-16 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:29:07,201 : 19664 : Thread-16 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:29:07,201 : 19664 : Thread-16 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:29:07,201 : 19664 : Thread-16 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 777b'], 'Brisbane', 'NY', '33931']])
+2020-10-02 11:29:07,201 : 19664 : Thread-16 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:29:07,201 : 19664 : Thread-16 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:29:07,201 : 19664 : Thread-16 : _session : close : 393 ：DEBUG : Enter : 230048144
+2020-10-02 11:29:07,201 : 19664 : Thread-16 : _session : hard_close : 327 ：DEBUG : Exit : 230048144 is hard-closed 
+2020-10-02 11:29:07,201 : 19664 : Thread-16 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:29:33,315 : 19664 : Thread-20 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:29:33,553 : 19664 : Thread-20 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:29:33,553 : 19664 : Thread-20 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:29:33,553 : 19664 : Thread-20 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'ny', '33931']] 0
+2020-10-02 11:29:33,553 : 19664 : Thread-20 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'ny', '33931']])
+2020-10-02 11:29:33,553 : 19664 : Thread-20 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:29:33,553 : 19664 : Thread-20 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:29:33,553 : 19664 : Thread-20 : _session : close : 393 ：DEBUG : Enter : 230048976
+2020-10-02 11:29:33,553 : 19664 : Thread-20 : _session : hard_close : 327 ：DEBUG : Exit : 230048976 is hard-closed 
+2020-10-02 11:29:33,553 : 19664 : Thread-20 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:29:37,526 : 19664 : Thread-21 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:29:37,748 : 19664 : Thread-21 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:29:37,748 : 19664 : Thread-21 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:29:37,748 : 19664 : Thread-21 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:29:37,748 : 19664 : Thread-21 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'NY', '33931']])
+2020-10-02 11:29:37,748 : 19664 : Thread-21 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:29:37,748 : 19664 : Thread-21 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:29:37,748 : 19664 : Thread-21 : _session : close : 393 ：DEBUG : Enter : 230051440
+2020-10-02 11:29:37,748 : 19664 : Thread-21 : _session : hard_close : 327 ：DEBUG : Exit : 230051440 is hard-closed 
+2020-10-02 11:29:37,748 : 19664 : Thread-21 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:30:30,836 : 19664 : Thread-25 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:30:31,036 : 19664 : Thread-25 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:30:31,036 : 19664 : Thread-25 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:30:31,036 : 19664 : Thread-25 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'ny', '33931']] 0
+2020-10-02 11:30:31,036 : 19664 : Thread-25 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'ny', '33931']])
+2020-10-02 11:30:31,036 : 19664 : Thread-25 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:30:31,036 : 19664 : Thread-25 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:30:31,036 : 19664 : Thread-25 : _session : close : 393 ：DEBUG : Enter : 219667568
+2020-10-02 11:30:31,036 : 19664 : Thread-25 : _session : hard_close : 327 ：DEBUG : Exit : 219667568 is hard-closed 
+2020-10-02 11:30:31,036 : 19664 : Thread-25 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:31:06,773 : 19664 : Thread-29 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_uv', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:31:14,584 : 19664 : Thread-29 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-02 11:31:14,616 : 19664 : Thread-29 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-02 11:31:14,616 : 19664 : Thread-29 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-02 11:31:14,616 : 19664 : Thread-29 : _session : close : 393 ：DEBUG : Enter : 230122224
+2020-10-02 11:31:14,616 : 19664 : Thread-29 : _session : hard_close : 327 ：DEBUG : Exit : 230122224 is hard-closed 
+2020-10-02 11:31:14,616 : 19664 : Thread-29 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:31:17,508 : 19664 : Thread-31 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_uv', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:31:18,163 : 19664 : Thread-31 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-02 11:31:18,295 : 19664 : Thread-31 : _subroutine : call : 84 ：DEBUG : Exit : *CHART_DATA_UV [<uopy._dynarray.DynArray object ['uvcs'] at 0x000000000DB76B90>, <uopy._dynarray.DynArray object ['19919', '11559', '18861', '12408', '19918', '16993', '13864', '16535'] at 0x000000000DB76AB0>]
+2020-10-02 11:31:18,295 : 19664 : Thread-31 : _session : close : 393 ：DEBUG : Enter : 230123888
+2020-10-02 11:31:18,295 : 19664 : Thread-31 : _session : hard_close : 327 ：DEBUG : Exit : 230123888 is hard-closed 
+2020-10-02 11:31:18,295 : 19664 : Thread-31 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:31:22,075 : 19664 : Thread-33 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_uv', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:31:22,724 : 19664 : Thread-33 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:31:22,724 : 19664 : Thread-33 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:31:22,724 : 19664 : Thread-33 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:31:22,739 : 19664 : Thread-33 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'LA', '33931']])
+2020-10-02 11:31:22,739 : 19664 : Thread-33 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:31:22,739 : 19664 : Thread-33 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:31:22,739 : 19664 : Thread-33 : _session : close : 393 ：DEBUG : Enter : 230125232
+2020-10-02 11:31:22,739 : 19664 : Thread-33 : _session : hard_close : 327 ：DEBUG : Exit : 230125232 is hard-closed 
+2020-10-02 11:31:22,739 : 19664 : Thread-33 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:31:36,795 : 19664 : Thread-36 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_uv', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:31:37,434 : 19664 : Thread-36 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:31:37,434 : 19664 : Thread-36 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:31:37,434 : 19664 : Thread-36 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'la', '33931']] 0
+2020-10-02 11:31:37,434 : 19664 : Thread-36 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'la', '33931']])
+2020-10-02 11:31:37,434 : 19664 : Thread-36 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:31:37,450 : 19664 : Thread-36 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:31:37,450 : 19664 : Thread-36 : _session : close : 393 ：DEBUG : Enter : 230172400
+2020-10-02 11:31:37,450 : 19664 : Thread-36 : _session : hard_close : 327 ：DEBUG : Exit : 230172400 is hard-closed 
+2020-10-02 11:31:37,450 : 19664 : Thread-36 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:31:40,702 : 19664 : Thread-38 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_uv', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:31:41,366 : 19664 : Thread-38 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:31:41,366 : 19664 : Thread-38 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:31:41,366 : 19664 : Thread-38 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:31:41,366 : 19664 : Thread-38 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'LA', '33931']])
+2020-10-02 11:31:41,366 : 19664 : Thread-38 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:31:41,382 : 19664 : Thread-38 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:31:41,382 : 19664 : Thread-38 : _session : close : 393 ：DEBUG : Enter : 230123088
+2020-10-02 11:31:41,382 : 19664 : Thread-38 : _session : hard_close : 327 ：DEBUG : Exit : 230123088 is hard-closed 
+2020-10-02 11:31:41,382 : 19664 : Thread-38 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:32:02,371 : 19664 : Thread-43 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:32:02,594 : 19664 : Thread-43 : _command : run : 174 ：DEBUG : Enter : VERSION
+2020-10-02 11:32:02,594 : 19664 : Thread-43 : _command : _exec : 152 ：DEBUG : Response : 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA..................... 0
+2020-10-02 11:32:02,594 : 19664 : Thread-43 : _command : run : 193 ：DEBUG : Exit : 0 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA.....................
+2020-10-02 11:32:02,609 : 19664 : Thread-43 : _session : close : 393 ：DEBUG : Enter : 219668464
+2020-10-02 11:32:02,609 : 19664 : Thread-43 : _session : hard_close : 327 ：DEBUG : Exit : 219668464 is hard-closed 
+2020-10-02 11:32:02,609 : 19664 : Thread-43 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:32:06,421 : 19664 : Thread-46 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:32:06,653 : 19664 : Thread-46 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:32:06,653 : 19664 : Thread-46 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:32:06,653 : 19664 : Thread-46 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:32:06,669 : 19664 : Thread-46 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'NY', '33931']])
+2020-10-02 11:32:06,669 : 19664 : Thread-46 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:32:06,669 : 19664 : Thread-46 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:32:06,669 : 19664 : Thread-46 : _session : close : 393 ：DEBUG : Enter : 219356048
+2020-10-02 11:32:06,669 : 19664 : Thread-46 : _session : hard_close : 327 ：DEBUG : Exit : 219356048 is hard-closed 
+2020-10-02 11:32:06,669 : 19664 : Thread-46 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:32:23,091 : 19664 : Thread-50 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:32:23,344 : 19664 : Thread-50 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:32:23,344 : 19664 : Thread-50 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:32:23,344 : 19664 : Thread-50 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'la', '33931']] 0
+2020-10-02 11:32:23,344 : 19664 : Thread-50 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'la', '33931']])
+2020-10-02 11:32:23,344 : 19664 : Thread-50 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:32:23,344 : 19664 : Thread-50 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:32:23,344 : 19664 : Thread-50 : _session : close : 393 ：DEBUG : Enter : 230051056
+2020-10-02 11:32:23,344 : 19664 : Thread-50 : _session : hard_close : 327 ：DEBUG : Exit : 230051056 is hard-closed 
+2020-10-02 11:32:23,344 : 19664 : Thread-50 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:32:38,780 : 19664 : Thread-53 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-02 11:32:39,034 : 19664 : Thread-53 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:32:39,034 : 19664 : Thread-53 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:32:39,049 : 19664 : Thread-53 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:32:39,049 : 19664 : Thread-53 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'LA', '33931']])
+2020-10-02 11:32:39,049 : 19664 : Thread-53 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:32:39,049 : 19664 : Thread-53 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:32:39,049 : 19664 : Thread-53 : _session : close : 393 ：DEBUG : Enter : 230049680
+2020-10-02 11:32:39,049 : 19664 : Thread-53 : _session : hard_close : 327 ：DEBUG : Exit : 230049680 is hard-closed 
+2020-10-02 11:32:39,049 : 19664 : Thread-53 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:35:09,014 : 21312 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-02 11:35:09,014 : 21312 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-02 11:35:09,014 : 21312 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-02 11:35:09,014 : 21312 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-02 11:35:33,909 : 21312 : Thread-4 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:35:34,554 : 21312 : Thread-4 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-02 11:35:34,568 : 21312 : Thread-4 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-02 11:35:34,568 : 21312 : Thread-4 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-02 11:35:34,570 : 21312 : Thread-4 : _session : close : 393 ：DEBUG : Enter : 222157712
+2020-10-02 11:35:34,571 : 21312 : Thread-4 : _session : hard_close : 327 ：DEBUG : Exit : 222157712 is hard-closed 
+2020-10-02 11:35:34,571 : 21312 : Thread-4 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:35:39,630 : 21312 : Thread-9 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:35:40,236 : 21312 : Thread-9 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:35:40,238 : 21312 : Thread-9 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:35:40,238 : 21312 : Thread-9 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-02 11:35:40,244 : 21312 : Thread-9 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'LA', '33931']])
+2020-10-02 11:35:40,244 : 21312 : Thread-9 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:35:40,246 : 21312 : Thread-9 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:35:40,246 : 21312 : Thread-9 : _session : close : 393 ：DEBUG : Enter : 221850160
+2020-10-02 11:35:40,246 : 21312 : Thread-9 : _session : hard_close : 327 ：DEBUG : Exit : 221850160 is hard-closed 
+2020-10-02 11:35:40,247 : 21312 : Thread-9 : _session : close : 405 ：DEBUG : Exit
+2020-10-02 11:35:46,636 : 21312 : Thread-12 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-02 11:35:47,254 : 21312 : Thread-12 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:35:47,258 : 21312 : Thread-12 : _file : open : 182 ：DEBUG : Exit
+2020-10-02 11:35:47,258 : 21312 : Thread-12 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'ny', '33931']] 0
+2020-10-02 11:35:47,264 : 21312 : Thread-12 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'ny', '33931']])
+2020-10-02 11:35:47,264 : 21312 : Thread-12 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-02 11:35:47,268 : 21312 : Thread-12 : _file : close : 242 ：DEBUG : Exit
+2020-10-02 11:35:47,268 : 21312 : Thread-12 : _session : close : 393 ：DEBUG : Enter : 227946160
+2020-10-02 11:35:47,268 : 21312 : Thread-12 : _session : hard_close : 327 ：DEBUG : Exit : 227946160 is hard-closed 
+2020-10-02 11:35:47,268 : 21312 : Thread-12 : _session : close : 405 ：DEBUG : Exit
+2020-10-03 10:46:38,731 : 21788 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-03 10:46:38,731 : 21788 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-03 10:46:38,731 : 21788 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-03 10:46:38,731 : 21788 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-03 10:46:40,204 : 23160 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-03 10:46:40,204 : 23160 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-03 10:46:40,204 : 23160 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-03 10:46:40,204 : 23160 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-03 16:00:09,892 : 21580 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-03 16:00:09,892 : 21580 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-03 16:00:09,892 : 21580 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-03 16:00:09,892 : 21580 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-03 16:00:11,528 : 21644 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-03 16:00:11,528 : 21644 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-03 16:00:11,528 : 21644 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-03 16:00:11,528 : 21644 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-03 16:01:55,726 : 21644 : Thread-5 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV1', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-03 16:02:20,198 : 21644 : Thread-7 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-03 16:02:36,283 : 21644 : Thread-9 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-03 16:02:37,026 : 21644 : Thread-9 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-03 16:02:37,048 : 21644 : Thread-9 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-03 16:02:37,048 : 21644 : Thread-9 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-03 16:02:37,058 : 21644 : Thread-9 : _session : close : 393 ：DEBUG : Enter : 231386288
+2020-10-03 16:02:37,059 : 21644 : Thread-9 : _session : hard_close : 327 ：DEBUG : Exit : 231386288 is hard-closed 
+2020-10-03 16:02:37,059 : 21644 : Thread-9 : _session : close : 405 ：DEBUG : Exit
+2020-10-03 16:42:21,104 : 21644 : Thread-14 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-03 16:42:21,872 : 21644 : Thread-14 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-03 16:42:22,009 : 21644 : Thread-14 : _subroutine : call : 84 ：DEBUG : Exit : *CHART_DATA_UV [<uopy._dynarray.DynArray object ['uvcs'] at 0x000000000DCAA490>, <uopy._dynarray.DynArray object ['19919', '11559', '18861', '12408', '19918', '16993', '13864', '16535'] at 0x000000000DCAA310>]
+2020-10-03 16:42:22,010 : 21644 : Thread-14 : _session : close : 393 ：DEBUG : Enter : 231384784
+2020-10-03 16:42:22,010 : 21644 : Thread-14 : _session : hard_close : 327 ：DEBUG : Exit : 231384784 is hard-closed 
+2020-10-03 16:42:22,010 : 21644 : Thread-14 : _session : close : 405 ：DEBUG : Exit
+2020-10-03 17:16:30,681 : 21644 : Thread-19 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-03 17:16:31,471 : 21644 : Thread-19 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-03 17:16:31,477 : 21644 : Thread-19 : _file : open : 182 ：DEBUG : Exit
+2020-10-03 17:16:31,477 : 21644 : Thread-19 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-03 17:16:31,484 : 21644 : Thread-19 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'NY', '33931']])
+2020-10-03 17:16:31,484 : 21644 : Thread-19 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-03 17:16:31,486 : 21644 : Thread-19 : _file : close : 242 ：DEBUG : Exit
+2020-10-03 17:16:31,486 : 21644 : Thread-19 : _session : close : 393 ：DEBUG : Enter : 239814896
+2020-10-03 17:16:31,487 : 21644 : Thread-19 : _session : hard_close : 327 ：DEBUG : Exit : 239814896 is hard-closed 
+2020-10-03 17:16:31,487 : 21644 : Thread-19 : _session : close : 405 ：DEBUG : Exit
+2020-10-03 17:17:27,664 : 21644 : Thread-22 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-03 17:17:28,375 : 21644 : Thread-22 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-03 17:17:28,378 : 21644 : Thread-22 : _file : open : 182 ：DEBUG : Exit
+2020-10-03 17:17:28,378 : 21644 : Thread-22 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', '927 Dublin Drive', 'Brisbane', 'la', '33931']] 0
+2020-10-03 17:17:28,384 : 21644 : Thread-22 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Drive', 'Brisbane', 'la', '33931']])
+2020-10-03 17:17:28,384 : 21644 : Thread-22 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-03 17:17:28,387 : 21644 : Thread-22 : _file : close : 242 ：DEBUG : Exit
+2020-10-03 17:17:28,387 : 21644 : Thread-22 : _session : close : 393 ：DEBUG : Enter : 239816560
+2020-10-03 17:17:28,387 : 21644 : Thread-22 : _session : hard_close : 327 ：DEBUG : Exit : 239816560 is hard-closed 
+2020-10-03 17:17:28,387 : 21644 : Thread-22 : _session : close : 405 ：DEBUG : Exit
+2020-10-03 17:17:36,547 : 21644 : Thread-26 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-03 17:17:37,325 : 21644 : Thread-26 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-03 17:17:37,331 : 21644 : Thread-26 : _file : open : 182 ：DEBUG : Exit
+2020-10-03 17:17:37,331 : 21644 : Thread-26 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-03 17:17:37,338 : 21644 : Thread-26 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Drive', 'Brisbane', 'LA', '33931']])
+2020-10-03 17:17:37,339 : 21644 : Thread-26 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-03 17:17:37,343 : 21644 : Thread-26 : _file : close : 242 ：DEBUG : Exit
+2020-10-03 17:17:37,343 : 21644 : Thread-26 : _session : close : 393 ：DEBUG : Enter : 231384272
+2020-10-03 17:17:37,343 : 21644 : Thread-26 : _session : hard_close : 327 ：DEBUG : Exit : 231384272 is hard-closed 
+2020-10-03 17:17:37,344 : 21644 : Thread-26 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 15:15:58,049 : 21888 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-04 15:15:58,049 : 21888 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-04 15:15:58,049 : 21888 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-04 15:15:58,049 : 21888 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-04 15:16:05,740 : 25840 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-04 15:16:05,740 : 25840 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-04 15:16:05,740 : 25840 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-04 15:16:05,740 : 25840 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-04 15:16:07,238 : 25712 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-04 15:16:07,238 : 25712 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-04 15:16:07,238 : 25712 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-04 15:16:07,238 : 25712 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-04 15:16:36,825 : 25712 : Thread-11 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-04 15:16:37,110 : 25712 : Thread-11 : _command : run : 174 ：DEBUG : Enter : VERSION
+2020-10-04 15:16:37,110 : 25712 : Thread-11 : _command : _exec : 152 ：DEBUG : Response : 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA..................... 0
+2020-10-04 15:16:37,110 : 25712 : Thread-11 : _command : run : 193 ：DEBUG : Exit : 0 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA.....................
+2020-10-04 15:16:37,126 : 25712 : Thread-11 : _session : close : 393 ：DEBUG : Enter : 222562480
+2020-10-04 15:16:37,126 : 25712 : Thread-11 : _session : hard_close : 327 ：DEBUG : Exit : 222562480 is hard-closed 
+2020-10-04 15:16:37,126 : 25712 : Thread-11 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 15:16:44,164 : 25712 : Thread-16 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'xdemo_uopy_ud', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-04 15:16:44,412 : 25712 : Thread-16 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-04 15:16:44,427 : 25712 : Thread-16 : _file : open : 182 ：DEBUG : Exit
+2020-10-04 15:16:44,427 : 25712 : Thread-16 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-04 15:16:44,434 : 25712 : Thread-16 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Street', 'Suite 7B'], 'Brisbane', 'LA', '33931']])
+2020-10-04 15:16:44,434 : 25712 : Thread-16 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-04 15:16:44,434 : 25712 : Thread-16 : _file : close : 242 ：DEBUG : Exit
+2020-10-04 15:16:44,434 : 25712 : Thread-16 : _session : close : 393 ：DEBUG : Enter : 222563472
+2020-10-04 15:16:44,434 : 25712 : Thread-16 : _session : hard_close : 327 ：DEBUG : Exit : 222563472 is hard-closed 
+2020-10-04 15:16:44,434 : 25712 : Thread-16 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 20:41:25,089 : 16284 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-04 20:41:25,089 : 16284 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-04 20:41:25,089 : 16284 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-04 20:41:25,089 : 16284 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-04 20:41:26,571 : 20488 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-04 20:41:26,571 : 20488 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-04 20:41:26,571 : 20488 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-04 20:41:26,571 : 20488 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-04 20:42:21,860 : 20488 : Thread-7 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost1', 'account': '', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 20:42:24,166 : 20488 : Thread-7 : _unirpc : __init__ : 141 ：ERROR : [Errno 11001] getaddrinfo failed
+2020-10-04 20:42:39,834 : 20488 : Thread-9 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV1', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 20:42:55,606 : 20488 : Thread-11 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 20:42:56,349 : 20488 : Thread-11 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-04 20:42:56,381 : 20488 : Thread-11 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-04 20:42:56,381 : 20488 : Thread-11 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-04 20:42:56,388 : 20488 : Thread-11 : _session : close : 393 ：DEBUG : Enter : 233890864
+2020-10-04 20:42:56,388 : 20488 : Thread-11 : _session : hard_close : 327 ：DEBUG : Exit : 233890864 is hard-closed 
+2020-10-04 20:42:56,388 : 20488 : Thread-11 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 20:50:32,246 : 9096 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-04 20:50:32,246 : 9096 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-04 20:50:32,246 : 9096 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-04 20:50:32,246 : 9096 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-04 20:50:33,731 : 18876 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-04 20:50:33,731 : 18876 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-04 20:50:33,731 : 18876 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-04 20:50:33,731 : 18876 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-04 20:51:01,072 : 18876 : Thread-4 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'susss', 'account': '', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 20:51:03,374 : 18876 : Thread-4 : _unirpc : __init__ : 141 ：ERROR : [Errno 11001] getaddrinfo failed
+2020-10-04 20:51:25,083 : 18876 : Thread-6 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UD', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 20:51:25,348 : 18876 : Thread-6 : _command : run : 174 ：DEBUG : Enter : VERSION
+2020-10-04 20:51:25,350 : 18876 : Thread-6 : _command : _exec : 152 ：DEBUG : Response : 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA..................... 0
+2020-10-04 20:51:25,351 : 18876 : Thread-6 : _command : run : 193 ：DEBUG : Exit : 0 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA.....................
+2020-10-04 20:51:25,355 : 18876 : Thread-6 : _session : close : 393 ：DEBUG : Enter : 230286608
+2020-10-04 20:51:25,355 : 18876 : Thread-6 : _session : hard_close : 327 ：DEBUG : Exit : 230286608 is hard-closed 
+2020-10-04 20:51:25,355 : 18876 : Thread-6 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 21:03:08,764 : 9484 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-04 21:03:08,764 : 9484 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-04 21:03:08,764 : 9484 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-04 21:03:08,764 : 9484 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-04 21:03:10,227 : 24996 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-04 21:03:10,227 : 24996 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-04 21:03:10,227 : 24996 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-04 21:03:10,227 : 24996 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-04 21:03:39,270 : 24996 : Thread-4 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'ssefefe', 'account': '', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 21:03:41,574 : 24996 : Thread-4 : _unirpc : __init__ : 141 ：ERROR : [Errno 11001] getaddrinfo failed
+2020-10-04 21:03:54,366 : 24996 : Thread-6 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UVa', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 21:04:04,005 : 24996 : Thread-8 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 21:04:04,696 : 24996 : Thread-8 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-04 21:04:04,718 : 24996 : Thread-8 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-04 21:04:04,718 : 24996 : Thread-8 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-04 21:04:04,719 : 24996 : Thread-8 : _session : close : 393 ：DEBUG : Enter : 214875088
+2020-10-04 21:04:04,720 : 24996 : Thread-8 : _session : hard_close : 327 ：DEBUG : Exit : 214875088 is hard-closed 
+2020-10-04 21:04:04,720 : 24996 : Thread-8 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 21:29:11,995 : 24996 : Thread-12 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 21:29:12,745 : 24996 : Thread-12 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-04 21:29:12,903 : 24996 : Thread-12 : _subroutine : call : 84 ：DEBUG : Exit : *CHART_DATA_UV [<uopy._dynarray.DynArray object ['uvcs'] at 0x000000000CCEB870>, <uopy._dynarray.DynArray object ['19919', '11559', '18861', '12408', '19918', '16993', '13864', '16535'] at 0x000000000CCEB670>]
+2020-10-04 21:29:12,903 : 24996 : Thread-12 : _session : close : 393 ：DEBUG : Enter : 214875312
+2020-10-04 21:29:12,904 : 24996 : Thread-12 : _session : hard_close : 327 ：DEBUG : Exit : 214875312 is hard-closed 
+2020-10-04 21:29:12,904 : 24996 : Thread-12 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 21:39:52,107 : 24996 : Thread-17 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 21:39:52,802 : 24996 : Thread-17 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-04 21:39:52,819 : 24996 : Thread-17 : _file : open : 182 ：DEBUG : Exit
+2020-10-04 21:39:52,819 : 24996 : Thread-17 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-04 21:39:52,828 : 24996 : Thread-17 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Drive', 'Brisbane', 'LA', '33931']])
+2020-10-04 21:39:52,829 : 24996 : Thread-17 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-04 21:39:52,833 : 24996 : Thread-17 : _file : close : 242 ：DEBUG : Exit
+2020-10-04 21:39:52,833 : 24996 : Thread-17 : _session : close : 393 ：DEBUG : Enter : 223278864
+2020-10-04 21:39:52,833 : 24996 : Thread-17 : _session : hard_close : 327 ：DEBUG : Exit : 223278864 is hard-closed 
+2020-10-04 21:39:52,833 : 24996 : Thread-17 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 21:40:23,624 : 24996 : Thread-20 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 21:40:24,308 : 24996 : Thread-20 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-04 21:40:24,313 : 24996 : Thread-20 : _file : open : 182 ：DEBUG : Exit
+2020-10-04 21:40:24,313 : 24996 : Thread-20 : _file : write_named_fields : 780 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'la', '33931']] 0
+2020-10-04 21:40:24,329 : 24996 : Thread-20 : _file : write_named_fields : 803 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'la', '33931']])
+2020-10-04 21:40:24,330 : 24996 : Thread-20 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-04 21:40:24,333 : 24996 : Thread-20 : _file : close : 242 ：DEBUG : Exit
+2020-10-04 21:40:24,333 : 24996 : Thread-20 : _session : close : 393 ：DEBUG : Enter : 214875536
+2020-10-04 21:40:24,333 : 24996 : Thread-20 : _session : hard_close : 327 ：DEBUG : Exit : 214875536 is hard-closed 
+2020-10-04 21:40:24,333 : 24996 : Thread-20 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 21:40:28,425 : 24996 : Thread-24 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 21:40:29,080 : 24996 : Thread-24 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-04 21:40:29,091 : 24996 : Thread-24 : _file : open : 182 ：DEBUG : Exit
+2020-10-04 21:40:29,091 : 24996 : Thread-24 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-04 21:40:29,100 : 24996 : Thread-24 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', ['927 Dublin Drive', 'Suite 777'], 'Brisbane', 'LA', '33931']])
+2020-10-04 21:40:29,101 : 24996 : Thread-24 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-04 21:40:29,105 : 24996 : Thread-24 : _file : close : 242 ：DEBUG : Exit
+2020-10-04 21:40:29,105 : 24996 : Thread-24 : _session : close : 393 ：DEBUG : Enter : 223278160
+2020-10-04 21:40:29,105 : 24996 : Thread-24 : _session : hard_close : 327 ：DEBUG : Exit : 223278160 is hard-closed 
+2020-10-04 21:40:29,105 : 24996 : Thread-24 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 22:00:22,963 : 24996 : Thread-30 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 22:00:23,686 : 24996 : Thread-30 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS WITH  LAST_NAME_SEARCH LIKE SMITH...
+2020-10-04 22:00:23,717 : 24996 : Thread-30 : _command : _exec : 152 ：DEBUG : Response : 
+6 record(s) selected to SELECT list #0.
+ 0
+2020-10-04 22:00:23,717 : 24996 : Thread-30 : _command : run : 193 ：DEBUG : Exit : 0 
+6 record(s) selected to SELECT list #0.
+
+2020-10-04 22:00:23,717 : 24996 : Thread-30 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-04 22:00:23,719 : 24996 : Thread-30 : _list : read_list : 203 ：DEBUG : Exit : 2064þ1200þ1680þ1028þ0333þ0084
+2020-10-04 22:00:23,720 : 24996 : Thread-30 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-04 22:00:23,724 : 24996 : Thread-30 : _file : open : 182 ：DEBUG : Exit
+2020-10-04 22:00:23,724 : 24996 : Thread-30 : _file : read_named_fields : 714 ：DEBUG : Enter : 2064þ1200þ1680þ1028þ0333þ0084 ['ID', 'LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE', 'ZIP'] 0
+2020-10-04 22:00:23,735 : 24996 : Thread-30 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0', '0', '0', '0', '0', '0'], ['0', '0', '0', '0', '0', '0'], ['2064', '1200', '1680', '1028', '0333', '0084'], [['2064', 'Smith', 'Ed', '5241 North Colfax Street', 'Parkland', 'Arkansas', '03458'], ['1200', 'Smith', 'Ed', '3257 North Pleasanton Street'
+2020-10-04 22:00:23,751 : 24996 : Thread-30 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-04 22:00:23,756 : 24996 : Thread-30 : _file : close : 242 ：DEBUG : Exit
+2020-10-04 22:00:23,756 : 24996 : Thread-30 : _session : close : 393 ：DEBUG : Enter : 223430896
+2020-10-04 22:00:23,756 : 24996 : Thread-30 : _session : hard_close : 327 ：DEBUG : Exit : 223430896 is hard-closed 
+2020-10-04 22:00:23,757 : 24996 : Thread-30 : _session : close : 405 ：DEBUG : Exit
+2020-10-04 22:17:29,678 : 24996 : Thread-34 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO_UOPY_UV', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-04 22:17:30,431 : 24996 : Thread-34 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'CT'
+2020-10-04 22:17:30,451 : 24996 : Thread-34 : _command : _exec : 152 ：DEBUG : Response : 
+61 record(s) selected to SELECT list #0.
+ 0
+2020-10-04 22:17:30,451 : 24996 : Thread-34 : _command : run : 193 ：DEBUG : Exit : 0 
+61 record(s) selected to SELECT list #0.
+
+2020-10-04 22:17:30,451 : 24996 : Thread-34 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-04 22:17:30,453 : 24996 : Thread-34 : _list : read_list : 203 ：DEBUG : Exit : 0037þ0587þ0726þ1364þ0734þ0778þ1641þ2129þ0429þ1744þ0531þ0078þ1123þ0916þ0570þ1473þ0562þ0058þ2124þ0859þ2301þ0898þ0135þ0938þ0743þ0103þ1698þ2259þ1521þ0756þ0403þ1370þ2487þ0920þ0014þ0981þ0169þ2436þ0588þ1948þ1611þ1404þ2267þ1348þ0108þ2297þ1188þ0410þ0096þ2021þ1239þ1
+2020-10-04 22:17:30,453 : 24996 : Thread-34 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-04 22:17:30,457 : 24996 : Thread-34 : _file : open : 182 ：DEBUG : Exit
+2020-10-04 22:17:30,457 : 24996 : Thread-34 : _file : read_named_fields : 714 ：DEBUG : Enter : 0037þ0587þ0726þ1364þ0734þ0778þ1641þ2129þ0429þ1744þ0531þ0078þ1123þ0916þ0570þ1473þ0562þ0058þ2124þ0859þ2301þ0898þ0135þ0938þ0743þ0103þ1698þ2259þ1521þ0756þ0403þ1370þ2487þ0920þ0014þ0981þ0169þ2436þ0588þ1948þ1611þ1404þ2267þ1348þ0108þ2297þ1188þ0410þ0096þ2021þ1239þ1 ['LAST_NAME', 'FIRST_NAME', 'CITY', 'STATE', 'BIRTHDATE', 'GENDER'] 0
+2020-10-04 22:17:30,467 : 24996 : Thread-34 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+2020-10-04 22:17:30,471 : 24996 : Thread-34 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-04 22:17:30,474 : 24996 : Thread-34 : _file : close : 242 ：DEBUG : Exit
+2020-10-04 22:17:30,474 : 24996 : Thread-34 : _session : close : 393 ：DEBUG : Enter : 223430288
+2020-10-04 22:17:30,474 : 24996 : Thread-34 : _session : hard_close : 327 ：DEBUG : Exit : 223430288 is hard-closed 
+2020-10-04 22:17:30,475 : 24996 : Thread-34 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:44:41,403 : 26316 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-05 17:44:41,403 : 26316 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-05 17:44:41,403 : 26316 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-05 17:44:41,403 : 26316 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-05 17:44:42,669 : 28392 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-05 17:44:42,669 : 28392 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-05 17:44:42,669 : 28392 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-05 17:44:42,669 : 28392 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-05 17:45:24,693 : 28392 : Thread-9 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'xdemo_uopy_uv', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-05 17:45:51,628 : 28392 : Thread-13 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:46:04,058 : 28392 : Thread-13 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-05 17:46:04,073 : 28392 : Thread-13 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-05 17:46:04,073 : 28392 : Thread-13 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-05 17:46:04,073 : 28392 : Thread-13 : _session : close : 393 ：DEBUG : Enter : 224860080
+2020-10-05 17:46:04,073 : 28392 : Thread-13 : _session : hard_close : 327 ：DEBUG : Exit : 224860080 is hard-closed 
+2020-10-05 17:46:04,073 : 28392 : Thread-13 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:46:07,564 : 28392 : Thread-16 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:46:12,835 : 28392 : Thread-16 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-05 17:46:12,835 : 28392 : Thread-16 : _session : close : 393 ：DEBUG : Enter : 224858288
+2020-10-05 17:46:12,850 : 28392 : Thread-16 : _session : hard_close : 327 ：DEBUG : Exit : 224858288 is hard-closed 
+2020-10-05 17:46:12,850 : 28392 : Thread-16 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:46:21,113 : 28392 : Thread-20 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:46:26,425 : 28392 : Thread-20 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:46:26,425 : 28392 : Thread-20 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 17:46:26,425 : 28392 : Thread-20 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-05 17:46:26,425 : 28392 : Thread-20 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Street', 'Brisbane', 'LA', '33931']])
+2020-10-05 17:46:26,440 : 28392 : Thread-20 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:46:26,440 : 28392 : Thread-20 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 17:46:26,440 : 28392 : Thread-20 : _session : close : 393 ：DEBUG : Enter : 240156944
+2020-10-05 17:46:26,440 : 28392 : Thread-20 : _session : hard_close : 327 ：DEBUG : Exit : 240156944 is hard-closed 
+2020-10-05 17:46:26,440 : 28392 : Thread-20 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:51:46,695 : 28392 : Thread-30 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:51:52,514 : 28392 : Thread-30 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-05 17:51:52,521 : 28392 : Thread-30 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-05 17:51:52,521 : 28392 : Thread-30 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-05 17:51:52,537 : 28392 : Thread-30 : _session : close : 393 ：DEBUG : Enter : 234412592
+2020-10-05 17:51:52,537 : 28392 : Thread-30 : _session : hard_close : 327 ：DEBUG : Exit : 234412592 is hard-closed 
+2020-10-05 17:51:52,537 : 28392 : Thread-30 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:51:55,131 : 28392 : Thread-34 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:51:58,206 : 28392 : Thread-34 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-05 17:51:58,206 : 28392 : Thread-34 : _session : close : 393 ：DEBUG : Enter : 225172240
+2020-10-05 17:51:58,206 : 28392 : Thread-34 : _session : hard_close : 327 ：DEBUG : Exit : 225172240 is hard-closed 
+2020-10-05 17:51:58,206 : 28392 : Thread-34 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:52:01,870 : 28392 : Thread-36 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:52:07,653 : 28392 : Thread-36 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:52:07,653 : 28392 : Thread-36 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 17:52:07,653 : 28392 : Thread-36 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-05 17:52:07,653 : 28392 : Thread-36 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Street', 'Brisbane', 'LA', '33931']])
+2020-10-05 17:52:07,653 : 28392 : Thread-36 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:52:07,653 : 28392 : Thread-36 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 17:52:07,653 : 28392 : Thread-36 : _session : close : 393 ：DEBUG : Enter : 234648464
+2020-10-05 17:52:07,653 : 28392 : Thread-36 : _session : hard_close : 327 ：DEBUG : Exit : 234648464 is hard-closed 
+2020-10-05 17:52:07,653 : 28392 : Thread-36 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:53:13,828 : 27616 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-05 17:53:13,828 : 27616 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-05 17:53:13,828 : 27616 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-05 17:53:13,828 : 27616 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-05 17:53:15,103 : 16828 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-05 17:53:15,103 : 16828 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-05 17:53:15,103 : 16828 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-05 17:53:15,103 : 16828 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-05 17:53:38,204 : 16828 : Thread-7 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'US-L-LT03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:53:43,953 : 16828 : Thread-7 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-05 17:53:43,972 : 16828 : Thread-7 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-05 17:53:43,972 : 16828 : Thread-7 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-05 17:53:43,983 : 16828 : Thread-7 : _session : close : 393 ：DEBUG : Enter : 214869296
+2020-10-05 17:53:43,984 : 16828 : Thread-7 : _session : hard_close : 327 ：DEBUG : Exit : 214869296 is hard-closed 
+2020-10-05 17:53:43,984 : 16828 : Thread-7 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:53:46,037 : 16828 : Thread-11 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'US-L-LT03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:53:51,742 : 16828 : Thread-11 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-05 17:53:51,745 : 16828 : Thread-11 : _session : close : 393 ：DEBUG : Enter : 214871344
+2020-10-05 17:53:51,746 : 16828 : Thread-11 : _session : hard_close : 327 ：DEBUG : Exit : 214871344 is hard-closed 
+2020-10-05 17:53:51,746 : 16828 : Thread-11 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:53:56,791 : 16828 : Thread-16 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'US-L-LT03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:54:00,476 : 16828 : Thread-16 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:54:00,479 : 16828 : Thread-16 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 17:54:00,480 : 16828 : Thread-16 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-05 17:54:00,484 : 16828 : Thread-16 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Street', 'Brisbane', 'LA', '33931']])
+2020-10-05 17:54:00,486 : 16828 : Thread-16 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:54:00,488 : 16828 : Thread-16 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 17:54:00,489 : 16828 : Thread-16 : _session : close : 393 ：DEBUG : Enter : 221031056
+2020-10-05 17:54:00,490 : 16828 : Thread-16 : _session : hard_close : 327 ：DEBUG : Exit : 221031056 is hard-closed 
+2020-10-05 17:54:00,491 : 16828 : Thread-16 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:54:38,991 : 12800 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-05 17:54:38,991 : 12800 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-05 17:54:38,991 : 12800 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-05 17:54:38,991 : 12800 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-05 17:54:40,263 : 27928 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-05 17:54:40,263 : 27928 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-05 17:54:40,263 : 27928 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-05 17:54:40,263 : 27928 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-05 17:55:24,936 : 27928 : Thread-9 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'xdemo_uopy_uv', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:55:39,985 : 27928 : Thread-12 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:55:45,137 : 27928 : Thread-12 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-05 17:55:45,153 : 27928 : Thread-12 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-05 17:55:45,153 : 27928 : Thread-12 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-05 17:55:45,169 : 27928 : Thread-12 : _session : close : 393 ：DEBUG : Enter : 221455952
+2020-10-05 17:55:45,169 : 27928 : Thread-12 : _session : hard_close : 327 ：DEBUG : Exit : 221455952 is hard-closed 
+2020-10-05 17:55:45,169 : 27928 : Thread-12 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:55:48,931 : 27928 : Thread-15 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:55:54,234 : 27928 : Thread-15 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:55:54,249 : 27928 : Thread-15 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 17:55:54,249 : 27928 : Thread-15 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-05 17:55:54,249 : 27928 : Thread-15 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Street', 'Brisbane', 'LA', '33931']])
+2020-10-05 17:55:54,249 : 27928 : Thread-15 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:55:54,249 : 27928 : Thread-15 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 17:55:54,249 : 27928 : Thread-15 : _session : close : 393 ：DEBUG : Enter : 221457648
+2020-10-05 17:55:54,249 : 27928 : Thread-15 : _session : hard_close : 327 ：DEBUG : Exit : 221457648 is hard-closed 
+2020-10-05 17:55:54,249 : 27928 : Thread-15 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:56:09,840 : 27928 : Thread-19 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:56:15,137 : 27928 : Thread-19 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS WITH  LAST_NAME_SEARCH LIKE SMITH...
+2020-10-05 17:56:15,204 : 27928 : Thread-19 : _command : _exec : 152 ：DEBUG : Response :  0
+2020-10-05 17:56:15,204 : 27928 : Thread-19 : _command : run : 193 ：DEBUG : Exit : 0 
+2020-10-05 17:56:15,204 : 27928 : Thread-19 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-05 17:56:15,204 : 27928 : Thread-19 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-05 17:56:15,204 : 27928 : Thread-19 : _session : close : 393 ：DEBUG : Enter : 236734416
+2020-10-05 17:56:15,204 : 27928 : Thread-19 : _session : hard_close : 327 ：DEBUG : Exit : 236734416 is hard-closed 
+2020-10-05 17:56:15,204 : 27928 : Thread-19 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:56:20,161 : 27928 : Thread-22 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:56:25,425 : 27928 : Thread-22 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-05 17:56:25,441 : 27928 : Thread-22 : _command : _exec : 152 ：DEBUG : Response : 
+62 record(s) selected to SELECT list #0.
+ 0
+2020-10-05 17:56:25,441 : 27928 : Thread-22 : _command : run : 193 ：DEBUG : Exit : 0 
+62 record(s) selected to SELECT list #0.
+
+2020-10-05 17:56:25,441 : 27928 : Thread-22 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-05 17:56:25,441 : 27928 : Thread-22 : _list : read_list : 203 ：DEBUG : Exit : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0
+2020-10-05 17:56:25,441 : 27928 : Thread-22 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:56:25,441 : 27928 : Thread-22 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 17:56:25,441 : 27928 : Thread-22 : _file : read_named_fields : 714 ：DEBUG : Enter : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0 ['LAST_NAME', 'FIRST_NAME', 'CITY', 'STATE', 'BIRTHDATE', 'GENDER'] 0
+2020-10-05 17:56:25,457 : 27928 : Thread-22 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+2020-10-05 17:56:25,479 : 27928 : Thread-22 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:56:25,479 : 27928 : Thread-22 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 17:56:25,479 : 27928 : Thread-22 : _session : close : 393 ：DEBUG : Enter : 221456464
+2020-10-05 17:56:25,479 : 27928 : Thread-22 : _session : hard_close : 327 ：DEBUG : Exit : 221456464 is hard-closed 
+2020-10-05 17:56:25,479 : 27928 : Thread-22 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:56:33,706 : 27928 : Thread-23 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:56:38,987 : 27928 : Thread-23 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-05 17:56:38,987 : 27928 : Thread-23 : _session : close : 393 ：DEBUG : Enter : 221764496
+2020-10-05 17:56:38,987 : 27928 : Thread-23 : _session : hard_close : 327 ：DEBUG : Exit : 221764496 is hard-closed 
+2020-10-05 17:56:38,987 : 27928 : Thread-23 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:56:42,333 : 27928 : Thread-25 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:56:47,596 : 27928 : Thread-25 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-05 17:56:47,596 : 27928 : Thread-25 : _command : _exec : 152 ：DEBUG : Response : 
+62 record(s) selected to SELECT list #0.
+ 0
+2020-10-05 17:56:47,596 : 27928 : Thread-25 : _command : run : 193 ：DEBUG : Exit : 0 
+62 record(s) selected to SELECT list #0.
+
+2020-10-05 17:56:47,596 : 27928 : Thread-25 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-05 17:56:47,596 : 27928 : Thread-25 : _list : read_list : 203 ：DEBUG : Exit : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0
+2020-10-05 17:56:47,596 : 27928 : Thread-25 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:56:47,611 : 27928 : Thread-25 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 17:56:47,611 : 27928 : Thread-25 : _file : read_named_fields : 714 ：DEBUG : Enter : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0 ['LAST_NAME', 'FIRST_NAME', 'CITY', 'STATE', 'BIRTHDATE', 'GENDER'] 0
+2020-10-05 17:56:47,627 : 27928 : Thread-25 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+2020-10-05 17:56:47,627 : 27928 : Thread-25 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:56:47,627 : 27928 : Thread-25 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 17:56:47,627 : 27928 : Thread-25 : _session : close : 393 ：DEBUG : Enter : 236760944
+2020-10-05 17:56:47,627 : 27928 : Thread-25 : _session : hard_close : 327 ：DEBUG : Exit : 236760944 is hard-closed 
+2020-10-05 17:56:47,627 : 27928 : Thread-25 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 17:56:57,815 : 27928 : Thread-27 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 17:57:03,034 : 27928 : Thread-27 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:57:03,034 : 27928 : Thread-27 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 17:57:03,034 : 27928 : Thread-27 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0526'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-05 17:57:03,034 : 27928 : Thread-27 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0526'], [['Baildham', 'Ehab', '12954 West 13th Street', 'Glenview', 'FL', '92235']])
+2020-10-05 17:57:03,034 : 27928 : Thread-27 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 17:57:03,049 : 27928 : Thread-27 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 17:57:03,049 : 27928 : Thread-27 : _session : close : 393 ：DEBUG : Enter : 236758608
+2020-10-05 17:57:03,049 : 27928 : Thread-27 : _session : hard_close : 327 ：DEBUG : Exit : 236758608 is hard-closed 
+2020-10-05 17:57:03,049 : 27928 : Thread-27 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 18:00:01,917 : 12388 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-05 18:00:01,917 : 12388 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-05 18:00:01,917 : 12388 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-05 18:00:01,918 : 12388 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-05 18:00:03,190 : 22588 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-05 18:00:03,190 : 22588 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-05 18:00:03,190 : 22588 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-05 18:00:03,190 : 22588 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-05 18:00:43,580 : 22588 : Thread-12 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 18:00:48,851 : 22588 : Thread-12 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-05 18:00:48,851 : 22588 : Thread-12 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-05 18:00:48,851 : 22588 : Thread-12 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-05 18:00:48,867 : 22588 : Thread-12 : _session : close : 393 ：DEBUG : Enter : 215288656
+2020-10-05 18:00:48,867 : 22588 : Thread-12 : _session : hard_close : 327 ：DEBUG : Exit : 215288656 is hard-closed 
+2020-10-05 18:00:48,867 : 22588 : Thread-12 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 18:00:52,549 : 22588 : Thread-19 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 18:00:57,814 : 22588 : Thread-19 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 18:00:57,814 : 22588 : Thread-19 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 18:00:57,814 : 22588 : Thread-19 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-05 18:00:57,814 : 22588 : Thread-19 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Street', 'Brisbane', 'LA', '33931']])
+2020-10-05 18:00:57,829 : 22588 : Thread-19 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 18:00:57,829 : 22588 : Thread-19 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 18:00:57,829 : 22588 : Thread-19 : _session : close : 393 ：DEBUG : Enter : 215286480
+2020-10-05 18:00:57,829 : 22588 : Thread-19 : _session : hard_close : 327 ：DEBUG : Exit : 215286480 is hard-closed 
+2020-10-05 18:00:57,829 : 22588 : Thread-19 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 18:01:08,918 : 22588 : Thread-23 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 18:01:14,213 : 22588 : Thread-23 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS WITH  LAST_NAME_SEARCH LIKE ADCOCK...
+2020-10-05 18:01:14,219 : 22588 : Thread-23 : _command : _exec : 152 ：DEBUG : Response :  0
+2020-10-05 18:01:14,219 : 22588 : Thread-23 : _command : run : 193 ：DEBUG : Exit : 0 
+2020-10-05 18:01:14,219 : 22588 : Thread-23 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-05 18:01:14,219 : 22588 : Thread-23 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-05 18:01:14,219 : 22588 : Thread-23 : _session : close : 393 ：DEBUG : Enter : 215600560
+2020-10-05 18:01:14,235 : 22588 : Thread-23 : _session : hard_close : 327 ：DEBUG : Exit : 215600560 is hard-closed 
+2020-10-05 18:01:14,235 : 22588 : Thread-23 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 18:01:18,165 : 22588 : Thread-26 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 18:01:23,419 : 22588 : Thread-26 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-05 18:01:23,419 : 22588 : Thread-26 : _command : _exec : 152 ：DEBUG : Response : 
+62 record(s) selected to SELECT list #0.
+ 0
+2020-10-05 18:01:23,419 : 22588 : Thread-26 : _command : run : 193 ：DEBUG : Exit : 0 
+62 record(s) selected to SELECT list #0.
+
+2020-10-05 18:01:23,419 : 22588 : Thread-26 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-05 18:01:23,419 : 22588 : Thread-26 : _list : read_list : 203 ：DEBUG : Exit : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0
+2020-10-05 18:01:23,419 : 22588 : Thread-26 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 18:01:23,434 : 22588 : Thread-26 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 18:01:23,434 : 22588 : Thread-26 : _file : read_named_fields : 714 ：DEBUG : Enter : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0 ['LAST_NAME', 'FIRST_NAME', 'CITY', 'STATE', 'BIRTHDATE', 'GENDER'] 0
+2020-10-05 18:01:23,434 : 22588 : Thread-26 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+2020-10-05 18:01:23,434 : 22588 : Thread-26 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 18:01:23,434 : 22588 : Thread-26 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 18:01:23,434 : 22588 : Thread-26 : _session : close : 393 ：DEBUG : Enter : 225970864
+2020-10-05 18:01:23,434 : 22588 : Thread-26 : _session : hard_close : 327 ：DEBUG : Exit : 225970864 is hard-closed 
+2020-10-05 18:01:23,434 : 22588 : Thread-26 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 18:01:25,409 : 22588 : Thread-27 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 18:01:30,655 : 22588 : Thread-27 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-05 18:01:30,655 : 22588 : Thread-27 : _session : close : 393 ：DEBUG : Enter : 225970064
+2020-10-05 18:01:30,655 : 22588 : Thread-27 : _session : hard_close : 327 ：DEBUG : Exit : 225970064 is hard-closed 
+2020-10-05 18:01:30,655 : 22588 : Thread-27 : _session : close : 405 ：DEBUG : Exit
+2020-10-05 18:01:34,292 : 22588 : Thread-29 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'us-l-lt03', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-05 18:01:39,541 : 22588 : Thread-29 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-05 18:01:39,541 : 22588 : Thread-29 : _file : open : 182 ：DEBUG : Exit
+2020-10-05 18:01:39,541 : 22588 : Thread-29 : _file : read_named_fields : 714 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-05 18:01:39,557 : 22588 : Thread-29 : _file : read_named_fields : 737 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Street', 'Brisbane', 'LA', '33931']])
+2020-10-05 18:01:39,557 : 22588 : Thread-29 : _file : close : 224 ：DEBUG : Enter : MEMBERS
+2020-10-05 18:01:39,557 : 22588 : Thread-29 : _file : close : 242 ：DEBUG : Exit
+2020-10-05 18:01:39,557 : 22588 : Thread-29 : _session : close : 393 ：DEBUG : Enter : 226089296
+2020-10-05 18:01:39,557 : 22588 : Thread-29 : _session : hard_close : 327 ：DEBUG : Exit : 226089296 is hard-closed 
+2020-10-05 18:01:39,557 : 22588 : Thread-29 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:21:48,141 : 10728 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-06 15:21:48,141 : 10728 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-06 15:21:48,141 : 10728 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-06 15:21:48,141 : 10728 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-06 15:21:49,429 : 14960 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-06 15:21:49,429 : 14960 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-06 15:21:49,429 : 14960 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-06 15:21:49,429 : 14960 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-06 15:22:12,624 : 14960 : Thread-7 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:22:13,346 : 14960 : Thread-7 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-06 15:22:13,370 : 14960 : Thread-7 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X-type - The RELEASE LEVEL of this account
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-06 15:22:13,371 : 14960 : Thread-7 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X-type - The RELEASE LEVEL of this account
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-06 15:22:13,373 : 14960 : Thread-7 : _session : close : 393 ：DEBUG : Enter : 229942128
+2020-10-06 15:22:13,373 : 14960 : Thread-7 : _session : hard_close : 327 ：DEBUG : Exit : 229942128 is hard-closed 
+2020-10-06 15:22:13,373 : 14960 : Thread-7 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:22:15,727 : 14960 : Thread-11 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:22:16,344 : 14960 : Thread-11 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-06 15:22:16,357 : 14960 : Thread-11 : _subroutine : call : 84 ：DEBUG : Exit : *CHART_DATA_UV [<uopy._dynarray.DynArray object ['uvcs'] at 0x000000000DB4A070>, <uopy._dynarray.DynArray object ['0', '0', '0', '0', '0', '0', '0', '0'] at 0x000000000DB4A1B0>]
+2020-10-06 15:22:16,357 : 14960 : Thread-11 : _session : close : 393 ：DEBUG : Enter : 229943472
+2020-10-06 15:22:16,358 : 14960 : Thread-11 : _session : hard_close : 327 ：DEBUG : Exit : 229943472 is hard-closed 
+2020-10-06 15:22:16,359 : 14960 : Thread-11 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:22:24,778 : 14960 : Thread-16 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:22:25,415 : 14960 : Thread-16 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-06 15:22:25,417 : 14960 : Thread-16 : _session : close : 393 ：DEBUG : Enter : 236058992
+2020-10-06 15:22:25,417 : 14960 : Thread-16 : _session : hard_close : 327 ：DEBUG : Exit : 236058992 is hard-closed 
+2020-10-06 15:22:25,417 : 14960 : Thread-16 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:22:31,949 : 14960 : Thread-20 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:22:32,591 : 14960 : Thread-20 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS WITH  LAST_NAME_SEARCH LIKE ADCOCK...
+2020-10-06 15:22:32,596 : 14960 : Thread-20 : _command : _exec : 152 ：DEBUG : Response :  0
+2020-10-06 15:22:32,596 : 14960 : Thread-20 : _command : run : 193 ：DEBUG : Exit : 0 
+2020-10-06 15:22:32,596 : 14960 : Thread-20 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-06 15:22:32,598 : 14960 : Thread-20 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-06 15:22:32,600 : 14960 : Thread-20 : _session : close : 393 ：DEBUG : Enter : 236057744
+2020-10-06 15:22:32,600 : 14960 : Thread-20 : _session : hard_close : 327 ：DEBUG : Exit : 236057744 is hard-closed 
+2020-10-06 15:22:32,601 : 14960 : Thread-20 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:22:37,645 : 14960 : Thread-25 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:22:38,282 : 14960 : Thread-25 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-06 15:22:38,285 : 14960 : Thread-25 : _command : _exec : 152 ：DEBUG : Response :  0
+2020-10-06 15:22:38,286 : 14960 : Thread-25 : _command : run : 193 ：DEBUG : Exit : 0 
+2020-10-06 15:22:38,286 : 14960 : Thread-25 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-06 15:22:38,288 : 14960 : Thread-25 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-06 15:22:38,289 : 14960 : Thread-25 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-06 15:22:38,291 : 14960 : Thread-25 : _session : close : 393 ：DEBUG : Enter : 229942096
+2020-10-06 15:22:38,291 : 14960 : Thread-25 : _session : hard_close : 327 ：DEBUG : Exit : 229942096 is hard-closed 
+2020-10-06 15:22:38,291 : 14960 : Thread-25 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:30:13,178 : 5948 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-06 15:30:13,180 : 5948 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-06 15:30:13,180 : 5948 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-06 15:30:13,180 : 5948 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-06 15:30:14,684 : 14972 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-06 15:30:14,686 : 14972 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-06 15:30:14,686 : 14972 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-06 15:30:14,686 : 14972 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-06 15:30:44,052 : 14972 : Thread-11 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-06 15:30:44,732 : 14972 : Thread-11 : _command : run : 174 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-06 15:30:44,747 : 14972 : Thread-11 : _command : _exec : 152 ：DEBUG : Response : 
+     RELLEVEL
+0001 X-type - The RELEASE LEVEL of this account
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+ 0
+2020-10-06 15:30:44,747 : 14972 : Thread-11 : _command : run : 193 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X-type - The RELEASE LEVEL of this account
+0002 12.1.1
+0003 NEWACC
+0004 
+0005 12.1.1
+
+2020-10-06 15:30:44,747 : 14972 : Thread-11 : _session : close : 393 ：DEBUG : Enter : 244517360
+2020-10-06 15:30:44,747 : 14972 : Thread-11 : _session : hard_close : 327 ：DEBUG : Exit : 244517360 is hard-closed 
+2020-10-06 15:30:44,747 : 14972 : Thread-11 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:30:46,305 : 14972 : Thread-12 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-06 15:30:46,992 : 14972 : Thread-12 : _subroutine : call : 61 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-06 15:30:47,007 : 14972 : Thread-12 : _subroutine : call : 84 ：DEBUG : Exit : *CHART_DATA_UV [<uopy._dynarray.DynArray object ['uvcs'] at 0x000000000E9303B0>, <uopy._dynarray.DynArray object ['0', '0', '0', '0', '0', '0', '0', '0'] at 0x000000000E930090>]
+2020-10-06 15:30:47,007 : 14972 : Thread-12 : _session : close : 393 ：DEBUG : Enter : 244829072
+2020-10-06 15:30:47,007 : 14972 : Thread-12 : _session : hard_close : 327 ：DEBUG : Exit : 244829072 is hard-closed 
+2020-10-06 15:30:47,007 : 14972 : Thread-12 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:30:51,022 : 14972 : Thread-16 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-06 15:30:51,739 : 14972 : Thread-16 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-06 15:30:51,739 : 14972 : Thread-16 : _session : close : 393 ：DEBUG : Enter : 244518736
+2020-10-06 15:30:51,739 : 14972 : Thread-16 : _session : hard_close : 327 ：DEBUG : Exit : 244518736 is hard-closed 
+2020-10-06 15:30:51,739 : 14972 : Thread-16 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:30:56,855 : 14972 : Thread-18 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-06 15:30:57,557 : 14972 : Thread-18 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS WITH  LAST_NAME_SEARCH LIKE SAS...
+2020-10-06 15:30:57,572 : 14972 : Thread-18 : _command : _exec : 152 ：DEBUG : Response :  0
+2020-10-06 15:30:57,572 : 14972 : Thread-18 : _command : run : 193 ：DEBUG : Exit : 0 
+2020-10-06 15:30:57,572 : 14972 : Thread-18 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-06 15:30:57,572 : 14972 : Thread-18 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-06 15:30:57,572 : 14972 : Thread-18 : _session : close : 393 ：DEBUG : Enter : 250607248
+2020-10-06 15:30:57,572 : 14972 : Thread-18 : _session : hard_close : 327 ：DEBUG : Exit : 250607248 is hard-closed 
+2020-10-06 15:30:57,572 : 14972 : Thread-18 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:31:02,223 : 14972 : Thread-21 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'HS.SALES', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'UOPY'}
+2020-10-06 15:31:02,940 : 14972 : Thread-21 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-06 15:31:02,956 : 14972 : Thread-21 : _command : _exec : 152 ：DEBUG : Response :  0
+2020-10-06 15:31:02,956 : 14972 : Thread-21 : _command : run : 193 ：DEBUG : Exit : 0 
+2020-10-06 15:31:02,956 : 14972 : Thread-21 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-06 15:31:02,956 : 14972 : Thread-21 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-06 15:31:02,956 : 14972 : Thread-21 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-06 15:31:02,956 : 14972 : Thread-21 : _session : close : 393 ：DEBUG : Enter : 244517168
+2020-10-06 15:31:02,956 : 14972 : Thread-21 : _session : hard_close : 327 ：DEBUG : Exit : 244517168 is hard-closed 
+2020-10-06 15:31:02,956 : 14972 : Thread-21 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:31:21,118 : 14972 : Thread-24 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'DEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:31:35,283 : 14972 : Thread-25 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:31:35,599 : 14972 : Thread-25 : _command : run : 174 ：DEBUG : Enter : VERSION
+2020-10-06 15:31:35,599 : 14972 : Thread-25 : _command : _exec : 152 ：DEBUG : Response : 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA..................... 0
+2020-10-06 15:31:35,599 : 14972 : Thread-25 : _command : run : 193 ：DEBUG : Exit : 0 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA.....................
+2020-10-06 15:31:35,615 : 14972 : Thread-25 : _session : close : 393 ：DEBUG : Enter : 250607056
+2020-10-06 15:31:35,615 : 14972 : Thread-25 : _session : hard_close : 327 ：DEBUG : Exit : 250607056 is hard-closed 
+2020-10-06 15:31:35,615 : 14972 : Thread-25 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:31:38,130 : 14972 : Thread-27 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:31:38,377 : 14972 : Thread-27 : _subroutine : call : 61 ：DEBUG : Enter : CHART_DATA_UD ['udcs', '']
+2020-10-06 15:31:38,393 : 14972 : Thread-27 : _subroutine : call : 84 ：DEBUG : Exit : CHART_DATA_UD [<uopy._dynarray.DynArray object ['udcs'] at 0x000000000EF13250>, <uopy._dynarray.DynArray object ['0', '0', '0', '0', '0', '0', '0', '0'] at 0x000000000EF13190>]
+2020-10-06 15:31:38,393 : 14972 : Thread-27 : _session : close : 393 ：DEBUG : Enter : 250609648
+2020-10-06 15:31:38,393 : 14972 : Thread-27 : _session : hard_close : 327 ：DEBUG : Exit : 250609648 is hard-closed 
+2020-10-06 15:31:38,393 : 14972 : Thread-27 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:31:44,027 : 14972 : Thread-29 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:31:44,250 : 14972 : Thread-29 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-06 15:31:44,250 : 14972 : Thread-29 : _session : close : 393 ：DEBUG : Enter : 250689008
+2020-10-06 15:31:44,250 : 14972 : Thread-29 : _session : hard_close : 327 ：DEBUG : Exit : 250689008 is hard-closed 
+2020-10-06 15:31:44,250 : 14972 : Thread-29 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:31:51,824 : 14972 : Thread-32 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:31:52,041 : 14972 : Thread-32 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS WITH  LAST_NAME_SEARCH LIKE Q...
+2020-10-06 15:31:52,041 : 14972 : Thread-32 : _command : _exec : 152 ：DEBUG : Response : Not a filename : 
+ MEMBERS 0
+2020-10-06 15:31:52,041 : 14972 : Thread-32 : _command : run : 193 ：DEBUG : Exit : 0 Not a filename : 
+ MEMBERS
+2020-10-06 15:31:52,041 : 14972 : Thread-32 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-06 15:31:52,041 : 14972 : Thread-32 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-06 15:31:52,041 : 14972 : Thread-32 : _session : close : 393 ：DEBUG : Enter : 244518160
+2020-10-06 15:31:52,041 : 14972 : Thread-32 : _session : hard_close : 327 ：DEBUG : Exit : 244518160 is hard-closed 
+2020-10-06 15:31:52,041 : 14972 : Thread-32 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:31:55,304 : 14972 : Thread-35 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:31:55,535 : 14972 : Thread-35 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-06 15:31:55,535 : 14972 : Thread-35 : _command : _exec : 152 ：DEBUG : Response : Not a filename : 
+ MEMBERS 0
+2020-10-06 15:31:55,535 : 14972 : Thread-35 : _command : run : 193 ：DEBUG : Exit : 0 Not a filename : 
+ MEMBERS
+2020-10-06 15:31:55,535 : 14972 : Thread-35 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-06 15:31:55,535 : 14972 : Thread-35 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-06 15:31:55,535 : 14972 : Thread-35 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-06 15:31:55,535 : 14972 : Thread-35 : _session : close : 393 ：DEBUG : Enter : 250729456
+2020-10-06 15:31:55,535 : 14972 : Thread-35 : _session : hard_close : 327 ：DEBUG : Exit : 250729456 is hard-closed 
+2020-10-06 15:31:55,535 : 14972 : Thread-35 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:35:06,688 : 31580 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-06 15:35:06,688 : 31580 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-06 15:35:06,688 : 31580 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-06 15:35:06,688 : 31580 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-06 15:35:08,054 : 27564 : MainThread : _uopy : <module> : 11 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-06 15:35:08,054 : 27564 : MainThread : _uopy : <module> : 12 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-06 15:35:08,054 : 27564 : MainThread : _uopy : <module> : 13 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-06 15:35:08,054 : 27564 : MainThread : _uopy : <module> : 14 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-06 15:35:23,966 : 27564 : Thread-4 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:35:24,220 : 27564 : Thread-4 : _command : run : 174 ：DEBUG : Enter : VERSION
+2020-10-06 15:35:24,222 : 27564 : Thread-4 : _command : _exec : 152 ：DEBUG : Response : 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA..................... 0
+2020-10-06 15:35:24,222 : 27564 : Thread-4 : _command : run : 193 ：DEBUG : Exit : 0 
+    Module Name         Version	  Licensed
+
+UniData RDBMS............ 8.2	  Yes
+Connection Pooling....... 8.2	  Yes
+Device License........... 8.2	  Yes
+NFA...................... 8.2	  Yes
+RFS...................... 8.2	  No
+EDA.....................
+2020-10-06 15:35:24,225 : 27564 : Thread-4 : _session : close : 393 ：DEBUG : Enter : 236449968
+2020-10-06 15:35:24,226 : 27564 : Thread-4 : _session : hard_close : 327 ：DEBUG : Exit : 236449968 is hard-closed 
+2020-10-06 15:35:24,226 : 27564 : Thread-4 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:35:25,709 : 27564 : Thread-7 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:35:25,937 : 27564 : Thread-7 : _subroutine : call : 61 ：DEBUG : Enter : CHART_DATA_UD ['udcs', '']
+2020-10-06 15:35:25,940 : 27564 : Thread-7 : _subroutine : call : 84 ：DEBUG : Exit : CHART_DATA_UD [<uopy._dynarray.DynArray object ['udcs'] at 0x000000000E17FBB0>, <uopy._dynarray.DynArray object ['0', '0', '0', '0', '0', '0', '0', '0'] at 0x000000000E17FAD0>]
+2020-10-06 15:35:25,940 : 27564 : Thread-7 : _session : close : 393 ：DEBUG : Enter : 236452400
+2020-10-06 15:35:25,940 : 27564 : Thread-7 : _session : hard_close : 327 ：DEBUG : Exit : 236452400 is hard-closed 
+2020-10-06 15:35:25,940 : 27564 : Thread-7 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:35:29,591 : 27564 : Thread-11 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:35:29,831 : 27564 : Thread-11 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-06 15:35:29,832 : 27564 : Thread-11 : _session : close : 393 ：DEBUG : Enter : 244811376
+2020-10-06 15:35:29,832 : 27564 : Thread-11 : _session : hard_close : 327 ：DEBUG : Exit : 244811376 is hard-closed 
+2020-10-06 15:35:29,832 : 27564 : Thread-11 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:35:33,649 : 27564 : Thread-15 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:35:33,859 : 27564 : Thread-15 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-06 15:35:33,860 : 27564 : Thread-15 : _command : _exec : 152 ：DEBUG : Response : Not a filename : 
+ MEMBERS 0
+2020-10-06 15:35:33,860 : 27564 : Thread-15 : _command : run : 193 ：DEBUG : Exit : 0 Not a filename : 
+ MEMBERS
+2020-10-06 15:35:33,860 : 27564 : Thread-15 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-06 15:35:33,861 : 27564 : Thread-15 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-06 15:35:33,861 : 27564 : Thread-15 : _file : open : 159 ：DEBUG : Enter : MEMBERS
+2020-10-06 15:35:33,862 : 27564 : Thread-15 : _session : close : 393 ：DEBUG : Enter : 244912656
+2020-10-06 15:35:33,862 : 27564 : Thread-15 : _session : hard_close : 327 ：DEBUG : Exit : 244912656 is hard-closed 
+2020-10-06 15:35:33,862 : 27564 : Thread-15 : _session : close : 405 ：DEBUG : Exit
+2020-10-06 15:35:41,460 : 27564 : Thread-19 : _session : __init__ : 72 ：DEBUG : Enter : {'host': 'localhost', 'account': 'demo', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'louie'}
+2020-10-06 15:35:41,689 : 27564 : Thread-19 : _command : run : 174 ：DEBUG : Enter : SELECT MEMBERS WITH  LAST_NAME_SEARCH LIKE DDD...
+2020-10-06 15:35:41,690 : 27564 : Thread-19 : _command : _exec : 152 ：DEBUG : Response : Not a filename : 
+ MEMBERS 0
+2020-10-06 15:35:41,690 : 27564 : Thread-19 : _command : run : 193 ：DEBUG : Exit : 0 Not a filename : 
+ MEMBERS
+2020-10-06 15:35:41,690 : 27564 : Thread-19 : _list : read_list : 179 ：DEBUG : Enter : 0
+2020-10-06 15:35:41,691 : 27564 : Thread-19 : _list : read_list : 203 ：DEBUG : Exit : 
+2020-10-06 15:35:41,693 : 27564 : Thread-19 : _session : close : 393 ：DEBUG : Enter : 236452784
+2020-10-06 15:35:41,693 : 27564 : Thread-19 : _session : hard_close : 327 ：DEBUG : Exit : 236452784 is hard-closed 
+2020-10-06 15:35:41,693 : 27564 : Thread-19 : _session : close : 405 ：DEBUG : Exit
+2020-10-14 11:25:11,664 : 16308 : MainThread : _uopy : <module> : 14 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-14 11:25:11,664 : 16308 : MainThread : _uopy : <module> : 15 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-14 11:25:11,664 : 16308 : MainThread : _uopy : <module> : 16 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-14 11:25:11,664 : 16308 : MainThread : _uopy : <module> : 17 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-14 11:25:12,564 : 15212 : MainThread : _uopy : <module> : 14 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-14 11:25:12,564 : 15212 : MainThread : _uopy : <module> : 15 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-14 11:25:12,564 : 15212 : MainThread : _uopy : <module> : 16 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-14 11:25:12,564 : 15212 : MainThread : _uopy : <module> : 17 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-14 11:25:50,700 : 15212 : Thread-7 : _session : __init__ : 75 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'xshen'}
+2020-10-14 11:25:51,282 : 15212 : Thread-7 : _command : run : 177 ：DEBUG : Enter : CT VOC RELLEVEL
+2020-10-14 11:25:51,296 : 15212 : Thread-7 : _command : _exec : 155 ：DEBUG : Response : 
+     RELLEVEL
+0001 X
+0002 11.3.2
+0003 NEWACC
+0004 
+0005 11.3.2
+ 0
+2020-10-14 11:25:51,296 : 15212 : Thread-7 : _command : run : 196 ：DEBUG : Exit : 0 
+     RELLEVEL
+0001 X
+0002 11.3.2
+0003 NEWACC
+0004 
+0005 11.3.2
+
+2020-10-14 11:25:51,296 : 15212 : Thread-7 : _session : close : 396 ：DEBUG : Enter : 2380740075872
+2020-10-14 11:25:51,297 : 15212 : Thread-7 : _session : hard_close : 330 ：DEBUG : Exit : 2380740075872 is hard-closed 
+2020-10-14 11:25:51,297 : 15212 : Thread-7 : _session : close : 408 ：DEBUG : Exit
+2020-10-14 11:25:55,877 : 15212 : Thread-11 : _session : __init__ : 75 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'xshen'}
+2020-10-14 11:25:56,190 : 15212 : Thread-11 : _subroutine : call : 64 ：DEBUG : Enter : *CHART_DATA_UV ['uvcs', '']
+2020-10-14 11:25:56,192 : 15212 : Thread-11 : _session : close : 396 ：DEBUG : Enter : 2380739823264
+2020-10-14 11:25:56,192 : 15212 : Thread-11 : _session : hard_close : 330 ：DEBUG : Exit : 2380739823264 is hard-closed 
+2020-10-14 11:25:56,192 : 15212 : Thread-11 : _session : close : 408 ：DEBUG : Exit
+2020-10-14 11:26:02,312 : 15212 : Thread-16 : _session : __init__ : 75 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'xshen'}
+2020-10-14 11:26:02,612 : 15212 : Thread-16 : _file : open : 162 ：DEBUG : Enter : MEMBERS
+2020-10-14 11:26:02,616 : 15212 : Thread-16 : _file : open : 185 ：DEBUG : Exit
+2020-10-14 11:26:02,617 : 15212 : Thread-16 : _file : read_named_fields : 717 ：DEBUG : Enter : ['0855'] ['LAST_NAME', 'FIRST_NAME', 'ADDRESS', 'CITY', 'STATE_CODE', 'ZIP'] 0
+2020-10-14 11:26:02,621 : 15212 : Thread-16 : _file : read_named_fields : 740 ：DEBUG : Exit : (['0'], ['0'], ['0855'], [['Adcock', 'Doug', '927 Dublin Street', 'Brisbane', 'LA', '33931']])
+2020-10-14 11:26:02,622 : 15212 : Thread-16 : _file : close : 227 ：DEBUG : Enter : MEMBERS
+2020-10-14 11:26:02,622 : 15212 : Thread-16 : _file : close : 245 ：DEBUG : Exit
+2020-10-14 11:26:02,622 : 15212 : Thread-16 : _session : close : 396 ：DEBUG : Enter : 2380740078848
+2020-10-14 11:26:02,622 : 15212 : Thread-16 : _session : hard_close : 330 ：DEBUG : Exit : 2380740078848 is hard-closed 
+2020-10-14 11:26:02,622 : 15212 : Thread-16 : _session : close : 408 ：DEBUG : Exit
+2020-10-14 11:26:05,463 : 15212 : Thread-21 : _session : __init__ : 75 ：DEBUG : Enter : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'uvcs', 'encoding': 'cp1252', 'ssl': False, 'user': 'xshen'}
+2020-10-14 11:26:05,760 : 15212 : Thread-21 : _command : run : 177 ：DEBUG : Enter : SELECT MEMBERS BY CITY BY LAST_NAME WITH  STATE_CODE = 'NY'
+2020-10-14 11:26:05,771 : 15212 : Thread-21 : _command : _exec : 155 ：DEBUG : Response : 
+62 record(s) selected to SELECT list #0.
+ 0
+2020-10-14 11:26:05,771 : 15212 : Thread-21 : _command : run : 196 ：DEBUG : Exit : 0 
+62 record(s) selected to SELECT list #0.
+
+2020-10-14 11:26:05,771 : 15212 : Thread-21 : _list : read_list : 182 ：DEBUG : Enter : 0
+2020-10-14 11:26:05,772 : 15212 : Thread-21 : _list : read_list : 206 ：DEBUG : Exit : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0
+2020-10-14 11:26:05,772 : 15212 : Thread-21 : _file : open : 162 ：DEBUG : Enter : MEMBERS
+2020-10-14 11:26:05,773 : 15212 : Thread-21 : _file : open : 185 ：DEBUG : Exit
+2020-10-14 11:26:05,773 : 15212 : Thread-21 : _file : read_named_fields : 717 ：DEBUG : Enter : 1466þ0837þ0711þ0016þ0663þ0689þ2291þ2010þ1621þ1064þ2260þ0693þ1916þ1243þ0332þ1928þ1268þ1635þ1894þ1993þ0590þ0871þ0621þ2188þ0772þ0768þ1302þ2352þ1418þ2407þ0845þ1341þ1251þ0539þ1876þ1152þ1316þ0651þ0388þ2334þ0283þ0072þ0655þ2309þ1825þ2442þ1570þ0612þ0422þ1087þ0811þ0 ['LAST_NAME', 'FIRST_NAME', 'CITY', 'STATE', 'BIRTHDATE', 'GENDER'] 0
+2020-10-14 11:26:05,776 : 15212 : Thread-21 : _file : read_named_fields : 740 ：DEBUG : Exit : (['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0',
+2020-10-14 11:26:05,779 : 15212 : Thread-21 : _file : close : 227 ：DEBUG : Enter : MEMBERS
+2020-10-14 11:26:05,779 : 15212 : Thread-21 : _file : close : 245 ：DEBUG : Exit
+2020-10-14 11:26:05,779 : 15212 : Thread-21 : _session : close : 396 ：DEBUG : Enter : 2380740078176
+2020-10-14 11:26:05,779 : 15212 : Thread-21 : _session : hard_close : 330 ：DEBUG : Exit : 2380740078176 is hard-closed 
+2020-10-14 11:26:05,779 : 15212 : Thread-21 : _session : close : 408 ：DEBUG : Exit

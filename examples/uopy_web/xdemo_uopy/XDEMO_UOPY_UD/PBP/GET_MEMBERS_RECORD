@@ -1,0 +1,38 @@
+SUBROUTINE GET_MEMBERS_RECORD(MEMBER_ID, MEMBER_XML_RECORD, RETURN_CODE, ERROR_MESSAGE)
+
+*****************************************************************************
+*	Subroutine: GET_MEMBERS_RECORD
+*       Copyright (C) Rocket Software 1993-2015
+*	For UniData: Compile with ‘-I’ option and catalog subroutine.
+*	Desc:	This sample program demonstrates the use of XMLExecute()
+*	to return a U2 record data to the calling program in XML format.
+*	It receives a member's ID and constructs a query
+*	to produce the member's name and address information
+*	in element-centric mode.
+*	Notes:	This program was written in UniData, some changes may be needed
+*	(such as the include below) to work in UniVerse but the concepts
+*	are the same.
+*****************************************************************************
+
+$INCLUDE INCLUDE XML.H
+CMD="LIST MEMBERS FIRST_NAME LAST_NAME ADDRESS CITY STATE_CODE "
+CMD:="WITH @ID=":MEMBER_ID
+
+*	Create only the record portion of the XML document (no need for XML schema) 
+OPTIONS = "HIDEROOT"
+
+*	Output XML in element-centric format 
+OPTIONS := @FM:"ELEMENTS"
+
+XSDVAR = ''; MEMBER_XML_RECORD = ''; ERROR_MESSAGE = ''
+
+RETURN_CODE = XMLExecute(CMD, OPTIONS, MEMBER_XML_RECORD, XSDVAR)
+***
+IF RETURN_CODE NE XML.SUCCESS THEN 
+  R = XMLError(ERROR_MESSAGE)
+  CRT "XMLExecute failed, Error Message: ":ERROR_MESSAGE
+END
+
+RETURN
+
+*****************************************************************************

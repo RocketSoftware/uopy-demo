@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- import plugin script -->
+    <script src='static/Chart.min.js'></script>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+  </head>
+    <!--  body { background: #555;} -->
+     <style>
+
+    
+   
+
+     
+
+     .content {
+        max-width:500px;
+        margin:auto;
+     }
+    </style>
+    <div class="container">
+        
+     <form  action="display_members" method="POST">
+        <label>Python User Group Members by State  </label>
+      {{form.state()}}
+            
+         <input type="submit" value="Submit">
+     </form>
+
+
+	
+</div>
+	

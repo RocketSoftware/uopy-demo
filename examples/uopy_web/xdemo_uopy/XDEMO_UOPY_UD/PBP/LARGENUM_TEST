@@ -1,0 +1,38 @@
+*****************************************************************************
+*
+*	Program:	LARGENUM_TEST
+*       Copyright (C) Rocket Software 1993-2015
+*	Desc:	This sample program calculates square root of a large decimal number,
+*	first using U2 SQRT function and then by calling a Python function.
+*	Precision is lost when using U2 SQRT due to the use of floating
+*	point calculations. The Python function is able to return a better
+*	precision through the use of Decimal module and higher precision
+*	specification.
+*
+*	Python function getsqrt() takes a number as an input and
+*	returns its square root. Note the use of getcontext().prec = 64
+*	which overrides the default precision of 28.
+*
+***************************************************************************** 
+NMBR = "12345678901234567894.1111111"
+CRT "NMBR=" :NMBR
+CRT "U2 RESULT: "
+CRT "SQRT(NMBR)= " :SQRT(NMBR)
+
+ModuleName = "largenum_sqrt"
+FuncName = "getsqrt"
+
+*	call the Python function
+pyresult = PyCallFunction(ModuleName, FuncName, NMBR)
+
+*	check the outcome and CRT exception and traceback information
+*	if an exception was raised
+IF @PYEXCEPTIONTYPE = '' THEN 
+  CRT "Python RESULT: "
+  CRT "SQRT(NMBR)= " :pyresult 
+END ELSE
+  CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE
+  CRT "EXCEPTION MESSAGE IS " :@PYEXCEPTIONMSG
+  CRT "EXCEPTIONTRACEBACK IS " :@PYEXCEPTIONTRACEBACK
+END
+************************************************************************

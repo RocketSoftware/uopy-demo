@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- import plugin script -->
+    <script src='static/Chart.min.js'></script>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+  </head>
+  
+     <style>
+
+     
+     .content {
+        max-width:500px;
+        margin:auto;
+     }
+    </style>
+<div class="container">
+<h2>Member Edit</h2>
+<!--<form  method="post">-->
+  {% from "_formhelpers.html" import render_field %}
+  <form method=post>
+      <dl>
+          {{ render_field(form.lastname) }}
+          {{ render_field(form.firstname) }}
+          {{ render_field(form.address1) }}
+          {{ render_field(form.address2) }}
+          {{ render_field(form.city) }}
+          {{ render_field(form.statecode) }}
+          {{ render_field(form.zip) }}
+      </dl>
+      <p><input type=submit value=Submit>
+  </form>
+</div>
+</html>

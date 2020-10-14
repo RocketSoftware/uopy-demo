@@ -1,0 +1,52 @@
+*****************************************************************************
+*
+*	Program:	SENDALERT_PYFUNC
+*       Copyright (C) Rocket Software 1993-2017
+*	Desc:	This sample program sends a hardware failure notification to
+*	a system administrator with the use of Python’s smtplib and
+*	Google Gmail SMTP server.
+*	The U2 Basic program prompts the user for sender’s and recipient’s
+*	email addresses, message subject and body, Gmail username
+*	and password.
+*	It demonstrates the use of the new function in U2 Basic,
+*	PyCallFunction(), by calling the Python function SendAlert().
+*
+*	Python function SendAlert() uses input parameters received from
+*	SENDALERT_PYFUNC to construct the email message text
+*	and sends it through GMail server.
+*
+*	Note: To use this example with Gmail, turn on "Access for less secure apps" in your Gmail settings.
+*	Here is the link to set the less secure apps - https://www.google.com/settings/security/lesssecureapps
+*	The IMAP Access option for the gmail user must be enabled.
+*
+*****************************************************************************
+PROMPT ""
+ModuleName = "Notification"
+FuncName = "SendAlert"
+
+CRT "Enter Sender's Address: ":; INPUT fromaddr
+CRT "Enter Recipient's Address: ":; INPUT toaddrs 
+CRT "Enter Message Subject: ":; INPUT subject 
+CRT "Enter Message Body: ":; INPUT msgtext 
+ECHO OFF
+CRT "(Authentication) Enter gmail username: ":; INPUT username
+ECHO ON
+CRT ""
+ECHO OFF
+CRT "(Authentication) Enter user password: ":; INPUT password
+ECHO ON
+CRT ""
+
+*	call the Python function
+pyresult = PyCallFunction(ModuleName, FuncName, fromaddr, toaddrs, subject, msgtext, username, password)
+
+*	check the outcome and CRT exception and traceback information
+*	if an exception was raised
+IF @PYEXCEPTIONTYPE = '' THEN
+   CRT "Successfully sent the message to ":toaddrs 
+END ELSE
+   CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE 
+   CRT "EXCEPTION MESSAGE IS " :@PYEXCEPTIONMSG
+   CRT "EXCEPTIONTRACEBACK IS " :@PYEXCEPTIONTRACEBACK
+END
+*****************************************************************************************

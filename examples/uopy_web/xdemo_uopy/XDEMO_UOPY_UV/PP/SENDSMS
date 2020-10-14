@@ -1,0 +1,46 @@
+*****************************************************************************
+*
+*	Program:	SENDSMS
+*       Copyright (C) Rocket Software 1993-2017
+*	Desc:	This sample program sends a SMS  to
+*  a phone number with the use of a Twilio assigned phone number
+*  The U2 BASIC program prompts the user for phone numbers and message
+*	It demonstrates the use of the new function in U2 Basic,
+*	PyCallFunction(), by calling the Python function SendSMS().
+*
+*	Python function SendSMS() uses input parameters received from
+*  SENDSMS to construct the SMS
+*  and sends it through Twilio server.
+*
+*
+*****************************************************************************
+PROMPT ""
+ModuleName = "send_sms1"
+FuncName = "SendSMS"
+
+*CRT "Enter Sender's Address: ":; INPUT fromaddr
+CRT "Enter Recipient's Phone Number: ":; INPUT tophones 
+*CRT "Enter Message Subject: ":; INPUT subject 
+CRT "Enter Message Body: ":; INPUT msgtext 
+*ECHO OFF
+*CRT "(Authentication) Enter gmail username: ":; INPUT username
+*ECHO ON
+*CRT ""
+*ECHO OFF
+*CRT "(Authentication) Enter user password: ":; INPUT password
+*ECHO ON
+*CRT ""
+
+*	call the Python function
+pyresult = PyCallFunction(ModuleName, FuncName,  tophones,  msgtext)
+
+*	check the outcome and CRT exception and traceback information
+*	if an exception was raised
+IF @PYEXCEPTIONTYPE = '' THEN
+   CRT "Successfully sent the message to ":tophones 
+END ELSE
+   CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE 
+   CRT "EXCEPTION MESSAGE IS " :@PYEXCEPTIONMSG
+   CRT "EXCEPTIONTRACEBACK IS " :@PYEXCEPTIONTRACEBACK
+END
+*****************************************************************************************
