@@ -1392,3 +1392,11 @@ EDA.....................
 2020-10-14 11:26:05,779 : 15212 : Thread-21 : _session : close : 396 ：DEBUG : Enter : 2380740078176
 2020-10-14 11:26:05,779 : 15212 : Thread-21 : _session : hard_close : 330 ：DEBUG : Exit : 2380740078176 is hard-closed 
 2020-10-14 11:26:05,779 : 15212 : Thread-21 : _session : close : 408 ：DEBUG : Exit
+2020-10-14 11:51:39,358 : 20300 : MainThread : _uopy : <module> : 14 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-14 11:51:39,358 : 20300 : MainThread : _uopy : <module> : 15 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-14 11:51:39,359 : 20300 : MainThread : _uopy : <module> : 16 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-14 11:51:39,359 : 20300 : MainThread : _uopy : <module> : 17 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
+2020-10-14 11:51:55,094 : 23416 : MainThread : _uopy : <module> : 14 ：INFO : {'host': 'localhost', 'account': 'XDEMO', 'port': 31438, 'timeout': 100, 'service': 'udcs', 'encoding': 'cp1252', 'ssl': False}
+2020-10-14 11:51:55,094 : 23416 : MainThread : _uopy : <module> : 15 ：INFO : {'pooling_on': False, 'min_pool_size': 5, 'max_pool_size': 15, 'max_wait_time': 60, 'idle_remove_threshold': 300, 'idle_remove_interval': 300}
+2020-10-14 11:51:55,094 : 23416 : MainThread : _uopy : <module> : 16 ：INFO : {'client_auth_required': False, 'server_cert_file': 'c:\temp\\desktop-ppdt4ds.crt', 'client_cert_file': '', 'client_key_file': '', 'check_hostname': False}
+2020-10-14 11:51:55,094 : 23416 : MainThread : _uopy : <module> : 17 ：INFO : {'level': 'DEBUG', 'format': 'standard', 'dir': './logs', 'file_name': 'uopy.log', 'max_size': 524288, 'backup_count': 10, 'unirpc_debug': False, 'log_data_max_size': 256}
