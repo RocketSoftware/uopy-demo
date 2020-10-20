@@ -1,6 +1,6 @@
 # UOPY demo
 
-UniObjects for Python demo programs.
+UniObjects for Python (UOPY) is a Python package by Rocket Software.
 
 ## Installation
 
@@ -12,9 +12,9 @@ $ pip install uopy
 
 ## Quick start
 
-**Before use UOPY to connect requires a running Universe/UniData server.** 
+**Before using UOPY to connect to an MV Database, you must be running either a UniVerse or UniData server.** 
 
-The following example use UOPY to connect to [UniVerse](https://www.rocketsoftware.com/products/rocket-universe-0/rocket-universe) on Windows.
+The following example uses UOPY to connect to [UniVerse](https://www.rocketsoftware.com/products/rocket-universe-0/rocket-universe) on Windows.
 
 ```python
 >>> import uopy
@@ -32,10 +32,17 @@ WHSE3         Tertiary Warehouse
 
 3 records listed.
 ```
-### Examples code
 
-* UOPY GUI [link](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_tkexample)
-* UOPY Web App [link](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_web)
+## Resources
+
+1. Intro to UOPY, UniObjects for Python
+    - [video link](https://www.rocketsoftware.com/resource/intro-uopy-uniobjects-python)
+2. UOPY GUI examples
+    - [video link](https://www.rocketsoftware.com/resource/uopy-gui-examples)
+    - [code link](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_tkexample)
+3. Webserver app demo
+    - [video link](https://www.rocketsoftware.com/resource/webserver-app-demo)
+    - [code link](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_web)
 
 ## API Reference
 
