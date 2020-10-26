@@ -35,16 +35,13 @@ WHSE3         Tertiary Warehouse
 
 ## Resources
 
-1. UOPY: Intro to UOPY, UniObjects for Python
-    - [video link](https://www.rocketsoftware.com/resource/intro-uopy-uniobjects-python)
-2. UOPY: GUI examples
-    - [video link](https://www.rocketsoftware.com/resource/uopy-gui-examples)
-    - [code link](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_tkexample)
-3. UOPY: Webserver app demo
-    - [video link](https://www.rocketsoftware.com/resource/webserver-app-demo)
-    - [code link](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_web)
-4. UOPY: Android Demo
-    - [video link](https://www.rocketsoftware.com/resource/uopy-android-demo)
+| Name | Link  |
+|---|---|
+| GitHub UOPY examples repository | [home](https://github.com/RocketSoftware/uopy-demo)  |
+| UOPY: Intro to UOPY, UniObjects for Python | [video](https://www.rocketsoftware.com/resource/intro-uopy-uniobjects-python) |
+| UOPY: GUI examples | [video](https://www.rocketsoftware.com/resource/uopy-gui-examples), [code](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_tkexample) |
+| UOPY: Webserver app demo |  [video](https://www.rocketsoftware.com/resource/webserver-app-demo), [code](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_web) |
+| UOPY: Android Demo | [video](https://www.rocketsoftware.com/resource/uopy-android-demo) |
 
 ## API Reference
 
