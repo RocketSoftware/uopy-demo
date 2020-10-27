@@ -1756,7 +1756,34 @@ Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#DynArray">DynArray</a>:&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;@var<br>
 &nbsp;<br>
 Raises:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a></tt></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#UOError">UOError</a><br>
+&nbsp;<br>
+Examples:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;import&nbsp;uopy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;for&nbsp;atvar&nbsp;in&nbsp;uopy.AtVar:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(atvar.name,&nbsp;atvar.value)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LOG_NAME&nbsp;1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PATH&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;USER_NO&nbsp;3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WHO&nbsp;4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TRANSACTION&nbsp;5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DATA_PENDING&nbsp;6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;USER_RETURN_CODE&nbsp;7<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SYSTEM_RETURN_CODE&nbsp;8<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NULL_STR&nbsp;9<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA&nbsp;10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TRANSACTION_LEVEL&nbsp;11<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;with&nbsp;uopy.<a href="#Session-connect">connect</a>(user='test_user',&nbsp;password='test_password')&nbsp;as&nbsp;session:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_name&nbsp;=&nbsp;session.<a href="#Session-get_atvar">get_atvar</a>(uopy.AtVar.LOG_NAME)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;account_path&nbsp;=&nbsp;session.<a href="#Session-get_atvar">get_atvar</a>(uopy.AtVar.PATH)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(log_name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(account_path)<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;test_user<br>
+&nbsp;&nbsp;&nbsp;&nbsp;C:\U2\ud82\XDEMO</tt></dd></dl>
 
 <dl><dt><a name="Session-hard_close"><strong>hard_close</strong></a>(self)</dt></dl>
 
