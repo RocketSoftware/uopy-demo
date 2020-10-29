@@ -75,8 +75,6 @@ def hello():
         global dbms
         global server
         global account
-        global session
-        global choices
         global memberid
 
         form = Login(request.form)
@@ -188,11 +186,42 @@ def membystate():
 
     form = DisplayForm(request.form)
     if request.method == 'POST':
-        print('here at membystate')
+ #       print('here at membystate')
         return render_template('default.html', user=user,
                                content=render_template('display_members.html'
                                , user=user, form=form))
     else:
+        try:
+            with uopy.connect(user=user, password=password,
+                              host=server, account=account,
+                              service=dbms):
+                cmd = uopy.Command('SELECT STATES BY STATE_NAME ')
+                cmd.run()
+                select_list = uopy.List()
+                ids = select_list.read_list()
+ #               print(ids)
+                if not ids:
+                    flash('No results found!')
+                    print('no results found')
+                    error = 'no records found'
+                    return redirect('/index.html')
+                else:
+                    with uopy.File('STATES') as mem:
+                            field_list = [
+                                'ID',
+                                'STATE_NAME',
+                                ]
+                            id_list = ids
+                            read_rs = mem.read_named_fields(id_list, field_list)
+                            u2data = read_rs[3]
+ #                           print(u2data)
+ #                           MemFile.memberid.choices[0] = ids
+ #                           MemFile.memberid.choices[1] = u2data
+                            form.state.choices = u2data
+        except uopy.UOError as e:
+                    print(e.code)
+                    flash(e.code)
+
         return render_template('default.html', user=user,
                                content=render_template('membystate.html'
                                , user=user, form=form))
@@ -204,7 +233,7 @@ def display_members():
     if request.method == 'POST':
         state = request.form['state']
 
-    print('at display')
+ #   print('at display')
     print(state)
     try:
         with uopy.connect(host=server, user=user, password=password,
@@ -288,6 +317,7 @@ def memsearch():
                     id_list = ids
                     read_rs = mem.read_named_fields(id_list, field_list)
                     u2data = read_rs[3]
+#                    print(u2data)
                     data = pd.DataFrame(u2data, columns=[
                         'ID',
                         'LAST_NAME',
@@ -332,7 +362,7 @@ def mempick():
                     id_list = [memberid]
                     read_rs = mem_file.read_named_fields(id_list,
                             field_list)
-                    print(read_rs)
+#                    print(read_rs)
                     LastName = read_rs[3][0][0]
                     FirstName = read_rs[3][0][1]
                     Address = read_rs[3][0][2]
@@ -363,7 +393,36 @@ def mempick():
             flash(e.code)
             return render_template('default.html', user=user)
     else:
-
+        try:
+            with uopy.connect(user=user, password=password,
+                              host=server, account=account,
+                              service=dbms):
+                cmd = uopy.Command('SELECT MEMBERS BY LAST_NAME_FIRST ')
+                cmd.run()
+                select_list = uopy.List()
+                ids = select_list.read_list()
+ #               print(ids)
+                if not ids:
+                    flash('No results found!')
+                    print('no results found')
+                    error = 'no records found'
+                    return redirect('/index.html')
+                else:
+                    with uopy.File('MEMBERS') as mem:
+                            field_list = [
+                                'ID',
+                                'LAST_NAME_FIRST',
+                                ]
+                            id_list = ids
+                            read_rs = mem.read_named_fields(id_list, field_list)
+                            u2data = read_rs[3]
+ #                           print(u2data)
+ #                           MemFile.memberid.choices[0] = ids
+ #                           MemFile.memberid.choices[1] = u2data
+                            form.memberid.choices = u2data
+        except uopy.UOError as e:
+                    print(e.code)
+                    flash(e.code)
         return render_template('default.html', user=user,
                                content=render_template('memfile.html',
                                user=user, form=form))
