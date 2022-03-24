@@ -14,7 +14,7 @@ Enhancements and fixes
 As of uopy 1.2.0, there is a new method to get the fileinfo information for a uopy.File object. 
 It gets the same information as if you were using the MultiValue BASIC FILEINFO function.
 
-Requirements: You must be connected to a UniData 8.2.4 or later, or UniVerse 12.2.1 or later to use this feature.
+Requirements: You must be connected to UniData 8.2.4 or later, or UniVerse 12.2.1 or later to use this feature.
 
 In order to get the fileinfo information, you must call the uopy.File.fileInfoEx method.
 
@@ -106,7 +106,7 @@ pkg_resources.get_distribution("uopy").version
   
 ### Server-side requirements
   
-In order to get the fileInfo information using the uopy.File.fileInfoEx method, you must be connected UniData 8.2.4 or UniVerse 12.2.1.
+In order to get the fileInfo information using the uopy.File.fileInfoEx method, you must be connected to UniData 8.2.4 or UniVerse 12.2.1.
 
 If you are on a prior release, the method will raise an uopy.UOError exception: For example:
 
