@@ -1,5 +1,7 @@
 # UOPY demo
 
+[![PyPI](https://img.shields.io/pypi/v/uopy)](https://pypi.org/project/uopy/)
+
 UniObjects for Python (UOPY) is a Python package by Rocket Software. It is a client API that allows Python applications to access Rocket MV Databases over the network.
 
 ## Installation
