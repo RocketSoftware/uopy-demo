@@ -4,20 +4,20 @@
 
 Enhancement and fixes
 
-- UOPY -94 Request to retrieve the UO Server timeout value from UOPY (external story)
-- UOPY -95 Calling Subroutine from UO client using Connection Pooling causes session to become unresponsive when entering debugger (external story)
-- UOPY -93 Support uopy.File.fileinfo Function like u2py for UD (internal story)
-- UOPY -62 Need way to determine version of uopy from inside the module. (internal story)
-- UOPY -44 UOPY connection not released when session killed on server (external bug)
-- UOPY -96 test_performance.TestPerformance.test_read_named_fields has an error when running in Linux (internal bug)
+- UOPY-94 Request to retrieve the UO Server timeout value from UOPY (external story)
+- UOPY-95 Calling Subroutine from UO client using Connection Pooling causes session to become unresponsive when entering debugger (external story)
+- UOPY-93 Support uopy.File.fileinfo Function like u2py for UD (internal story)
+- UOPY-62 Need way to determine version of uopy from inside the module. (internal story)
+- UOPY-44 UOPY connection not released when session killed on server (external bug)
+- UOPY-96 test_performance.TestPerformance.test_read_named_fields has an error when running in Linux (internal bug)
 
 ## UOPY 1.2.0 - Mar 24, 2022
 
 Enhancements and fixes
 
-- UOPY- 41 Prior to this release, uopy returned two values when only one id was sent to `read_named_fields`, and the id was not found in the file.
-- UOPY- 42 This release adds a method to the `uopy.File` object that gets the fileinfo information from the server.
-- UOPY- 43 An issue with the `uopy.connect` method, where turning on connection pooling was only allowed from the `uopy.ini`, has been fixed in this release. Passing `pooling_on=True` in the `uopy.connect` method will properly utilize a connection pooling license if available.
+- UOPY-41 Prior to this release, uopy returned two values when only one id was sent to `read_named_fields`, and the id was not found in the file.
+- UOPY-42 This release adds a method to the `uopy.File` object that gets the fileinfo information from the server.
+- UOPY-43 An issue with the `uopy.connect` method, where turning on connection pooling was only allowed from the `uopy.ini`, has been fixed in this release. Passing `pooling_on=True` in the `uopy.connect` method will properly utilize a connection pooling license if available.
 - UOPY- 66 Various performance enhancements have been made to the `uopy.File.Read` and `uopy.File.Write` methods.
 
 ### Getting fileinfo from a uopy.File object
