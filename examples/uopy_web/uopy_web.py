@@ -1,7 +1,7 @@
 ﻿from flask import Flask, flash, request, url_for, redirect, \
     send_from_directory, flash
 from flask import render_template
-from wtforms import Form, TextField, TextAreaField, validators, \
+from wtforms import Form, TextAreaField, validators, \
     StringField, SubmitField, RadioField, SelectField
 import pandas as pd
 import uopy
@@ -15,13 +15,13 @@ app.static_folder = os.path.abspath('./static/')
 
 class Login(Form):
 
-    server = TextField('Server:',
+    server = StringField('Server:',
                        validators=[validators.DataRequired()])
-    account = TextField('Account:',
+    account = StringField('Account:',
                         validators=[validators.DataRequired()])
-    user = TextField('User:', validators=[validators.DataRequired(),
+    user = StringField('User:', validators=[validators.DataRequired(),
                      validators.Length(min=6, max=35)])
-    password = TextField('Password:',
+    password = StringField('Password:',
                          validators=[validators.DataRequired(),
                          validators.Length(min=3, max=35)])
     dbms = RadioField('dbms', [validators.DataRequired()],
@@ -50,22 +50,22 @@ class MemFile(Form):
 
 class MemEdit(Form):
 
-    lastname = TextField('LastName',
+    lastname = StringField('LastName',
                          validators=[validators.DataRequired()])
-    firstname = TextField('FirstName',
+    firstname = StringField('FirstName',
                           validators=[validators.DataRequired()])
-    address1 = TextField('Address1',
+    address1 = StringField('Address1',
                          validators=[validators.DataRequired()])
-    address2 = TextField('Address2')
-    city = TextField('City', validators=[validators.DataRequired()])
-    statecode = TextField('State',
+    address2 = StringField('Address2')
+    city = StringField('City', validators=[validators.DataRequired()])
+    statecode = StringField('State',
                           validators=[validators.DataRequired()])
-    zip = TextField('Zip', validators=[validators.DataRequired()])
+    zip = StringField('Zip', validators=[validators.DataRequired()])
 
 
 class MemSearch(Form):
 
-    id = TextField('LastName', validators=[validators.DataRequired()])
+    id = StringField('LastName', validators=[validators.DataRequired()])
 
 @app.route('/', methods=['GET', 'POST'])
 def hello():
