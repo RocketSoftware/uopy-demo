@@ -1,3 +1,6 @@
+.venv/
+.ruff_cache/
+venv/
 
 examples/uopy_tkexample/logs/
 examples/uopy_web/logs/

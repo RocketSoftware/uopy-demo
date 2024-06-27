@@ -18,7 +18,7 @@ $ pip install uopy
 
 ## Quick start
 
-**Before using UOPY to connect to an MV Database, you must be running either a [UniVerse](https://www.rocketsoftware.com/products/rocket-universe-0/rocket-universe) or [UniData](https://www.rocketsoftware.com/products/rocket-unidata-0/rocket-unidata) server.** 
+**Before using UOPY to connect to an MV Database, you must be running either a [UniVerse](https://www.rocketsoftware.com/products/rocket-universe-0/rocket-universe) or [UniData](https://www.rocketsoftware.com/products/rocket-unidata-0/rocket-unidata) server.**
 
 The following example uses UOPY to connect to UniVerse on Windows.
 
