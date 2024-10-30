@@ -18,17 +18,17 @@ $INCLUDE INCLUDE XML.H
 CMD="LIST MEMBERS FIRST_NAME LAST_NAME ADDRESS CITY STATE_CODE "
 CMD:="WITH @ID=":MEMBER_ID
 
-*	Create only the record portion of the XML document (no need for XML schema) 
+*	Create only the record portion of the XML document (no need for XML schema)
 OPTIONS = "HIDEROOT"
 
-*	Output XML in element-centric format 
+*	Output XML in element-centric format
 OPTIONS := @FM:"ELEMENTS"
 
 XSDVAR = ''; MEMBER_XML_RECORD = ''; ERROR_MESSAGE = ''
 
 RETURN_CODE = XMLExecute(CMD, OPTIONS, MEMBER_XML_RECORD, XSDVAR)
 ***
-IF RETURN_CODE NE XML.SUCCESS THEN 
+IF RETURN_CODE NE XML.SUCCESS THEN
   R = XMLError(ERROR_MESSAGE)
   CRT "XMLExecute failed, Error Message: ":ERROR_MESSAGE
 END

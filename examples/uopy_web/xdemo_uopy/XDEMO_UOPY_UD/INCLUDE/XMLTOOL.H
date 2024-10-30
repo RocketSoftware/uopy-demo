@@ -1,6 +1,6 @@
 ****************************************************************************
 *
-*       Include file for XMAP TOOL 
+*       Include file for XMAP TOOL
 *
 *       Module%M%Version%I% Date%H%
 *
@@ -28,7 +28,7 @@ EQU	ETOOL.NOXMAPREC		TO	5	;* intermediate file not exist
 EQU	ETOOL.XMAPWRITEFAIL	TO	6	;* Write to _U2XMAP_ failed
 EQU	ETOOL.NSERROR		TO	7	;* NS conflict with IngoerNS
 EQU	ETOOL.XMLWRITEFAIL	TO	8	;* Write to _XML_ failed
-EQU	ETOOL.WRONGACCTID	TO	9	;* Wrong acct id 
+EQU	ETOOL.WRONGACCTID	TO	9	;* Wrong acct id
 EQU	ETOOL.NODTDID		TO	10	;* DTD id is not exist
 EQU	ETOOL.OPENDICTFAIL	TO	11	;* failed to open dict file
 EQU	ETOOL.NODICTID		TO	12	;* failed to read dict item
@@ -66,4 +66,3 @@ EQU     ETOOL.WRITEPWDFAILED   	TO      105     ;* Write password failed
 EQU     ETOOL.GETSRVINFOFAILED 	TO      106     ;* Get server information failed
 EQU     ETOOL.CONNECTIONFAILED 	TO      107     ;* Connection failed
 EQU	ETOOL.CLIENTINFOFAILED	TO	108	;* Get client info. failed
-

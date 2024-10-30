@@ -25,9 +25,9 @@ ModuleName = "Notification"
 FuncName = "SendAlert"
 
 CRT "Enter Sender's Address: ":; INPUT fromaddr
-CRT "Enter Recipient's Address: ":; INPUT toaddrs 
-CRT "Enter Message Subject: ":; INPUT subject 
-CRT "Enter Message Body: ":; INPUT msgtext 
+CRT "Enter Recipient's Address: ":; INPUT toaddrs
+CRT "Enter Message Subject: ":; INPUT subject
+CRT "Enter Message Body: ":; INPUT msgtext
 ECHO OFF
 CRT "(Authentication) Enter gmail username: ":; INPUT username
 ECHO ON
@@ -43,9 +43,9 @@ pyresult = PyCallFunction(ModuleName, FuncName, fromaddr, toaddrs, subject, msgt
 *	check the outcome and CRT exception and traceback information
 *	if an exception was raised
 IF @PYEXCEPTIONTYPE = '' THEN
-   CRT "Successfully sent the message to ":toaddrs 
+   CRT "Successfully sent the message to ":toaddrs
 END ELSE
-   CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE 
+   CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE
    CRT "EXCEPTION MESSAGE IS " :@PYEXCEPTIONMSG
    CRT "EXCEPTIONTRACEBACK IS " :@PYEXCEPTIONTRACEBACK
 END

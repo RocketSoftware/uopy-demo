@@ -9,45 +9,54 @@
 # values of the geometry location result.
 
 import io as StringIO
-from urllib.request import urlopen 
-from urllib.parse import urlencode 
+from urllib.request import urlopen
+from urllib.parse import urlencode
 import json
 
+
 class Point:
-    def __init__ (self, lat=0, lng=0):
+    def __init__(self, lat=0, lng=0):
         self.lat = lat
         self.lng = lng
 
-    def PointValue (self):
+    def PointValue(self):
         lat_str = "%.7f" % self.lat
         lng_str = "%.7f" % self.lng
-        return lat_str + ', ' + lng_str
+        return lat_str + ", " + lng_str
 
 
 class decodeAddressException(Exception):
     def __init__(self, msg):
         self.msg = msg
+
     def __str__(self):
         return self.msg
-        
-def decodeAddressToGeocode( address ): 
+
+
+def decodeAddressToGeocode(address):
     urlParams = {
-        'address': address, 
-        'sensor': 'false',
+        "address": address,
+        "sensor": "false",
     }
-    url = 'http://maps.google.com/maps/api/geocode/json?' + urlencode(urlParams)
-    response = urlopen( url )
-    responseBody = str(response.read(), encoding='UTF-8')
-    body = StringIO.StringIO( responseBody )
-    result = json.load( body )
-    if 'status' not in result or result['status'] != 'OK':
-        if 'status' not in result:
-             raise decodeAddressException("Unknown error calling decodeAddressToGeocode")
+    url = "http://maps.google.com/maps/api/geocode/json?" + urlencode(urlParams)
+    response = urlopen(url)
+    responseBody = str(response.read(), encoding="UTF-8")
+    body = StringIO.StringIO(responseBody)
+    result = json.load(body)
+    if "status" not in result or result["status"] != "OK":
+        if "status" not in result:
+            raise decodeAddressException("Unknown error calling decodeAddressToGeocode")
         else:
-             raise decodeAddressException("Error from decodeAddressToGeocode: " + result['status'])		
+            raise decodeAddressException(
+                "Error from decodeAddressToGeocode: " + result["status"]
+            )
     else:
-        #latitude,longitude
-        coordinates = Point(result['results'][0]['geometry']['location']['lat'],\
-        result['results'][0]['geometry']['location']['lng'])
+        # latitude,longitude
+        coordinates = Point(
+            result["results"][0]["geometry"]["location"]["lat"],
+            result["results"][0]["geometry"]["location"]["lng"],
+        )
         return coordinates
+
+
 ####################################################

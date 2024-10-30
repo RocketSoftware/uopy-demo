@@ -11,20 +11,21 @@
 
 import xml.etree.ElementTree as ET
 import u2py
-s = u2py.Subroutine("GET_MEMBERS_RECORD", 4) 
+
+s = u2py.Subroutine("GET_MEMBERS_RECORD", 4)
 s.args[0] = "0965"
 s.call()
-if str(s.args[2]) != '0':
+if str(s.args[2]) != "0":
     print("Error from the subroutine:", s.args[3])
 else:
-    xmlstring = s.args[1] 
+    xmlstring = s.args[1]
     print("xmlstring=", xmlstring)
-    # Parse XML from the string into element 
+    # Parse XML from the string into element
     tree = ET.fromstring(xmlstring)
     for child in tree:
-        if child.tag != 'ADDRESS_MV': 
+        if child.tag != "ADDRESS_MV":
             print(child.tag, child.text)
         else:
-            print('STREET_ADDRESS', child.find('ADDRESS').text)
+            print("STREET_ADDRESS", child.find("ADDRESS").text)
 
 ####################################################

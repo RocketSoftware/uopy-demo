@@ -169,8 +169,8 @@ EQUATE AMGF_LAST          TO 4
 EQUATE AMGRP_MSG_NOT_IN_GROUP     TO 0
 EQUATE AMGRP_FIRST_MSG_IN_GROUP   LITERALLY  "AMGF_IN_GROUP + AMGF_FIRST"
 EQUATE AMGRP_MIDDLE_MSG_IN_GROUP  TO          AMGF_IN_GROUP
-EQUATE AMGRP_LAST_MSG_IN_GROUP    LITERALLY  "AMGF_IN_GROUP + AMGF_LAST" 
-EQUATE AMGRP_ONLY_MSG_IN_GROUP    LITERALLY  "AMGF_IN_GROUP + AMGF_FIRST + AMGF_LAST" 
+EQUATE AMGRP_LAST_MSG_IN_GROUP    LITERALLY  "AMGF_IN_GROUP + AMGF_LAST"
+EQUATE AMGRP_ONLY_MSG_IN_GROUP    LITERALLY  "AMGF_IN_GROUP + AMGF_FIRST + AMGF_LAST"
 
 **********************************************************************
 **                                                                   *
@@ -264,9 +264,9 @@ EQUATE AMBRW_NEXT            TO  8
 EQUATE AMBRW_CURRENT         TO 16
 EQUATE AMBRW_RECEIVE_CURRENT TO 32
 EQUATE AMBRW_DEFAULT         TO          AMBRW_NEXT
-EQUATE AMBRW_LOCK_NEXT       LITERALLY  "AMBRW_LOCK + AMBRW_NEXT" 
-EQUATE AMBRW_LOCK_FIRST      LITERALLY  "AMBRW_LOCK + AMBRW_FIRST" 
-EQUATE AMBRW_LOCK_CURRENT    LITERALLY  "AMBRW_LOCK + AMBRW_CURRENT" 
+EQUATE AMBRW_LOCK_NEXT       LITERALLY  "AMBRW_LOCK + AMBRW_NEXT"
+EQUATE AMBRW_LOCK_FIRST      LITERALLY  "AMBRW_LOCK + AMBRW_FIRST"
+EQUATE AMBRW_LOCK_CURRENT    LITERALLY  "AMBRW_LOCK + AMBRW_CURRENT"
 
 **********************************************************************
 **                                                                   *
@@ -684,7 +684,7 @@ EQUATE AMELEM_DEFAULT TO AMELEM_STRUC_ID:@VM:AMELEM_VERSION_1:@VM:0:@VM:0:@VM:''
 **********************************************************************
 **  U2/AMI Option Codes                                               *
 **********************************************************************
-EQUATE U2AMI_RECEIVEMSG     TO 0 ;* Retrieve msg and msg len 
+EQUATE U2AMI_RECEIVEMSG     TO 0 ;* Retrieve msg and msg len
 EQUATE U2AMI_LEAVEMSG       TO 1 ;* Leave msg on queue but get msg len
 EQUATE U2AMI_DISCARDMSG     TO 2 ;* Retrieve msg and discard it
 EQUATE U2AMI_RESIZEBUFFER   TO 3 ;* Allow U2 to handle msg buffers
@@ -695,24 +695,23 @@ EQUATE U2AMI_RESIZEBUFFER   TO 3 ;* Allow U2 to handle msg buffers
 
 EQUATE U2AMI_ERR_BASE            TO 100 ;* Start of the U2/AMI error codes
 
-EQUATE U2AMI_ERR_MQUNAVAILABLE   TO 100 ;* MQ AMI libraries not available      
-EQUATE U2AMI_ERR_UNKNOWN         TO 101 ;* Unknown error                       
-EQUATE U2AMI_ERR_NOBINDIR        TO 102 ;* uvbin/udtbin env variable not found 
-EQUATE U2AMI_ERR_FORK            TO 103 ;* Error during exec of ami process    
-EQUATE U2AMI_ERR_PIPECREATE      TO 104 ;* Error creating pipes to ami process 
-EQUATE U2AMI_ERR_PIPEWRITETOAMI  TO 105 ;* Error writing pipe to ami process   
-EQUATE U2AMI_ERR_PIPEREADFROMAMI TO 106 ;* Error reading pipe from ami process 
-EQUATE U2AMI_ERR_PIPEWRITETOU2   TO 107 ;* Error writing pipe to u2 process   
-EQUATE U2AMI_ERR_PIPEREADFROMU2  TO 108 ;* Error reading pipe from u2 process 
-EQUATE U2AMI_ERR_EXEC            TO 109 ;* Error during exec of ami process    
+EQUATE U2AMI_ERR_MQUNAVAILABLE   TO 100 ;* MQ AMI libraries not available
+EQUATE U2AMI_ERR_UNKNOWN         TO 101 ;* Unknown error
+EQUATE U2AMI_ERR_NOBINDIR        TO 102 ;* uvbin/udtbin env variable not found
+EQUATE U2AMI_ERR_FORK            TO 103 ;* Error during exec of ami process
+EQUATE U2AMI_ERR_PIPECREATE      TO 104 ;* Error creating pipes to ami process
+EQUATE U2AMI_ERR_PIPEWRITETOAMI  TO 105 ;* Error writing pipe to ami process
+EQUATE U2AMI_ERR_PIPEREADFROMAMI TO 106 ;* Error reading pipe from ami process
+EQUATE U2AMI_ERR_PIPEWRITETOU2   TO 107 ;* Error writing pipe to u2 process
+EQUATE U2AMI_ERR_PIPEREADFROMU2  TO 108 ;* Error reading pipe from u2 process
+EQUATE U2AMI_ERR_EXEC            TO 109 ;* Error during exec of ami process
 EQUATE U2AMI_ERR_INVALIDFORMAT   TO 110 ;* Variable does not match req'd format
-EQUATE U2AMI_ERR_NOT_HANDLE      TO 111 ;* Variable not of type MQShandle      
-EQUATE U2AMI_ERR_NULL_HANDLE     TO 112 ;* Uninitialized handle                
+EQUATE U2AMI_ERR_NOT_HANDLE      TO 111 ;* Variable not of type MQShandle
+EQUATE U2AMI_ERR_NULL_HANDLE     TO 112 ;* Uninitialized handle
 EQUATE U2AMI_ERR_INVALID_HANDLE  TO 113 ;* Handle has been closed w/amTerminate
-EQUATE U2AMI_ERR_UNKNOWN_HANDLE  TO 114 ;* Unexpected handle value reported    
+EQUATE U2AMI_ERR_UNKNOWN_HANDLE  TO 114 ;* Unexpected handle value reported
 EQUATE U2AMI_ERR_SESSION_IN_USE  TO 115 ;* An active AMI session already exists
 EQUATE U2AMI_ERR_CREATE_HANDLE   TO 116 ;* Error creating U2/MQS Session Handle
 EQUATE U2AMI_ERR_DL_OPEN         TO 117 ;* Error opening MQ AMI library
 EQUATE U2AMI_ERR_DL_FUNC         TO 118 ;* Error calling func in MQ AMI library
 EQUATE U2AMI_ERR_RCVMSGOPTS      TO 119 ;* Invalid receive-message option
-

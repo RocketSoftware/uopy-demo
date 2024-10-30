@@ -25,7 +25,7 @@
 *
 *****************************************************************************
 
-* SSL versions 
+* SSL versions
 EQU SSL_SSLV2		TO	"SSLv2"
 EQU SSL_SSLV3		TO	"SSLv3"
 EQU SSL_TLSV1		TO	"TLSv1"
@@ -136,4 +136,3 @@ EQU SSL_DSA_VERIFY	TO	4
 
 * SSL function return status
 EQU SSL_SUCCESS		TO	0
-

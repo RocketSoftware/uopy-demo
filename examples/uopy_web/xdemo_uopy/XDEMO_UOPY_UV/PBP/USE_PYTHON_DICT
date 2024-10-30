@@ -2,7 +2,7 @@
 *
 * How to use Python dict object in BASIC to store 1 million key/value pairs
 * Copyright (C) Rocket Software 1993-2017
-* 
+*
 *******************************************************************************
 ModuleName = "builtins"
 ClsName = "dict"
@@ -11,7 +11,7 @@ ClsName = "dict"
 pymodule = PyImport(ModuleName)
 pydictcls = PyGetAttr(pymodule, ClsName)
 pydict = PyCall(pydictcls)
-IF @PYEXCEPTIONTYPE NE '' THEN 
+IF @PYEXCEPTIONTYPE NE '' THEN
   GOSUB CRT.EXCEPTION.INFO
   STOP
 END
@@ -22,7 +22,7 @@ PRINT "Storing 1 million key/value pairs..."
 start_time = SYSTEM(9)
 FOR i = 1 TO 1000000
     pyresult = PyCallMethod(pydict, "__setitem__", "key":i, "value":i)
-	IF @PYEXCEPTIONTYPE NE '' THEN 
+	IF @PYEXCEPTIONTYPE NE '' THEN
 		GOSUB CRT.EXCEPTION.INFO
 		STOP
 	END
@@ -34,7 +34,7 @@ PRINT "Time (ms) to store 1 million key/value pairs: ": SYSTEM(9) - start_time
 start_time = SYSTEM(9)
 FOR i = 1 TO 1000000
     pyresult = PyCallMethod(pydict, "__getitem__", "key":i)
-	IF @PYEXCEPTIONTYPE NE '' THEN 
+	IF @PYEXCEPTIONTYPE NE '' THEN
 		GOSUB CRT.EXCEPTION.INFO
 		STOP
 	END
@@ -53,15 +53,15 @@ start_time = SYSTEM(9)
 value = PyCallMethod(pydict, "__getitem__", "key-531245")
 PRINT ""
 PRINT "Time (ms) to get result for non-existing key: " : SYSTEM(9) - start_time
-IF @PYEXCEPTIONTYPE NE '' THEN 
+IF @PYEXCEPTIONTYPE NE '' THEN
   GOSUB CRT.EXCEPTION.INFO
   STOP
 END
 
 *
 CRT.EXCEPTION.INFO:
-  CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE 
+  CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE
   CRT "EXCEPTION MESSAGE IS " :@PYEXCEPTIONMSG
-  CRT "EXCEPTIONTRACEBACK IS " :@PYEXCEPTIONTRACEBACK 
+  CRT "EXCEPTIONTRACEBACK IS " :@PYEXCEPTIONTRACEBACK
 RETURN
 END
