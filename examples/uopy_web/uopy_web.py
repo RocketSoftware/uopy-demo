@@ -1,8 +1,15 @@
 ﻿from flask import Flask, flash, request, url_for, redirect, send_from_directory, flash
 from flask import render_template
 
-from wtforms import Form, TextAreaField, validators, \
-    StringField, SubmitField, RadioField, SelectField
+from wtforms import (
+    Form,
+    TextAreaField,
+    validators,
+    StringField,
+    SubmitField,
+    RadioField,
+    SelectField,
+)
 
 import pandas as pd
 import uopy
@@ -16,19 +23,22 @@ app.static_folder = os.path.abspath("./static/")
 
 class Login(Form):
 
-
-    server = StringField('Server:',
-                       validators=[validators.DataRequired()])
-    account = StringField('Account:',
-                        validators=[validators.DataRequired()])
-    user = StringField('User:', validators=[validators.DataRequired(),
-                     validators.Length(min=6, max=35)])
-    password = StringField('Password:',
-                         validators=[validators.DataRequired(),
-                         validators.Length(min=3, max=35)])
-    dbms = RadioField('dbms', [validators.DataRequired()],
-                      choices=[('udcs', 'UniData'), ('uvcs', 'UniVerse'
-                      )], default='udcs')
+    server = StringField("Server:", validators=[validators.DataRequired()])
+    account = StringField("Account:", validators=[validators.DataRequired()])
+    user = StringField(
+        "User:",
+        validators=[validators.DataRequired(), validators.Length(min=6, max=35)],
+    )
+    password = StringField(
+        "Password:",
+        validators=[validators.DataRequired(), validators.Length(min=3, max=35)],
+    )
+    dbms = RadioField(
+        "dbms",
+        [validators.DataRequired()],
+        choices=[("udcs", "UniData"), ("uvcs", "UniVerse")],
+        default="udcs",
+    )
 
 
 class DisplayForm(Form):
@@ -61,24 +71,18 @@ class MemFile(Form):
 
 class MemEdit(Form):
 
-
-    lastname = StringField('LastName',
-                         validators=[validators.DataRequired()])
-    firstname = StringField('FirstName',
-                          validators=[validators.DataRequired()])
-    address1 = StringField('Address1',
-                         validators=[validators.DataRequired()])
-    address2 = StringField('Address2')
-    city = StringField('City', validators=[validators.DataRequired()])
-    statecode = StringField('State',
-                          validators=[validators.DataRequired()])
-    zip = StringField('Zip', validators=[validators.DataRequired()])
+    lastname = StringField("LastName", validators=[validators.DataRequired()])
+    firstname = StringField("FirstName", validators=[validators.DataRequired()])
+    address1 = StringField("Address1", validators=[validators.DataRequired()])
+    address2 = StringField("Address2")
+    city = StringField("City", validators=[validators.DataRequired()])
+    statecode = StringField("State", validators=[validators.DataRequired()])
+    zip = StringField("Zip", validators=[validators.DataRequired()])
 
 
 class MemSearch(Form):
 
-
-    id = StringField('LastName', validators=[validators.DataRequired()])
+    id = StringField("LastName", validators=[validators.DataRequired()])
 
 
 @app.route("/", methods=["GET", "POST"])
