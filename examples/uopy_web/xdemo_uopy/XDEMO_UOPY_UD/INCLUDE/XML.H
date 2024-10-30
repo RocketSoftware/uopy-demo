@@ -69,7 +69,7 @@ EQU XDOM.FALSE		     TO				0
 EQU XDOM.DUP		     TO				1
 EQU XDOM.NODUP		     TO				0
 
-* DOM Node type constants 
+* DOM Node type constants
 EQU XDOM.NONE		     TO				0
 EQU XDOM.ELEMENT.NODE        TO				1
 EQU XDOM.ATTR.NODE           TO				2
@@ -128,4 +128,3 @@ EQU XQ.ITEM.STRING              TO 	21
 EQU XQ.ITEM.TIME                TO 	22
 EQU XQ.ITEM.UNTYPED_ATOMIC      TO 	23
 EQU XQ.ITEM.YEAR_MONTH_DURATION TO 	24
-

@@ -10,26 +10,32 @@
 # Here is the link to set the less secure apps - https://www.google.com/settings/security/lesssecureapps
 # The IMAP Access option for the gmail user must be enabled.
 
-def SendAlert( fromaddr, toaddrs, subject, msgtext, username, password):
+
+def SendAlert(fromaddr, toaddrs, subject, msgtext, username, password):
     import smtplib
 
     # Turn the input string of comma-separated recipient addresses
     # into a list as required by sendmail function toaddrs = toaddrs.split()
 
-    # Note: The next line may word-wrap 
+    # Note: The next line may word-wrap
     toaddrs = toaddrs.split()
-    message = """\From: %s\nTo: %s\nSubject: %s\n\n%s """ \
-    % (fromaddr, ", ".join(toaddrs), subject, msgtext)
-    
+    message = """\From: %s\nTo: %s\nSubject: %s\n\n%s """ % (
+        fromaddr,
+        ", ".join(toaddrs),
+        subject,
+        msgtext,
+    )
+
     # End of 'message' line
 
-    server = smtplib.SMTP('smtp.gmail.com',587)
+    server = smtplib.SMTP("smtp.gmail.com", 587)
     server.ehlo()
     server.starttls()
 
     # Provide GMail user and password information
-    server.login(username,password)
+    server.login(username, password)
     server.sendmail(fromaddr, toaddrs, message)
     server.quit()
+
 
 #####################################################

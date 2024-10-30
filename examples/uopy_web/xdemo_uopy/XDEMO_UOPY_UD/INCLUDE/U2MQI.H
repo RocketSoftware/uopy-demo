@@ -16,7 +16,7 @@
 **********************************************************************
 **  U2/MQI Option Codes                                               *
 **********************************************************************
-EQUATE U2MQI_RECEIVEMSG     TO 0 ;* Retrieve msg and msg len 
+EQUATE U2MQI_RECEIVEMSG     TO 0 ;* Retrieve msg and msg len
 EQUATE U2MQI_LEAVEMSG       TO 1 ;* Leave msg on queue but get msg len
 EQUATE U2MQI_DISCARDMSG     TO 2 ;* Retrieve msg and discard it
 EQUATE U2MQI_RESIZEBUFFER   TO 3 ;* Allow U2 to handle msg buffers
@@ -27,21 +27,21 @@ EQUATE U2MQI_RESIZEBUFFER   TO 3 ;* Allow U2 to handle msg buffers
 
 EQUATE U2MQI_ERR_BASE            TO 100 ;* Start of the U2/MQI error codes
 
-EQUATE U2MQI_ERR_MQUNAVAILABLE   TO 100 ;* MQ MQI libraries not available      
-EQUATE U2MQI_ERR_UNKNOWN         TO 101 ;* Unknown error                       
-EQUATE U2MQI_ERR_NOBINDIR        TO 102 ;* uvbin/udtbin env variable not found 
-EQUATE U2MQI_ERR_FORK            TO 103 ;* Error during exec of MQI process    
-EQUATE U2MQI_ERR_PIPECREATE      TO 104 ;* Error creating pipes to MQI process 
-EQUATE U2MQI_ERR_PIPEWRITETOMQI  TO 105 ;* Error writing pipe to MQI process   
-EQUATE U2MQI_ERR_PIPEREADFROMMQI TO 106 ;* Error reading pipe from MQI process 
-EQUATE U2MQI_ERR_PIPEWRITETOU2   TO 107 ;* Error writing pipe to u2 process   
-EQUATE U2MQI_ERR_PIPEREADFROMU2  TO 108 ;* Error reading pipe from u2 process 
-EQUATE U2MQI_ERR_EXEC            TO 109 ;* Error during exec of MQI process    
+EQUATE U2MQI_ERR_MQUNAVAILABLE   TO 100 ;* MQ MQI libraries not available
+EQUATE U2MQI_ERR_UNKNOWN         TO 101 ;* Unknown error
+EQUATE U2MQI_ERR_NOBINDIR        TO 102 ;* uvbin/udtbin env variable not found
+EQUATE U2MQI_ERR_FORK            TO 103 ;* Error during exec of MQI process
+EQUATE U2MQI_ERR_PIPECREATE      TO 104 ;* Error creating pipes to MQI process
+EQUATE U2MQI_ERR_PIPEWRITETOMQI  TO 105 ;* Error writing pipe to MQI process
+EQUATE U2MQI_ERR_PIPEREADFROMMQI TO 106 ;* Error reading pipe from MQI process
+EQUATE U2MQI_ERR_PIPEWRITETOU2   TO 107 ;* Error writing pipe to u2 process
+EQUATE U2MQI_ERR_PIPEREADFROMU2  TO 108 ;* Error reading pipe from u2 process
+EQUATE U2MQI_ERR_EXEC            TO 109 ;* Error during exec of MQI process
 EQUATE U2MQI_ERR_INVALIDFORMAT   TO 110 ;* Variable does not match req'd format
-EQUATE U2MQI_ERR_NOT_HANDLE      TO 111 ;* Variable not of type MQShandle      
-EQUATE U2MQI_ERR_NULL_HANDLE     TO 112 ;* Uninitialized handle                
+EQUATE U2MQI_ERR_NOT_HANDLE      TO 111 ;* Variable not of type MQShandle
+EQUATE U2MQI_ERR_NULL_HANDLE     TO 112 ;* Uninitialized handle
 EQUATE U2MQI_ERR_INVALID_HANDLE  TO 113 ;* Handle has been closed w/amTerminate
-EQUATE U2MQI_ERR_UNKNOWN_HANDLE  TO 114 ;* Unexpected handle value reported    
+EQUATE U2MQI_ERR_UNKNOWN_HANDLE  TO 114 ;* Unexpected handle value reported
 EQUATE U2MQI_ERR_SESSION_IN_USE  TO 115 ;* An active MQI session already exists
 EQUATE U2MQI_ERR_CREATE_HANDLE   TO 116 ;* Error creating U2/MQS Session Handle
 EQUATE U2MQI_ERR_DL_OPEN         TO 117 ;* Error opening MQ MQI library
@@ -52,7 +52,7 @@ EQUATE U2MQI_ERR_RCVMSGOPTS      TO 119 ;* Invalid receive-message option
 ***********************************************************************
 **  Byte and Pointer Datatypes                                        *
 ***********************************************************************
-                                                                        
+
 EQUATE MQBYTE    TO CHAR(0)
 EQUATE MQBYTE8   TO MQBYTE:MQBYTE:MQBYTE:MQBYTE:MQBYTE:MQBYTE:MQBYTE:MQBYTE
 EQUATE MQBYTE16  TO MQBYTE8:MQBYTE8
@@ -69,53 +69,53 @@ EQUATE MQPTR TO MQBYTE:MQBYTE:MQBYTE:MQBYTE
 ***********************************************************************
 **  Values Related to MQAIR Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQAIR_STRUC_ID TO "AIR "
-                                                                        
+
 *Structure Version Number
 EQUATE MQAIR_VERSION_1 TO 1
 EQUATE MQAIR_CURRENT_VERSION TO 1
-                                                                        
+
 *Authentication Information Type
 EQUATE MQAIT_CRL_LDAP TO 1
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQBO Structure                                  *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQBO_STRUC_ID TO "BO  "
-                                                                        
+
 *Structure Version Number
 EQUATE MQBO_VERSION_1 TO 1
 EQUATE MQBO_CURRENT_VERSION TO 1
-                                                                        
+
 *Begin Options
 EQUATE MQBO_NONE TO 0 ;* 0x0
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQCIH Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQCIH_STRUC_ID TO "CIH "
-                                                                        
+
 *Structure Version Number
 EQUATE MQCIH_VERSION_1 TO 1
 EQUATE MQCIH_VERSION_2 TO 2
 EQUATE MQCIH_CURRENT_VERSION TO 2
-                                                                        
+
 *Structure Length
 EQUATE MQCIH_LENGTH_1 TO 164
 EQUATE MQCIH_LENGTH_2 TO 180
 EQUATE MQCIH_CURRENT_LENGTH TO 180
-                                                                        
+
 *Flags
 EQUATE MQCIH_NONE TO 0 ;* 0x0
-                                                                        
+
 *Return Code
 EQUATE MQCRC_OK TO 0
 EQUATE MQCRC_CICS_EXEC_ERROR TO 1
@@ -127,7 +127,7 @@ EQUATE MQCRC_SECURITY_ERROR TO 6
 EQUATE MQCRC_PROGRAM_NOT_AVAILABLE TO 7
 EQUATE MQCRC_BRIDGE_TIMEOUT TO 8
 EQUATE MQCRC_TRANSID_NOT_AVAILABLE TO 9
-                                                                        
+
 *Unit of Work Control
 EQUATE MQCUOWC_ONLY TO 273 ;* 0x111
 EQUATE MQCUOWC_CONTINUE TO 65536 ;* 0x10000
@@ -136,36 +136,36 @@ EQUATE MQCUOWC_MIDDLE TO 16 ;* 0x10
 EQUATE MQCUOWC_LAST TO 272 ;* 0x110
 EQUATE MQCUOWC_COMMIT TO 256 ;* 0x100
 EQUATE MQCUOWC_BACKOUT TO 4352 ;* 0x1100
-                                                                        
+
 *Get Wait Interval
 EQUATE MQCGWI_DEFAULT TO -2
-                                                                        
+
 *Link Type
 EQUATE MQCLT_PROGRAM TO 1
 EQUATE MQCLT_TRANSACTION TO 2
-                                                                        
+
 *Output Data Length
 EQUATE MQCODL_AS_INPUT TO -1
-                                                                        
+
 *ADS Descriptor
 EQUATE MQCADSD_NONE TO 0 ;* 0x0
 EQUATE MQCADSD_SEND TO 1 ;* 0x1
 EQUATE MQCADSD_RECV TO 16 ;* 0x10
 EQUATE MQCADSD_MSGFORMAT TO 256 ;* 0x100
-                                                                        
+
 *Conversational Task
 EQUATE MQCCT_YES TO 1 ;* 0x1
 EQUATE MQCCT_NO TO 0 ;* 0x0
-                                                                        
+
 *Task End Status
 EQUATE MQCTES_NOSYNC TO 0 ;* 0x0
 EQUATE MQCTES_COMMIT TO 256 ;* 0x100
 EQUATE MQCTES_BACKOUT TO 4352 ;* 0x1100
 EQUATE MQCTES_ENDTASK TO 65536 ;* 0x10000
-                                                                        
+
 *Facility
 MQCFAC_NONE = MQBYTE8
-                                                                        
+
 *Function
 EQUATE MQCFUNC_MQCONN TO "CONN"
 EQUATE MQCFUNC_MQGET TO "GET "
@@ -174,28 +174,28 @@ EQUATE MQCFUNC_MQOPEN TO "OPEN"
 EQUATE MQCFUNC_MQPUT TO "PUT "
 EQUATE MQCFUNC_MQPUT1 TO "PUT1"
 EQUATE MQCFUNC_NONE TO "    "
-                                                                        
+
 *Start Code
 EQUATE MQCSC_START TO "S   "
 EQUATE MQCSC_STARTDATA TO "SD  "
 EQUATE MQCSC_TERMINPUT TO "TD  "
 EQUATE MQCSC_NONE TO "    "
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQCNO Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQCNO_STRUC_ID TO "CNO "
-                                                                        
+
 *Structure Version Number
 EQUATE MQCNO_VERSION_1 TO 1
 EQUATE MQCNO_VERSION_2 TO 2
 EQUATE MQCNO_VERSION_3 TO 3
 EQUATE MQCNO_VERSION_4 TO 4
 EQUATE MQCNO_CURRENT_VERSION TO 4
-                                                                        
+
 *Connect Options
 EQUATE MQCNO_STANDARD_BINDING TO 0 ;* 0x0
 EQUATE MQCNO_FASTPATH_BINDING TO 1 ;* 0x1
@@ -203,55 +203,55 @@ EQUATE MQCNO_HANDLE_SHARE_NONE TO 32 ;* 0x20
 EQUATE MQCNO_HANDLE_SHARE_BLOCK TO 64 ;* 0x40
 EQUATE MQCNO_HANDLE_SHARE_NO_BLOCK TO 128 ;* 0x80
 EQUATE MQCNO_NONE TO 0 ;* 0x0
-                                                                        
+
 *Queue-Manager Connection Tag
 MQCT_NONE = MQBYTE128
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQDH Structure                                  *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQDH_STRUC_ID TO "DH  "
-                                                                        
+
 *Structure Version Number
 EQUATE MQDH_VERSION_1 TO 1
 EQUATE MQDH_CURRENT_VERSION TO 1
-                                                                        
+
 *General Flags
 EQUATE MQDHF_NEW_MSG_IDS TO 1 ;* 0x1
 EQUATE MQDHF_NONE TO 0 ;* 0x0
-                                                                        
+
 *Put Message Record Flags
 *See values for "Put Message Record Fields" under MQPMO
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQDLH Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQDLH_STRUC_ID TO "DLH "
-                                                                        
+
 *Structure Version Number
 EQUATE MQDLH_VERSION_1 TO 1
 EQUATE MQDLH_CURRENT_VERSION TO 1
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQGMO Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQGMO_STRUC_ID TO "GMO "
-                                                                        
+
 *Structure Version Number
 EQUATE MQGMO_VERSION_1 TO 1
 EQUATE MQGMO_VERSION_2 TO 2
 EQUATE MQGMO_VERSION_3 TO 3
 EQUATE MQGMO_CURRENT_VERSION TO 3
-                                                                        
+
 *Get-Message Options
 EQUATE MQGMO_WAIT TO 1 ;* 0x1
 EQUATE MQGMO_NO_WAIT TO 0 ;* 0x0
@@ -274,17 +274,17 @@ EQUATE MQGMO_COMPLETE_MSG TO 65536 ;* 0x10000
 EQUATE MQGMO_ALL_MSGS_AVAILABLE TO 131072 ;* 0x20000
 EQUATE MQGMO_ALL_SEGMENTS_AVAILABLE TO 262144 ;* 0x40000
 EQUATE MQGMO_NONE TO 0 ;* 0x0
-                                                                        
+
 *Wait Interval
 EQUATE MQWI_UNLIMITED TO -1
-                                                                        
+
 *Signal Values
 EQUATE MQEC_MSG_ARRIVED TO 2
 EQUATE MQEC_WAIT_INTERVAL_EXPIRED TO 3
 EQUATE MQEC_WAIT_CANCELED TO 4
 EQUATE MQEC_Q_MGR_QUIESCING TO 5
 EQUATE MQEC_CONNECTION_QUIESCING TO 6
-                                                                        
+
 *Match Options
 EQUATE MQMO_MATCH_MSG_ID TO 1 ;* 0x1
 EQUATE MQMO_MATCH_CORREL_ID TO 2 ;* 0x2
@@ -293,77 +293,77 @@ EQUATE MQMO_MATCH_MSG_SEQ_NUMBER TO 8  ;* 0x8
 EQUATE MQMO_MATCH_OFFSET TO 16 ;* 0x10
 EQUATE MQMO_MATCH_MSG_TOKEN TO 32 ;* 0x20
 EQUATE MQMO_NONE TO 0 ;* 0x0
-                                                                        
+
 *Group Status
 EQUATE MQGS_NOT_IN_GROUP TO " "
 EQUATE MQGS_MSG_IN_GROUP TO "G"
 EQUATE MQGS_LAST_MSG_IN_GROUP TO "L"
-                                                                        
+
 *Segment Status
 EQUATE MQSS_NOT_A_SEGMENT TO " "
 EQUATE MQSS_SEGMENT TO "S"
 EQUATE MQSS_LAST_SEGMENT TO "L"
-                                                                        
+
 *Segmentation
 EQUATE MQSEG_INHIBITED TO " "
 EQUATE MQSEG_ALLOWED TO "A"
-                                                                        
+
 *Message Token
 MQMTOK_NONE = MQBYTE16
-                                                                        
+
 *Returned Length
 EQUATE MQRL_UNDEFINED TO -1
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQIIH Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQIIH_STRUC_ID TO "IIH "
-                                                                        
+
 *Structure Version Number
 EQUATE MQIIH_VERSION_1 TO 1
 EQUATE MQIIH_CURRENT_VERSION TO 1
-                                                                        
+
 *Structure Length
 EQUATE MQIIH_LENGTH_1 TO 84
-                                                                        
+
 *Flags
 EQUATE MQIIH_NONE TO 0 ;* 0x0
-                                                                        
+
 *Authenticator
 EQUATE MQIAUT_NONE TO "        "
-                                                                        
+
 *Transaction Instance Identifier
 MQITII_NONE = MQBYTE16
-                                                                        
+
 *Transaction State
 EQUATE MQITS_IN_CONVERSATION TO "C"
 EQUATE MQITS_NOT_IN_CONVERSATION TO " "
 EQUATE MQITS_ARCHITECTED TO "A"
-                                                                        
+
 *Commit Mode
 EQUATE MQICM_COMMIT_THEN_SEND TO "0"
 EQUATE MQICM_SEND_THEN_COMMIT TO "1"
-                                                                        
+
 *Security Scope
 EQUATE MQISS_CHECK TO "C"
 EQUATE MQISS_FULL TO "F"
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQMD Structure                                  *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQMD_STRUC_ID TO "MD  "
-                                                                        
+
 *Structure Version Number
 EQUATE MQMD_VERSION_1 TO 1
 EQUATE MQMD_VERSION_2 TO 2
 EQUATE MQMD_CURRENT_VERSION TO 2
-                                                                        
+
 *Report Options
 EQUATE MQRO_EXCEPTION TO 16777216 ;* 0x1000000
 EQUATE MQRO_EXCEPTION_WITH_DATA TO 50331648 ;* 0x3000000
@@ -386,12 +386,12 @@ EQUATE MQRO_PASS_CORREL_ID TO 64 ;* 0x40
 EQUATE MQRO_DEAD_LETTER_Q TO 0 ;* 0x0
 EQUATE MQRO_DISCARD_MSG TO 134217728 ;* 0x8000000
 EQUATE MQRO_NONE TO 0 ;* 0x0
-                                                                        
+
 *Report Options Masks
 EQUATE MQRO_REJECT_UNSUP_MASK TO 270270464 ;* 0x101C0000
 EQUATE MQRO_ACCEPT_UNSUP_MASK TO 4024434943 ;* 0xEFE000FF
 EQUATE MQRO_ACCEPT_UNSUP_IF_XMIT_MASK TO 261888 ;* 0x3FF00
-                                                                        
+
 *Message Types
 EQUATE MQMT_SYSTEM_FIRST TO 1
 EQUATE MQMT_REQUEST TO 1
@@ -403,10 +403,10 @@ EQUATE MQMT_MQE_FIELDS TO 113
 EQUATE MQMT_SYSTEM_LAST TO 65535
 EQUATE MQMT_APPL_FIRST TO 65536
 EQUATE MQMT_APPL_LAST TO 999999999
-                                                                        
+
 *Expiry
 EQUATE MQEI_UNLIMITED TO -1
-                                                                        
+
 *Feedback Values
 EQUATE MQFB_NONE TO 0
 EQUATE MQFB_SYSTEM_FIRST TO 1
@@ -454,39 +454,39 @@ EQUATE MQFB_CICS_UOW_BACKED_OUT TO 413
 EQUATE MQFB_SYSTEM_LAST TO 65535
 EQUATE MQFB_APPL_FIRST TO 65536
 EQUATE MQFB_APPL_LAST TO 999999999
-                                                                        
+
 *Encoding
 EQUATE MQENC_NATIVE TO 546 ;* 0x222
-                                                                        
+
 *Encoding Masks
 EQUATE MQENC_INTEGER_MASK TO 15  ;* 0xF
 EQUATE MQENC_DECIMAL_MASK TO 240 ;* 0xF0
 EQUATE MQENC_FLOAT_MASK TO 3840 ;* 0xF00
 EQUATE MQENC_RESERVED_MASK TO 4294963200 ;* 0xFFFFF000
-                                                                        
+
 *Encodings for Binary Integers
 EQUATE MQENC_INTEGER_UNDEFINED TO 0 ;* 0x0
 EQUATE MQENC_INTEGER_NORMAL TO 1 ;* 0x1
 EQUATE MQENC_INTEGER_REVERSED TO 2 ;* 0x2
-                                                                        
+
 *Encodings for Packed-Decimal Integers
 EQUATE MQENC_DECIMAL_UNDEFINED TO 0 ;* 0x0
 EQUATE MQENC_DECIMAL_NORMAL TO 16 ;* 0x10
 EQUATE MQENC_DECIMAL_REVERSED TO 32 ;* 0x20
-                                                                        
+
 *Encodings for Floating-Point Numbers
 EQUATE MQENC_FLOAT_UNDEFINED TO 0 ;* 0x0
 EQUATE MQENC_FLOAT_IEEE_NORMAL TO 256 ;* 0x100
 EQUATE MQENC_FLOAT_IEEE_REVERSED TO 512 ;* 0x200
 EQUATE MQENC_FLOAT_S390 TO 768 ;* 0x300
-                                                                        
+
 *Coded Character-Set Identifiers
 EQUATE MQCCSI_UNDEFINED TO 0
 EQUATE MQCCSI_DEFAULT TO 0
 EQUATE MQCCSI_Q_MGR TO 0
 EQUATE MQCCSI_INHERIT TO -2
 EQUATE MQCCSI_EMBEDDED TO -1
-                                                                        
+
 *Formats
 EQUATE MQFMT_NONE TO "        "
 EQUATE MQFMT_ADMIN TO "MQADMIN "
@@ -508,18 +508,18 @@ EQUATE MQFMT_STRING TO "MQSTR   "
 EQUATE MQFMT_TRIGGER TO "MQTRIG  "
 EQUATE MQFMT_WORK_INFO_HEADER TO "MQHWIH  "
 EQUATE MQFMT_XMIT_Q_HEADER TO "MQXMIT  "
-                                                                        
+
 *Priority
 EQUATE MQPRI_PRIORITY_AS_Q_DEF TO -1
-                                                                        
+
 *Persistence Values
 EQUATE MQPER_NOT_PERSISTENT TO 0
 EQUATE MQPER_PERSISTENT TO 1
 EQUATE MQPER_PERSISTENCE_AS_Q_DEF TO 2
-                                                                        
+
 *Message Identifier
 MQMI_NONE = MQBYTE24
-                                                                        
+
 *Correlation Identifier
 MQCI_NONE        = MQBYTE24
 MQCI_NEW_SESSION = MQBYTE24
@@ -547,10 +547,10 @@ MQCI_NEW_SESSION[21,1] = CHAR(69) ;* 0x45
 MQCI_NEW_SESSION[22,1] = CHAR(76) ;* 0x4C
 MQCI_NEW_SESSION[23,1] = CHAR(73) ;* 0x49
 MQCI_NEW_SESSION[24,1] = CHAR(68) ;* 0x44
-                                                                        
+
 *Accounting Token
 MQACT_NONE = MQBYTE32
-                                                                        
+
 *Accounting Token Type
 EQUATE MQACTT_UNKNOWN TO 0 ;* 0x0
 EQUATE MQACTT_CICS_LUOW_ID TO 1 ;* 0x1
@@ -561,7 +561,7 @@ EQUATE MQACTT_OS400_ACCOUNT_TOKEN TO 8  ;* 0x8
 EQUATE MQACTT_WINDOWS_DEFAULT TO 9   ;* 0x9
 EQUATE MQACTT_NT_SECURITY_ID TO 11  ;* 0xB
 EQUATE MQACTT_USER TO 25 ;* 0x19
-                                                                        
+
 *Put Application Type
 EQUATE MQAT_UNKNOWN TO -1
 EQUATE MQAT_NO_CONTEXT TO 0
@@ -595,10 +595,10 @@ EQUATE MQAT_CHANNEL_INITIATOR TO 30
 EQUATE MQAT_DEFAULT TO 11
 EQUATE MQAT_USER_FIRST TO 65536
 EQUATE MQAT_USER_LAST TO 999999999
-                                                                        
+
 *Group Identifier
 MQGI_NONE = MQBYTE24
-                                                                        
+
 *Message Flags
 EQUATE MQMF_SEGMENTATION_INHIBITED TO 0 ;* 0x0
 EQUATE MQMF_SEGMENTATION_ALLOWED TO 1 ;* 0x1
@@ -607,50 +607,50 @@ EQUATE MQMF_LAST_MSG_IN_GROUP TO 16 ;* 0x10
 EQUATE MQMF_SEGMENT TO 2 ;* 0x2
 EQUATE MQMF_LAST_SEGMENT TO 64 ;* 0x40
 EQUATE MQMF_NONE TO 0 ;* 0x0
-                                                                        
+
 *Message Flags Masks
 EQUATE MQMF_REJECT_UNSUP_MASK TO 4095  ;* 0xFFF
 EQUATE MQMF_ACCEPT_UNSUP_MASK TO 4293918720 ;* 0xFFF00000
 EQUATE MQMF_ACCEPT_UNSUP_IF_XMIT_MASK TO 1044480 ;* 0xFF000
-                                                                        
+
 *Original Length
 EQUATE MQOL_UNDEFINED TO -1
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQMDE Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQMDE_STRUC_ID TO "MDE "
-                                                                        
+
 *Structure Version Number
 EQUATE MQMDE_VERSION_2 TO 2
 EQUATE MQMDE_CURRENT_VERSION TO 2
-                                                                        
+
 *Structure Length
 EQUATE MQMDE_LENGTH_2 TO 72
-                                                                        
+
 *General Flags
 EQUATE MQMDEF_NONE TO 0 ;* 0x0
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQOD Structure                                  *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQOD_STRUC_ID TO "OD  "
-                                                                        
+
 *Structure Version Number
 EQUATE MQOD_VERSION_1 TO 1
 EQUATE MQOD_VERSION_2 TO 2
 EQUATE MQOD_VERSION_3 TO 3
 EQUATE MQOD_CURRENT_VERSION TO 3
-                                                                        
+
 *Structure Length
 EQUATE MQOD_CURRENT_LENGTH TO 336
-                                                                        
+
 *Object Types
 EQUATE MQOT_Q TO 1
 EQUATE MQOT_NAMELIST TO 2
@@ -661,7 +661,7 @@ EQUATE MQOT_CHANNEL TO 6
 EQUATE MQOT_AUTH_INFO TO 7
 EQUATE MQOT_CF_STRUC TO 10
 EQUATE MQOT_RESERVED_1 TO 999
-                                                                        
+
 *Extended Object Types
 EQUATE MQOT_ALL TO 1001
 EQUATE MQOT_ALIAS_Q TO 1002
@@ -676,32 +676,32 @@ EQUATE MQOT_CURRENT_CHANNEL TO 1011
 EQUATE MQOT_SAVED_CHANNEL TO 1012
 EQUATE MQOT_SVRCONN_CHANNEL TO 1013
 EQUATE MQOT_CLNTCONN_CHANNEL TO 1014
-                                                                        
+
 *Security Identifier
 MQSID_NONE = MQBYTE40
-                                                                        
+
 *Security Identifier Type
 *(call the MQ_SETDEFAULTS subroutine to initialize the following)
 EQUATE MQSIDT_NONE TO 0 ;* 0x0
 EQUATE MQSIDT_NT_SECURITY_ID TO 1 ;* 0x1
 EQUATE MQSIDT_WAS_SECURITY_ID TO 2 ;* 0x2
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQPMO Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQPMO_STRUC_ID TO "PMO "
-                                                                        
+
 *Structure Version Number
 EQUATE MQPMO_VERSION_1 TO 1
 EQUATE MQPMO_VERSION_2 TO 2
 EQUATE MQPMO_CURRENT_VERSION TO 2
-                                                                        
+
 *Structure Length
 EQUATE MQPMO_CURRENT_LENGTH TO 152
-                                                                        
+
 *Put-Message Options
 EQUATE MQPMO_SYNCPOINT TO 2 ;* 0x2
 EQUATE MQPMO_NO_SYNCPOINT TO 4 ;* 0x4
@@ -717,7 +717,7 @@ EQUATE MQPMO_SET_ALL_CONTEXT TO 2048 ;* 0x800
 EQUATE MQPMO_ALTERNATE_USER_AUTHORITY TO 4096 ;* 0x1000
 EQUATE MQPMO_FAIL_IF_QUIESCING TO 8192 ;* 0x2000
 EQUATE MQPMO_NONE TO 0 ;* 0x0
-                                                                        
+
 *Put Message Record Fields
 EQUATE MQPMRF_MSG_ID TO 1 ;* 0x1
 EQUATE MQPMRF_CORREL_ID TO 2 ;* 0x2
@@ -725,136 +725,136 @@ EQUATE MQPMRF_GROUP_ID TO 64 ;* 0x40
 EQUATE MQPMRF_FEEDBACK TO 8  ;* 0x8
 EQUATE MQPMRF_ACCOUNTING_TOKEN TO 16 ;* 0x10
 EQUATE MQPMRF_NONE TO 0 ;* 0x0
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQRFH Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQRFH_STRUC_ID TO "RFH "
-                                                                        
+
 *Structure Version Number
 EQUATE MQRFH_VERSION_1 TO 1
 EQUATE MQRFH_VERSION_2 TO 2
-                                                                        
+
 *Structure Length
 EQUATE MQRFH_STRUC_LENGTH_FIXED TO 32
 EQUATE MQRFH_STRUC_LENGTH_FIXED_2 TO 36
-                                                                        
+
 *Flags
 EQUATE MQRFH_NONE TO 0 ;* 0x0
-                                                                        
+
 *Names for Name/Value String
 EQUATE MQNVS_APPL_TYPE TO "OPT_APP_GRP "
 EQUATE MQNVS_MSG_TYPE TO "OPT_MSG_TYPE "
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQRMH Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQRMH_STRUC_ID TO "RMH "
-                                                                        
+
 *Structure Version Number
 EQUATE MQRMH_VERSION_1 TO 1
 EQUATE MQRMH_CURRENT_VERSION TO 1
-                                                                        
+
 *Flags
 EQUATE MQRMHF_LAST TO 1 ;* 0x1
 EQUATE MQRMHF_NOT_LAST TO 0 ;* 0x0
-                                                                        
+
 *Object Instance Identifier
 MQOII_NONE = MQBYTE24
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQSCO Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQSCO_STRUC_ID TO "SCO "
-                                                                        
+
 *Structure Version Number
 EQUATE MQSCO_VERSION_1 TO 1
 EQUATE MQSCO_CURRENT_VERSION TO 1
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQTM Structure                                  *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQTM_STRUC_ID TO "TM  "
-                                                                        
+
 *Structure Version Number
 EQUATE MQTM_VERSION_1 TO 1
 EQUATE MQTM_CURRENT_VERSION TO 1
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQTMC2 Structure                                *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQTMC_STRUC_ID TO "TMC "
-                                                                        
+
 *Structure Version Number
 EQUATE MQTMC_VERSION_1 TO "   1"
 EQUATE MQTMC_VERSION_2 TO "   2"
 EQUATE MQTMC_CURRENT_VERSION TO "   2"
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQWIH Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQWIH_STRUC_ID TO "WIH "
-                                                                        
+
 *Structure Version Number
 EQUATE MQWIH_VERSION_1 TO 1
 EQUATE MQWIH_CURRENT_VERSION TO 1
-                                                                        
+
 *Structure Length
 EQUATE MQWIH_LENGTH_1 TO 120
 EQUATE MQWIH_CURRENT_LENGTH TO 120
-                                                                        
+
 *Flags
 EQUATE MQWIH_NONE TO 0 ;* 0x0
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQXQH Structure                                 *
 ***********************************************************************
-                                                                        
+
 *Structure Identifier
 EQUATE MQXQH_STRUC_ID TO "XQH "
-                                                                        
+
 *Structure Version Number
 EQUATE MQXQH_VERSION_1 TO 1
 EQUATE MQXQH_CURRENT_VERSION TO 1
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQCLOSE Function                                *
 ***********************************************************************
-                                                                        
+
 *Object Handle
 EQUATE MQHO_UNUSABLE_HOBJ TO -1
 EQUATE MQHO_NONE TO 0
-                                                                        
+
 *Close Options
 EQUATE MQCO_NONE TO 0 ;* 0x0
 EQUATE MQCO_DELETE TO 1 ;* 0x1
 EQUATE MQCO_DELETE_PURGE TO 2 ;* 0x2
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQINQ Function                                  *
 ***********************************************************************
-                                                                        
+
 *Character-Attribute Selectors
 EQUATE MQCA_ALTERATION_DATE TO 2027
 EQUATE MQCA_ALTERATION_TIME TO 2028
@@ -913,7 +913,7 @@ EQUATE MQCA_USER_LIST TO 4000
 EQUATE MQCA_XCF_GROUP_NAME TO 2043
 EQUATE MQCA_XCF_MEMBER_NAME TO 2044
 EQUATE MQCA_XMIT_Q_NAME TO 2024
-                                                                        
+
 *Integer-Attribute Selectors
 EQUATE MQIA_APPL_TYPE TO 1
 EQUATE MQIA_ARCHIVE TO 60
@@ -988,16 +988,16 @@ EQUATE MQIA_TRIGGER_MSG_PRIORITY TO 26
 EQUATE MQIA_TRIGGER_TYPE TO 28
 EQUATE MQIA_USAGE TO 12
 EQUATE MQIA_USER_LIST TO 2000
-                                                                        
+
 *Integer Attribute Value Denoting "Not Applicable"
 EQUATE MQIAV_NOT_APPLICABLE TO -1
 EQUATE MQIAV_UNDEFINED TO -2
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to MQOPEN Function                                 *
 ***********************************************************************
-                                                                        
+
 *Open Options
 EQUATE MQOO_INPUT_AS_Q_DEF TO 1 ;* 0x1
 EQUATE MQOO_INPUT_SHARED TO 2 ;* 0x2
@@ -1016,16 +1016,16 @@ EQUATE MQOO_SET_IDENTITY_CONTEXT TO 1024 ;* 0x400
 EQUATE MQOO_SET_ALL_CONTEXT TO 2048 ;* 0x800
 EQUATE MQOO_ALTERNATE_USER_AUTHORITY TO 4096 ;* 0x1000
 EQUATE MQOO_FAIL_IF_QUIESCING TO 8192 ;* 0x2000
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to All Functions                                   *
 ***********************************************************************
-                                                                        
+
 *Connection Handle
 EQUATE MQHC_DEF_HCONN TO 0
 EQUATE MQHC_UNUSABLE_HCONN TO -1
-                                                                        
+
 *String Lengths
 EQUATE MQ_ABEND_CODE_LENGTH TO 4
 EQUATE MQ_ACCOUNTING_TOKEN_LENGTH TO 32
@@ -1123,13 +1123,13 @@ EQUATE MQ_TRIGGER_DATA_LENGTH TO 64
 EQUATE MQ_USER_ID_LENGTH TO 12
 EQUATE MQ_XCF_GROUP_NAME_LENGTH TO 8
 EQUATE MQ_XCF_MEMBER_NAME_LENGTH TO 16
-                                                                        
+
 *Completion Codes
 EQUATE MQCC_OK TO 0
 EQUATE MQCC_WARNING TO 1
 EQUATE MQCC_FAILED TO 2
 EQUATE MQCC_UNKNOWN TO -1
-                                                                        
+
 *Reason Codes
 EQUATE MQRC_NONE TO 0
 EQUATE MQRC_APPL_FIRST TO 900
@@ -1515,129 +1515,129 @@ EQUATE MQRC_DISTRIBUTION_LIST_EMPTY TO 6126
 EQUATE MQRC_INCONSISTENT_OPEN_OPTIONS TO 6127
 EQUATE MQRC_WRONG_VERSION TO 6128
 EQUATE MQRC_REFERENCE_ERROR TO 6129
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to Queue Attributes                                *
 ***********************************************************************
-                                                                        
+
 *Queue Types
 EQUATE MQQT_LOCAL TO 1
 EQUATE MQQT_MODEL TO 2
 EQUATE MQQT_ALIAS TO 3
 EQUATE MQQT_REMOTE TO 6
 EQUATE MQQT_CLUSTER TO 7
-                                                                        
+
 *Cluster Queue Types
 EQUATE MQCQT_LOCAL_Q TO 1
 EQUATE MQCQT_ALIAS_Q TO 2
 EQUATE MQCQT_REMOTE_Q TO 3
 EQUATE MQCQT_Q_MGR_ALIAS TO 4
-                                                                        
+
 *Extended Queue Types
 EQUATE MQQT_ALL TO 1001
-                                                                        
+
 *Queue Definition Types
 EQUATE MQQDT_PREDEFINED TO 1
 EQUATE MQQDT_PERMANENT_DYNAMIC TO 2
 EQUATE MQQDT_TEMPORARY_DYNAMIC TO 3
 EQUATE MQQDT_SHARED_DYNAMIC TO 4
-                                                                        
+
 *Inhibit Get
 EQUATE MQQA_GET_INHIBITED TO 1
 EQUATE MQQA_GET_ALLOWED TO 0
-                                                                        
+
 *Inhibit Put
 EQUATE MQQA_PUT_INHIBITED TO 1
 EQUATE MQQA_PUT_ALLOWED TO 0
-                                                                        
+
 *Queue Shareability
 EQUATE MQQA_SHAREABLE TO 1
 EQUATE MQQA_NOT_SHAREABLE TO 0
-                                                                        
+
 *Back-Out Hardening
 EQUATE MQQA_BACKOUT_HARDENED TO 1
 EQUATE MQQA_BACKOUT_NOT_HARDENED TO 0
-                                                                        
+
 *Message Delivery Sequence
 EQUATE MQMDS_PRIORITY TO 0
 EQUATE MQMDS_FIFO TO 1
-                                                                        
+
 *Trigger Control
 EQUATE MQTC_OFF TO 0
 EQUATE MQTC_ON TO 1
-                                                                        
+
 *Trigger Types
 EQUATE MQTT_NONE TO 0
 EQUATE MQTT_FIRST TO 1
 EQUATE MQTT_EVERY TO 2
 EQUATE MQTT_DEPTH TO 3
-                                                                        
+
 *Queue Usage
 EQUATE MQUS_NORMAL TO 0
 EQUATE MQUS_TRANSMISSION TO 1
-                                                                        
+
 *Distribution Lists
 EQUATE MQDL_SUPPORTED TO 1
 EQUATE MQDL_NOT_SUPPORTED TO 0
-                                                                        
+
 *Index Type
 EQUATE MQIT_NONE TO 0
 EQUATE MQIT_MSG_ID TO 1
 EQUATE MQIT_CORREL_ID TO 2
 EQUATE MQIT_MSG_TOKEN TO 4
 EQUATE MQIT_GROUP_ID TO 5
-                                                                        
+
 *Default Bind
 EQUATE MQBND_BIND_ON_OPEN TO 0
 EQUATE MQBND_BIND_NOT_FIXED TO 1
-                                                                        
+
 *Queue Sharing Group Disposition
 EQUATE MQQSGD_Q_MGR TO 0
 EQUATE MQQSGD_COPY TO 1
 EQUATE MQQSGD_SHARED TO 2
 EQUATE MQQSGD_GROUP TO 3
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to Namelist Attributes                             *
 ***********************************************************************
-                                                                        
+
 *Name Count
 EQUATE MQNC_MAX_NAMELIST_NAME_COUNT TO 256
-                                                                        
+
 *Namelist Type
 EQUATE MQNT_NONE TO 0
 EQUATE MQNT_Q TO 1
 EQUATE MQNT_CLUSTER TO 2
 EQUATE MQNT_AUTH_INFO TO 4
 EQUATE MQNT_ALL TO 1001
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to Process-Definition Attributes                   *
 ***********************************************************************
-                                                                        
+
 *Application Type
 *See values for "Put Application Type" under MQMD
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to Authentication-Information Attributes           *
 ***********************************************************************
-                                                                        
+
 *Authentication Information Type
 *See values for "Authentication Information Type" under MQAIR
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  Values Related to Queue-Manager Attributes                        *
 ***********************************************************************
-                                                                        
+
 *Channel Auto Definition
 EQUATE MQCHAD_DISABLED TO 0
 EQUATE MQCHAD_ENABLED TO 1
-                                                                        
+
 *Command Level
 EQUATE MQCMDL_LEVEL_1 TO 100
 EQUATE MQCMDL_LEVEL_101 TO 101
@@ -1655,23 +1655,23 @@ EQUATE MQCMDL_LEVEL_500 TO 500
 EQUATE MQCMDL_LEVEL_510 TO 510
 EQUATE MQCMDL_LEVEL_520 TO 520
 EQUATE MQCMDL_LEVEL_530 TO 530
-                                                                        
+
 *Distribution Lists
 *See values for "Distribution Lists" under Queue Attributes
-                                                                        
+
 *Expiration Scan Interval
 EQUATE MQEXPI_OFF TO 0
-                                                                        
+
 *Intra-Group Queuing
 EQUATE MQIGQ_DISABLED TO 0
 EQUATE MQIGQ_ENABLED TO 1
-                                                                        
+
 *Intra-Group Queuing Put Authority
 EQUATE MQIGQPA_DEFAULT TO 1
 EQUATE MQIGQPA_CONTEXT TO 2
 EQUATE MQIGQPA_ONLY_IGQ TO 3
 EQUATE MQIGQPA_ALTERNATE_OR_IGQ TO 4
-                                                                        
+
 *Platform
 EQUATE MQPL_MVS TO 1
 EQUATE MQPL_OS390 TO 1
@@ -1684,12 +1684,12 @@ EQUATE MQPL_WINDOWS TO 5
 EQUATE MQPL_WINDOWS_NT TO 11
 EQUATE MQPL_VMS TO 12
 EQUATE MQPL_NSK TO 13
-                                                                        
+
 *Syncpoint Availability
 EQUATE MQSP_AVAILABLE TO 1
 EQUATE MQSP_NOT_AVAILABLE TO 0
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  MQAIR Structure -- Authentication Information Record              *
 ***********************************************************************
@@ -1703,7 +1703,7 @@ EQUATE MQAIR.LDAPUserNamePtr    TO 5
 EQUATE MQAIR.LDAPUserNameOffset TO 6
 EQUATE MQAIR.LDAPUserNameLength TO 7
 EQUATE MQAIR.LDAPPassword       TO 8
- 
+
 * Default MQAIR variable
 MQAIR.DFLT = ""
 MQAIR.DFLT<MQAIR.StrucId>            = MQAIR_STRUC_ID
@@ -1719,23 +1719,23 @@ MQAIR.DFLT<MQAIR.LDAPPassword>       = ""
 ***********************************************************************
 **  MQBO Structure -- Begin Options                                   *
 ***********************************************************************
-                                                                        
+
 * MQBO Fields
 EQUATE MQBO.StrucId TO 1
 EQUATE MQBO.Version TO 2
 EQUATE MQBO.Options TO 3
- 
+
 * Default MQBO variable
 MQBO.DFLT = ""
 MQBO.DFLT<MQBO.StrucId> = MQBO_STRUC_ID
 MQBO.DFLT<MQBO.Version> = MQBO_VERSION_1
 MQBO.DFLT<MQBO.Options> = MQBO_NONE
-        
-                                                                        
+
+
 ***********************************************************************
 **  MQCIH Structure -- CICS Information Header                        *
 ***********************************************************************
-                                                                        
+
 * MQCIH Fields
 EQUATE MQCIH.StrucId            TO  1
 EQUATE MQCIH.Version            TO  2
@@ -1775,7 +1775,7 @@ EQUATE MQCIH.CursorPosition     TO 35
 EQUATE MQCIH.ErrorOffset        TO 36
 EQUATE MQCIH.InputItem          TO 37
 EQUATE MQCIH.Reserved4          TO 38
- 
+
 * Default MQCIH variable
 MQCIH.DFLT = ""
 MQCIH.DFLT<MQCIH.StrucId>            = MQCIH_STRUC_ID
@@ -1816,12 +1816,12 @@ MQCIH.DFLT<MQCIH.CursorPosition>     = 0
 MQCIH.DFLT<MQCIH.ErrorOffset>        = 0
 MQCIH.DFLT<MQCIH.InputItem>          = 0
 MQCIH.DFLT<MQCIH.Reserved4>          = 0
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  MQSCO Structure -- SSL Configuration Options                      *
 ***********************************************************************
-                                                                        
+
 * MQSCO Fields
 EQUATE MQSCO.StrucId           TO 1
 EQUATE MQSCO.Version           TO 2
@@ -1830,7 +1830,7 @@ EQUATE MQSCO.CryptoHardware    TO 4
 EQUATE MQSCO.AuthInfoRecCount  TO 5
 EQUATE MQSCO.AuthInfoRecOffset TO 6
 EQUATE MQSCO.AuthInfoRecPtr    TO 7
- 
+
 * Default MQSCO variable
 MQSCO.DFLT = ""
 MQSCO.DFLT<MQSCO.StrucId>           = MQSCO_STRUC_ID
@@ -1840,12 +1840,12 @@ MQSCO.DFLT<MQSCO.CryptoHardware>    = ""
 MQSCO.DFLT<MQSCO.AuthInfoRecCount>  = 0
 MQSCO.DFLT<MQSCO.AuthInfoRecOffset> = 0
 MQSCO.DFLT<MQSCO.AuthInfoRecPtr>    = MQPTR
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  MQCNO Structure -- Connect Options                                *
 ***********************************************************************
-                                                                        
+
 * MQCNO Fields
 EQUATE MQCNO.StrucId          TO 1
 EQUATE MQCNO.Version          TO 2
@@ -1855,7 +1855,7 @@ EQUATE MQCNO.ClientConnPtr    TO 5
 EQUATE MQCNO.ConnTag          TO 6
 EQUATE MQCNO.SSLConfigPtr     TO 7
 EQUATE MQCNO.SSLConfigOffset  TO 8
- 
+
 * Default MQCNO variable
 MQCNO.DFLT = ""
 MQCNO.DFLT<MQCNO.StrucId>          = MQCNO_STRUC_ID
@@ -1866,12 +1866,12 @@ MQCNO.DFLT<MQCNO.ClientConnPtr>    = MQPTR
 MQCNO.DFLT<MQCNO.ConnTag>          = MQBYTE128
 MQCNO.DFLT<MQCNO.SSLConfigPtr>     = MQPTR
 MQCNO.DFLT<MQCNO.SSLConfigOffset>  = 0
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  MQDH Structure -- Distribution Header                             *
 ***********************************************************************
-                                                                        
+
 * MQDH Fields
 EQUATE MQDH.StrucId         TO  1
 EQUATE MQDH.Version         TO  2
@@ -1884,7 +1884,7 @@ EQUATE MQDH.PutMsgRecFields TO  8
 EQUATE MQDH.RecsPresent     TO  9
 EQUATE MQDH.ObjectRecOffset TO 10
 EQUATE MQDH.PutMsgRecOffset TO 11
- 
+
 * Default MQDH variable
 MQDH.DFLT = ""
 MQDH.DFLT<MQDH.StrucId>         = MQDH_STRUC_ID
@@ -1898,33 +1898,33 @@ MQDH.DFLT<MQDH.PutMsgRecFields> = MQPMRF_NONE
 MQDH.DFLT<MQDH.RecsPresent>     = 0
 MQDH.DFLT<MQDH.ObjectRecOffset> = 0
 MQDH.DFLT<MQDH.PutMsgRecOffset> = 0
-                                                                        
-                                                                        
+
+
 ***********************************************************************
 **  MQDLH Structure -- Dead Letter Header                             *
 ***********************************************************************
 
 EQUATE MQDLH.StrucId        TO  1 ;* Structure identifier
 EQUATE MQDLH.Version        TO  2 ;* Structure version number
-EQUATE MQDLH.Reason         TO  3 ;* Reason message arrived on dead-letter 
+EQUATE MQDLH.Reason         TO  3 ;* Reason message arrived on dead-letter
                                   ;* (undelivered-message) queue
 EQUATE MQDLH.DestQName      TO  4 ;* Name of original destination queue
 EQUATE MQDLH.DestQMgrName   TO  5 ;* Name of original destination queue
                                   ;* manager
-EQUATE MQDLH.Encoding       TO  6 ;* Numeric encoding of data that follows 
+EQUATE MQDLH.Encoding       TO  6 ;* Numeric encoding of data that follows
                                   ;* MQDLH
-EQUATE MQDLH.CodedCharSetId TO  7 ;* Character set identifier of data that 
+EQUATE MQDLH.CodedCharSetId TO  7 ;* Character set identifier of data that
                                   ;* follows MQDLH
 EQUATE MQDLH.Format         TO  8 ;* Format name of data that follows MQDLH
-EQUATE MQDLH.PutApplType    TO  9 ;* Type of application that put message on 
+EQUATE MQDLH.PutApplType    TO  9 ;* Type of application that put message on
                                   ;* dead-letter (undelivered-message) queue
-EQUATE MQDLH.PutApplName    TO 10 ;* Name of application that put message on 
+EQUATE MQDLH.PutApplName    TO 10 ;* Name of application that put message on
                                   ;* dead-letter (undelivered-message) queue
 EQUATE MQDLH.PutDate        TO 11 ;* Date when message was put on dead-letter
                                   ;* (undelivered-message) queue
-EQUATE MQDLH.PutTime        TO 12 ;* Time when message was put on the 
+EQUATE MQDLH.PutTime        TO 12 ;* Time when message was put on the
                                   ;* dead-letter (undelivered-message) queue
- 
+
 MQDLH.DFLT = ""
 MQDLH.DFLT<MQDLH.StrucId>        = MQDLH_STRUC_ID
 MQDLH.DFLT<MQDLH.Version>        = MQDLH_VERSION_1
@@ -1939,7 +1939,7 @@ MQDLH.DFLT<MQDLH.PutApplName>    = ""
 MQDLH.DFLT<MQDLH.PutDate>        = ""
 MQDLH.DFLT<MQDLH.PutTime>        = ""
 
-                                                                        
+
 ***********************************************************************
 **  MQGMO Structure -- Get Message Options                            *
 ***********************************************************************
@@ -1951,13 +1951,13 @@ EQUATE MQGMO.WaitInterval   TO  4 ;* Wait interval
 EQUATE MQGMO.Signal1        TO  5 ;* Signal
 EQUATE MQGMO.Signal2        TO  6 ;* Signal identifier
 EQUATE MQGMO.ResolvedQName  TO  7 ;* Resolved name of destination queue
-EQUATE MQGMO.MatchOptions   TO  8 ;* Options controlling selection criteria used 
+EQUATE MQGMO.MatchOptions   TO  8 ;* Options controlling selection criteria used
                                   ;* for MQGET
-EQUATE MQGMO.GroupStatus    TO  9 ;* Flag indicating whether message retrieved 
+EQUATE MQGMO.GroupStatus    TO  9 ;* Flag indicating whether message retrieved
                                   ;* is in a group
-EQUATE MQGMO.SegmentStatus  TO 10 ;* Flag indicating whether message retrieved is 
+EQUATE MQGMO.SegmentStatus  TO 10 ;* Flag indicating whether message retrieved is
                                   ;* a segment of a logical message
-EQUATE MQGMO.Segmentation   TO 11 ;* Flag indicating whether further segmentation 
+EQUATE MQGMO.Segmentation   TO 11 ;* Flag indicating whether further segmentation
                                   ;* is allowed for the message retrieved
 EQUATE MQGMO.Reserved1      TO 12 ;* Reserved
 EQUATE MQGMO.MsgToken       TO 13 ;* Message token
@@ -2019,7 +2019,7 @@ MQIIH.DFLT<MQIIH.CommitMode>     = MQICM_COMMIT_THEN_SEND
 MQIIH.DFLT<MQIIH.SecurityScope>  = MQISS_CHECK
 MQIIH.DFLT<MQIIH.Reserved>       = ""
 
-                                                                        
+
 ***********************************************************************
 **  MQMD Structure -- Message Descriptor                              *
 ***********************************************************************
@@ -2050,7 +2050,7 @@ EQUATE MQMD.PutTime          TO 23 ;* Time when message was put
 EQUATE MQMD.ApplOriginData   TO 24 ;* Application data relating to origin
 EQUATE MQMD.GroupId          TO 25 ;* Group identifier
 EQUATE MQMD.MsgSeqNumber     TO 26 ;* Sequence number of logical message within group
-EQUATE MQMD.Offset           TO 27 ;* Offset of data in physical message from start 
+EQUATE MQMD.Offset           TO 27 ;* Offset of data in physical message from start
                                    ;* of logical message
 EQUATE MQMD.MsgFlags         TO 28 ;* Message flags
 EQUATE MQMD.OriginalLength   TO 29 ;* Length of original message
@@ -2086,7 +2086,7 @@ MQMD.DFLT<MQMD.Offset>           = 0
 MQMD.DFLT<MQMD.MsgFlags>         = MQMF_NONE
 MQMD.DFLT<MQMD.OriginalLength>   = MQOL_UNDEFINED
 
-                                                                        
+
 ***********************************************************************
 **  MQMDE Structure -- Message Descriptor Extension                   *
 ***********************************************************************
@@ -2103,7 +2103,7 @@ EQUATE MQMDE.MsgSeqNumber   TO  9 ;* Sequence number of logical message within g
 EQUATE MQMDE.Offset         TO 10 ;* Offset of data in physical message from start of logical message
 EQUATE MQMDE.MsgFlags       TO 11 ;* Message flags
 EQUATE MQMDE.OriginalLength TO 12 ;* Length of original message
- 
+
 MQMDE.DFLT = ""
 MQMDE.DFLT<MQMDE.StrucId>        = MQMDE_STRUC_ID
 MQMDE.DFLT<MQMDE.Version>        = MQMDE_VERSION_2
@@ -2117,12 +2117,12 @@ MQMDE.DFLT<MQMDE.MsgSeqNumber>   = 1
 MQMDE.DFLT<MQMDE.Offset>         = 0
 MQMDE.DFLT<MQMDE.MsgFlags>       = MQMF_NONE
 MQMDE.DFLT<MQMDE.OriginalLength> = MQOL_UNDEFINED
- 
-                                                                        
+
+
 ***********************************************************************
 **  MQMD1 Structure -- Version-1 Message Descriptor                   *
 ***********************************************************************
-                                                                        
+
 EQUATE MQMD1.StrucId          TO  1 ;* Structure identifier
 EQUATE MQMD1.Version          TO  2 ;* Structure version number
 EQUATE MQMD1.Report           TO  3 ;* Report options
@@ -2147,7 +2147,7 @@ EQUATE MQMD1.PutApplName      TO 21 ;* Name of application that put the message
 EQUATE MQMD1.PutDate          TO 22 ;* Date when message was put
 EQUATE MQMD1.PutTime          TO 23 ;* Time when message was put
 EQUATE MQMD1.ApplOriginData   TO 24 ;* Application data relating to origin
- 
+
 MQMD1.DFLT = ""
 MQMD1.DFLT<MQMD1.StrucId>          = MQMD_STRUC_ID
 MQMD1.DFLT<MQMD1.Version>          = MQMD_VERSION_1
@@ -2173,8 +2173,8 @@ MQMD1.DFLT<MQMD1.PutApplName>      = ""
 MQMD1.DFLT<MQMD1.PutDate>          = ""
 MQMD1.DFLT<MQMD1.PutTime>          = ""
 MQMD1.DFLT<MQMD1.ApplOriginData>   = ""
- 
-                                                                        
+
+
 ***********************************************************************
 **  MQOD Structure -- Object Descriptor                               *
 ***********************************************************************
@@ -2197,7 +2197,7 @@ EQUATE MQOD.ResponseRecPtr      TO 15 ;* Address of first response record
 EQUATE MQOD.AlternateSecurityId TO 16 ;* Alternate security identifier
 EQUATE MQOD.ResolvedQName       TO 17 ;* Resolved queue name
 EQUATE MQOD.ResolvedQMgrName    TO 18 ;* Resolved queue manager name
- 
+
 MQOD.DFLT = ""
 MQOD.DFLT<MQOD.StrucId>             = MQOD_STRUC_ID
 MQOD.DFLT<MQOD.Version>             = MQOD_VERSION_1
@@ -2217,24 +2217,24 @@ MQOD.DFLT<MQOD.ResponseRecPtr>      = MQPTR
 MQOD.DFLT<MQOD.AlternateSecurityId> = MQBYTE40
 MQOD.DFLT<MQOD.ResolvedQName>       = ""
 MQOD.DFLT<MQOD.ResolvedQMgrName>    = ""
- 
-                                                                        
+
+
 ***********************************************************************
 **  MQOR Structure -- Object Record                                   *
 ***********************************************************************
-                                                                        
+
 EQUATE MQOR.ObjectName     TO 1 ;* Object name
 EQUATE MQOR.ObjectQMgrName TO 2 ;* Object queue manager name
- 
+
 MQOR.DFLT = ""
 MQOR.DFLT<MQOR.ObjectName>     = ""
 MQOR.DFLT<MQOR.ObjectQMgrName> = ""
- 
-                                                                        
+
+
 ***********************************************************************
 **  MQPMO Structure -- Put Message Options                            *
 ***********************************************************************
-                                                                        
+
 EQUATE MQPMO.StrucId           TO  1 ;* Structure identifier
 EQUATE MQPMO.Version           TO  2 ;* Structure version number
 EQUATE MQPMO.Options           TO  3 ;* Options that control the action of MQPUT and MQPUT1
@@ -2251,7 +2251,7 @@ EQUATE MQPMO.PutMsgRecOffset   TO 13 ;* Offset of first put message record from 
 EQUATE MQPMO.ResponseRecOffset TO 14 ;* Offset of first response record from start of MQPMO
 EQUATE MQPMO.PutMsgRecPtr      TO 15 ;* Address of first put message record
 EQUATE MQPMO.ResponseRecPtr    TO 16 ;* Address of first response record
- 
+
 MQPMO.DFLT = ""
 MQPMO.DFLT<MQPMO.StrucId>           = MQPMO_STRUC_ID
 MQPMO.DFLT<MQPMO.Version>           = MQPMO_VERSION_1
@@ -2269,12 +2269,12 @@ MQPMO.DFLT<MQPMO.PutMsgRecOffset>   = 0
 MQPMO.DFLT<MQPMO.ResponseRecOffset> = 0
 MQPMO.DFLT<MQPMO.PutMsgRecPtr>      = MQPTR
 MQPMO.DFLT<MQPMO.ResponseRecPtr>    = MQPTR
- 
-                                                                        
+
+
 ***********************************************************************
 **  MQPMR Structure -- Put Message Record                             *
 ***********************************************************************
-                                                                        
+
 EQUATE MQPMR.MsgId           TO 1 ;* Message identifier
 EQUATE MQPMR.CorrelId        TO 2 ;* Correlation identifier
 EQUATE MQPMR.Feedback        TO 3 ;* Feedback or reason code
@@ -2285,8 +2285,8 @@ MQPMR.DFLT<MQPMR.MsgId>           = MQBYTE24
 MQPMR.DFLT<MQPMR.CorrelId>        = MQBYTE24
 MQPMR.DFLT<MQPMR.Feedback>        = MQFB_NONE
 MQPMR.DFLT<MQPMR.AccountingToken> = MQBYTE32
- 
-                                                                        
+
+
 ***********************************************************************
 **  MQRFH Structure -- Rules and Formatting Header                    *
 ***********************************************************************
@@ -2307,12 +2307,12 @@ MQRFH.DFLT<MQRFH.Encoding>       = MQENC_NATIVE
 MQRFH.DFLT<MQRFH.CodedCharSetId> = MQCCSI_UNDEFINED
 MQRFH.DFLT<MQRFH.Format>         = MQFMT_NONE
 MQRFH.DFLT<MQRFH.Flags>          = MQRFH_NONE
- 
-                                                                        
+
+
 ***********************************************************************
 **  MQRFH2 Structure -- Rules and Formatting Header 2                 *
 ***********************************************************************
-                                                                        
+
 EQUATE MQRFH2.StrucId        TO 1 ;* Structure identifier
 EQUATE MQRFH2.Version        TO 2 ;* Structure version number
 EQUATE MQRFH2.StrucLength    TO 3 ;* Total length of MQRFH2 including all NameValueLength and NameValueData fields
@@ -2332,14 +2332,14 @@ MQRFH2.DFLT<MQRFH2.Format>         = MQFMT_NONE
 MQRFH2.DFLT<MQRFH2.Flags>          = MQRFH_NONE
 MQRFH2.DFLT<MQRFH2.NameValueCCSID> = 1208
 
-                                                                        
+
 ***********************************************************************
 **  MQRMH Structure -- Reference Message Header                       *
 ***********************************************************************
-                                                                        
+
 EQUATE MQRMH.StrucId            TO  1 ;* Structure identifier
 EQUATE MQRMH.Version            TO  2 ;* Structure version number
-EQUATE MQRMH.StrucLength        TO  3 ;* Total length of MQRMH, including strings at 
+EQUATE MQRMH.StrucLength        TO  3 ;* Total length of MQRMH, including strings at
                                       ;* end of fixed fields, but not the bulk data
 EQUATE MQRMH.Encoding           TO  4 ;* Numeric encoding of bulk data
 EQUATE MQRMH.CodedCharSetId     TO  5 ;* Character set identifier of bulk data
@@ -2381,7 +2381,7 @@ MQRMH.DFLT<MQRMH.DataLogicalLength>  = 0
 MQRMH.DFLT<MQRMH.DataLogicalOffset>  = 0
 MQRMH.DFLT<MQRMH.DataLogicalOffset2> = 0
 
-                                                                        
+
 ***********************************************************************
 **  MQRR Structure -- Response Record                                 *
 ***********************************************************************
@@ -2397,7 +2397,7 @@ MQRR.DFLT<MQRR.Reason>   = MQRC_NONE
 ***********************************************************************
 **  MQTM Structure -- Trigger Message                                 *
 ***********************************************************************
-                                                                        
+
 EQUATE MQTM.StrucId     TO 1 ;* Structure identifier
 EQUATE MQTM.Version     TO 2 ;* Structure version number
 EQUATE MQTM.QName       TO 3 ;* Name of triggered queue
@@ -2419,11 +2419,11 @@ MQTM.DFLT<MQTM.ApplId>      = ""
 MQTM.DFLT<MQTM.EnvData>     = ""
 MQTM.DFLT<MQTM.UserData>    = ""
 
-                                                                        
+
 ***********************************************************************
 **  MQTMC2 Structure -- Trigger Message 2 (Character)                 *
 ***********************************************************************
-                                                                        
+
 EQUATE MQTMC2.StrucId     TO  1 ;* Structure identifier
 EQUATE MQTMC2.Version     TO  2 ;* Structure version number
 EQUATE MQTMC2.QName       TO  3 ;* Name of triggered queue
@@ -2446,12 +2446,12 @@ MQTMC2.DFLT<MQTMC2.ApplId>      = ""
 MQTMC2.DFLT<MQTMC2.EnvData>     = ""
 MQTMC2.DFLT<MQTMC2.UserData>    = ""
 MQTMC2.DFLT<MQTMC2.QMgrName>    = ""
- 
-                                                                        
+
+
 ***********************************************************************
 **  MQWIH Structure -- Work Information Header                        *
 ***********************************************************************
-                                                                        
+
 EQUATE MQWIH.StrucId        TO  1 ;* Structure identifier
 EQUATE MQWIH.Version        TO  2 ;* Structure version number
 EQUATE MQWIH.StrucLength    TO  3 ;* Length of MQWIH structure
@@ -2476,12 +2476,12 @@ MQWIH.DFLT<MQWIH.ServiceName>    = ""
 MQWIH.DFLT<MQWIH.ServiceStep>    = ""
 MQWIH.DFLT<MQWIH.MsgToken>       = MQBYTE16
 MQWIH.DFLT<MQWIH.Reserved>       = ""
- 
-                                                                        
+
+
 ***********************************************************************
 **  MQXQH Structure -- Transmission Queue Header                      *
 ***********************************************************************
-                                                                        
+
 EQUATE MQXQH.StrucId        TO 1 ;* Structure identifier
 EQUATE MQXQH.Version        TO 2 ;* Structure version number
 EQUATE MQXQH.RemoteQName    TO 3 ;* Name of destination queue
@@ -2494,4 +2494,3 @@ MQXQH.DFLT<MQXQH.Version>        = MQXQH_VERSION_1
 MQXQH.DFLT<MQXQH.RemoteQName>    = ""
 MQXQH.DFLT<MQXQH.RemoteQMgrName> = ""
 MQXQH.DFLT<MQXQH.MsgDesc>        = LOWER(MQMD1.DFLT)
-

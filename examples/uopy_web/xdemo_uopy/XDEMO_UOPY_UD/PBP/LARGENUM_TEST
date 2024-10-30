@@ -13,7 +13,7 @@
 *	returns its square root. Note the use of getcontext().prec = 64
 *	which overrides the default precision of 28.
 *
-***************************************************************************** 
+*****************************************************************************
 NMBR = "12345678901234567894.1111111"
 CRT "NMBR=" :NMBR
 CRT "U2 RESULT: "
@@ -27,9 +27,9 @@ pyresult = PyCallFunction(ModuleName, FuncName, NMBR)
 
 *	check the outcome and CRT exception and traceback information
 *	if an exception was raised
-IF @PYEXCEPTIONTYPE = '' THEN 
+IF @PYEXCEPTIONTYPE = '' THEN
   CRT "Python RESULT: "
-  CRT "SQRT(NMBR)= " :pyresult 
+  CRT "SQRT(NMBR)= " :pyresult
 END ELSE
   CRT "EXCEPTION TYPE IS " :@PYEXCEPTIONTYPE
   CRT "EXCEPTION MESSAGE IS " :@PYEXCEPTIONMSG

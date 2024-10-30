@@ -7,7 +7,7 @@
 *	Rocket Software Confidential
 *	OCO Source Materials
 *	Copyright (C) Rocket Software, Inc.  1993-2012
-* 
+*
 *       (c) Copyright 1998 Ardent Software Inc. - All Rights Reserved
 *       This is unpublished proprietary source code of Ardent Software Inc.
 *       The copyright notice above does not evidence any actual or intented
@@ -20,9 +20,9 @@
 *       Date.... GTAR#    WHO Description......................................
 *	12/10/12 UDT-8866 ZJH, Add SQL.TXN.ISOLATION for SetConnectOption
 *	10/27/98 23888 CSM Add SQL.LIC.DEV.SUBKEY for licensing
-*       10/14/98 23801 SAP Change copyrights. 
+*       10/14/98 23801 SAP Change copyrights.
 *       06/19/97 20748 MJC BCI settings for SQLGetInfo and SQLSetConnectOption
-*       11/18/96 19547 MJC BCI settings for SQLTransact 
+*       11/18/96 19547 MJC BCI settings for SQLTransact
 *       11/18/96 19547 MJC BCI settings for AUTOCOMMIT
 *       11/06/96 19512 ENF Add BCI settings for PARAMOPTONS
 *       09/04/96 19182 MJC Add SQL.COLUMN.DISPLAY.SIZE
@@ -164,9 +164,9 @@ EQU SQL.LONGVARBINARY                   TO               -4
 EQU SQL.BIGINT                          TO               -5
 EQU SQL.TINYINT                         TO               -6
 EQU SQL.BIT                             TO               -7
-EQU NUM.SQL.TYPES                       TO               19 
+EQU NUM.SQL.TYPES                       TO               19
 
-* Define ODBC conception of display size 
+* Define ODBC conception of display size
 * for the various data types
 
 EQU SQL.CHAR.DSPSIZE                    TO                0
@@ -181,7 +181,7 @@ EQU SQL.DOUBLE.DSPSIZE                  TO               22
 EQU SQL.DATE.DSPSIZE                    TO               10
 EQU SQL.TIME.DSPSIZE                    TO                8
 
-* Define ODBC conception of precision 
+* Define ODBC conception of precision
 * for the various data types
 
 EQU SQL.CHAR.PRECISION                  TO              254
@@ -205,7 +205,7 @@ EQU SQL.B.INTTIME                       TO              103
 EQU SQL.B.CHAR                          TO                1
 EQU SQL.B.DEFAULT                       TO               99
 
-* Define return valued for 
+* Define return valued for
 * Describe and ColAttributes
 
 EQU SQL.NO.NULLS                        TO                0
@@ -637,4 +637,3 @@ EQU     SQL.PARAMOPTIONS.READ           TO                1
 * Additions for SQLTransact
 EQU     SQL.COMMIT                      TO                1
 EQU     SQL.ROLLBACK                    TO                2
-

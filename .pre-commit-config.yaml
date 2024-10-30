@@ -1,0 +1,21 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '\.(html|css|js)$|^docs/'
+      - id: end-of-file-fixer
+        exclude: '\.(html|css|js)$|^docs/'
+      - id: check-docstring-first
+      - id: check-added-large-files
+      - id: check-yaml
+      - id: check-toml
+      - id: requirements-txt-fixer
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.10.0
+    hooks:
+      - id: black
+  # - repo: https://github.com/codespell-project/codespell
+  #   rev: v2.3.0
+  #   hooks:
+  #   - id: codespell
