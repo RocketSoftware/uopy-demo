@@ -44,9 +44,9 @@ WHSE3         Tertiary Warehouse
 | Name | Link  |
 |---|---|
 | GitHub UOPY examples repository | [home](https://github.com/RocketSoftware/uopy-demo)  |
-| UOPY: Intro to UOPY, UniObjects for Python | [video](https://www.rocketsoftware.com/resource/uopy-intro-uopy-uniobjects-python) |
+| UOPY: Intro to UOPY, UniObjects for Python | [video](https://www.youtube.com/watch?v=m26_b0qD8zM) |
 | UOPY: GUI examples | [video](https://www.youtube.com/watch?v=el20qZC89t8), [code](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_tkexample) |
-| UOPY: Webserver app demo | [video](https://www.youtube.com/watch?v=Q7w-pQJdLDg&t=6s), [code](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_web) |
+| UOPY: Webserver app demo | [video](https://www.youtube.com/watch?v=Q7w-pQJdLDg), [code](https://github.com/RocketSoftware/uopy-demo/tree/master/examples/uopy_web) |
 | UOPY: Android Demo | [video](https://www.youtube.com/watch?v=3NfgQrPNtSM) |
 
 ## API Reference
