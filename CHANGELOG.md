@@ -1,15 +1,38 @@
 # Changelog
 
+## UOPY 1.4.0 - Jan 21, 2025
+
+UOPY 1.4.0 is certified on Python 3.9 & later.
+
+We have QA certified UOPY on Python odd version numbers (3.9, 3.11 and 3.13) and paper certified UOPY on Python even version numbers (3.10, 3.12).
+
+Enhancements and fixes
+
+- UOPY-123 Support for MVIS Connection Using UniObjects Protocol
+    * Feature Added: Support for establishing MVIS connections via the UniObjects protocol.
+    * Limitation: The UniCommands object from UOPY cannot be used for MVIS connections as it is not supported by MVIS.
+- UOPY-122 New ClearPool Functionality to Close Open Pool Connections in UOPY.
+    * A new ClearPool functionality has been introduced in UOPY to facilitate the termination of all open pool connections. This functionality uses the closeAllCPSessions() method, to close down all open sessions in the UV server spawned by UOPY.
+
+- UOPY-121 In UOPY version 1.3.0, an issue prevented connections to the UniVerse database on Linux systems. This has been resolved by implementing a new UniVerse version check function. The previous shell script-based checking method failed to retrieve the UniVerse version accurately.
+
+- UOPY-111 The README has been updated to replace outdated and non-functional video links with working links sourced from Rocket Software’s YouTube channel.
+    * These videos provide an introduction to UOPY, GUI examples, a webserver app demo, and an Android demo. The following video links have been updated:
+        * UOPY: Intro to UOPY, UniObjects for Python https://www.youtube.com/watch?v=m26_b0qD8zM
+        * UOPY: GUI Examples: https://www.youtube.com/watch?v=el20qZC89t8
+        * UOPY: Webserver App Demo： https://www.youtube.com/watch?v=Q7w-pQJdLDg
+        * UOPY: Android Demo： https://www.youtube.com/watch?v=3NfgQrPNtSM
+
 ## UOPY 1.3.0 - Oct 12, 2023
 
-Enhancement and fixes
+Enhancements and fixes
 
 - UOPY-94 Request to retrieve the UO Server timeout value from UOPY (external story)
 - UOPY-95 Calling Subroutine from UO client using Connection Pooling causes session to become unresponsive when entering debugger (external story)
 - UOPY-93 Support uopy.File.fileinfo Function like u2py for UD (internal story)
 - UOPY-62 Need way to determine version of uopy from inside the module. (internal story)
 - UOPY-44 UOPY connection not released when session killed on server (external bug)
-- UOPY-96 test_performance.TestPerformance.test_read_named_fields has an error when running in Linux (internal bug)
+- UOPY-96 test_performance.TestPerformance.test_read_named_fields has error when running in Linux (internal bug)
 
 ## UOPY 1.2.0 - Mar 24, 2022
 
@@ -18,7 +41,7 @@ Enhancements and fixes
 - UOPY-41 Prior to this release, uopy returned two values when only one id was sent to `read_named_fields`, and the id was not found in the file.
 - UOPY-42 This release adds a method to the `uopy.File` object that gets the fileinfo information from the server.
 - UOPY-43 An issue with the `uopy.connect` method, where turning on connection pooling was only allowed from the `uopy.ini`, has been fixed in this release. Passing `pooling_on=True` in the `uopy.connect` method will properly utilize a connection pooling license if available.
-- UOPY- 66 Various performance enhancements have been made to the `uopy.File.Read` and `uopy.File.Write` methods.
+- UOPY-66 Various performance enhancements have been made to the `uopy.File.Read` and `uopy.File.Write` method.
 
 ### Getting fileinfo from a uopy.File object
 
@@ -130,7 +153,7 @@ on versions prior to UniData 8.2.4 or prior to UniVerse 12.2.1.
 
 Enhancement
 
-- UOPY-38 UOPY's DynArray class should support concatenation operations like Python list
+- UOPY-38 UOPY's DynArray class should support concatenation operations like Python list.
 
 ## UOPY 1.1.0 - Oct 27, 2020
 
