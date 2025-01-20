@@ -1,6 +1,6 @@
 # Changelog
 
-## UOPY 1.4.0 - Jan 21, 2025
+## UOPY 1.4.0 - Jan 22, 2025
 
 UOPY 1.4.0 is certified on Python 3.9 & later.
 
