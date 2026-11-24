@@ -1,3 +1,4 @@
-flask
-pandas
-wtforms
+flask>=3.0,<4
+pandas>=2.0,<4
+uopy>=1.4,<2
+wtforms>=3.0,<4
