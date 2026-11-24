@@ -1,0 +1,12 @@
+version: 2
+updates:
+  # Keep the actions in .github/workflows current. checkout@v3 and
+  # setup-python@v4 went out of date without anyone noticing.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
