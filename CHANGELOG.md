@@ -1,5 +1,26 @@
 # Changelog
 
+## UOPY 1.5.0 - Nov 24, 2026
+
+UOPY 1.5.0 requires Python 3.9 or later and supports Python 3.9 through 3.15.
+
+Enhancements and fixes
+
+- UOPY-161 - UniObjects for Python now provides the `to_list` method on the `DynArray` class, which converts a dynamic array into a standard Python list. The method splits the dynamic array on its field, value, subvalue, and text mark delimiters. Applications that read multivalued records can now manipulate the data with ordinary Python list operations instead of handling dynamic array delimiters directly.
+
+- UOPY-160 - The UOPY `Session` class now includes an `is_pooled()` method that returns `True` if the session's connection was taken from the UOPY connection pool, and `False` otherwise. Previously, applications could only read the `pooling_on` configuration setting, which shows whether pooling is enabled but not whether a particular connection came from the pool. Applications can now call `session.is_pooled()` to confirm the origin of a connection at run time and handle pooled and non-pooled connections differently.
+
+- UOPY-156 - UOPY now provides the expiration date of the server's SSL certificate. For a session connected with SSL, the new `Session.server_cert_expiry` property returns the date as a string, for example `Dec 31 23:59:59 2026 GMT`. For a session without SSL, it returns `None`. Applications can use it to detect a server certificate that is about to expire.
+
+- UOPY-155 - Writing records with `write_named_fields` now reports server-side failures to the calling application. Previously, the method returned without raising an exception when the write failed on the server, for example when the user did not have the permissions required to update the file, so a failed write could be treated as successful. The appropriate exception is now raised, allowing applications to detect and handle write failures.
+    * `write_records` now reports failures the same way. Both methods raise `UOFileError`.
+    * The `response_errors` and `id_list` attributes of the `UOFileError` give the result for each record, so an application can tell which records failed.
+    * Both methods now return the response codes and status codes as integers, as `read_named_fields` already does, instead of as strings. Code that compares a code with `'0'` must now compare it with `0`.
+    * A write refused for lack of file permissions is reported only by UniVerse 14.2.1.1001 or later (UNV-36720). Against earlier releases it still raises no exception.
+
+- UOPY-154 - Fixed an issue where `select_matching_ak` and `select_alternate_key` returned no results when they were used against a distributed file. Previously, these calls worked only on an individual part file, so applications could not perform secondary index selection across a distributed file the way the BASIC `SELECTINDEX` statement does. Index-based selection now returns the expected record IDs for all parts of a distributed file.
+    * The fix is in the UniVerse server and requires UniVerse 14.3.1 or later.
+
 ## UOPY 1.4.0 - Jan 22, 2025
 
 UOPY 1.4.0 is certified on Python 3.9 & later.
@@ -8,15 +29,15 @@ We have QA certified UOPY on Python odd version numbers (3.9, 3.11 and 3.13) and
 
 Enhancements and fixes
 
-- UOPY-123 Support for MVIS Connection Using UniObjects Protocol
+- UOPY-123 - Support for MVIS Connection Using UniObjects Protocol
     * Feature Added: Support for establishing MVIS connections via the UniObjects protocol.
     * Limitation: The UniCommands object from UOPY cannot be used for MVIS connections as it is not supported by MVIS.
-- UOPY-122 New ClearPool Functionality to Close Open Pool Connections in UOPY.
+- UOPY-122 - New ClearPool Functionality to Close Open Pool Connections in UOPY.
     * A new ClearPool functionality has been introduced in UOPY to facilitate the termination of all open pool connections. This functionality uses the closeAllCPSessions() method, to close down all open sessions in the UV server spawned by UOPY.
 
-- UOPY-121 In UOPY version 1.3.0, an issue prevented connections to the UniVerse database on Linux systems. This has been resolved by implementing a new UniVerse version check function. The previous shell script-based checking method failed to retrieve the UniVerse version accurately.
+- UOPY-121 - In UOPY version 1.3.0, an issue prevented connections to the UniVerse database on Linux systems. This has been resolved by implementing a new UniVerse version check function. The previous shell script-based checking method failed to retrieve the UniVerse version accurately.
 
-- UOPY-111 The README has been updated to replace outdated and non-functional video links with working links sourced from Rocket Software’s YouTube channel.
+- UOPY-111 - The README has been updated to replace outdated and non-functional video links with working links sourced from Rocket Software’s YouTube channel.
     * These videos provide an introduction to UOPY, GUI examples, a webserver app demo, and an Android demo. The following video links have been updated:
         * UOPY: Intro to UOPY, UniObjects for Python https://www.youtube.com/watch?v=m26_b0qD8zM
         * UOPY: GUI Examples: https://www.youtube.com/watch?v=el20qZC89t8
